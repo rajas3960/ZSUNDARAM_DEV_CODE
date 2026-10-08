@@ -1,0 +1,82 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_POWER_GENERATION with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Power Generration', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  Referenceid;
+
+  @Consumption.valueHelpDefinition: [{ entity:
+  {name: 'ZV_TURNBINE_F4' , element: 'Turbine' },
+  distinctValues: true,
+  additionalBinding: [{
+                        localElement: 'Description',
+                        element: 'Description',
+                        usage: #RESULT
+                   },
+                   {
+                      localParameter: '',
+                      localElement: 'plant',
+                      localConstant: '',
+                      parameter: '',
+                      element: 'plant',
+                      usage: #FILTER
+                   }]
+  }]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 20, importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  Turbine;
+
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 30, importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  Description;
+
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 35, importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+  plant;
+
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 40, importance: #HIGH } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  Material;
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 50, importance: #HIGH } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  Materialdescription;
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 60 , importance: #HIGH } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  Powergenerated;
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 70, importance: #HIGH } ]
+  @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'BaseUnit', name: 'ZV_UOM_F4' },
+                                       distinctValues: true,
+                                       useForValidation: true } ]
+  Uom;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'StorageLocation', name: 'ZV_STORAGELOC_F4_2' },
+                                       distinctValues: true,
+                                       useForValidation: true } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 80, importance: #HIGH } ]
+  @UI.identification: [ { position: 80 } ]
+  @UI.lineItem: [ { position: 80 } ]
+  Storagelocation;
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 90, importance: #HIGH } ]
+  @UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 90 } ]
+  @UI.hidden: true
+  Movementtype;
+
+
+}

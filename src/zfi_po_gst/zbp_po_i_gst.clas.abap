@@ -1,0 +1,8 @@
+CLASS zbp_po_i_gst DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zpo_i_gst.
+CLASS-DATA: lt_status type table of zpo_gst_db.
+ENDCLASS.
+
+
+
+CLASS ZBP_PO_I_GST IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Comparative Statement For Quotation",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Comparative Statement For Quotation"
+  },
+  "ui5AppDetails": {
+    "appId": "zcsqdashboard"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_B283C10AA2154502335818C58A423D333B7677AD_TM",
+    "semanticObject": "zcsq_app",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_B283C10AA2154502335818C58A423D333B7677AD_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Comparative Statement For Quotation",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZI_DataOfBank {
+  grant select on ZI_DataOfBank
+  where ( ) = ASPECT pfcg_auth ( 'S_TABU_NAM', ACTVT = '03', TABLE = 'ZI_DATAOFBANK' );
+} 

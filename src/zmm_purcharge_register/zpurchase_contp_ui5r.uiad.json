@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Purchase Report Condition Type",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Register"
+  },
+  "ui5AppDetails": {
+    "appId": "zpurchaseconrep.zmmpurchaserep"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_FA4F40F620B76C38771D0A72C261CC4C5FD80C38_TM",
+    "semanticObject": "zmm_purchase_rep",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_FA4F40F620B76C38771D0A72C261CC4C5FD80C38_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Register",
+        "subtitle": "Condition Type"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Gate pass service defination'
+define service ZMM_GATEPASS_SD {
+  expose ZMM_GATEPASS_PV as GATEPASS;
+}

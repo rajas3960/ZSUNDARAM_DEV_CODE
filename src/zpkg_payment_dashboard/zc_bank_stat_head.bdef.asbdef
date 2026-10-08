@@ -1,0 +1,37 @@
+projection;
+strict ( 1 );
+use draft;
+
+define behavior for ZC_bank_stat_head //alias <alias_name>
+{
+  use update;
+
+  use action APPROVE1;
+  use action APPROVE2;
+  use action APPROVE3;
+  use action Reject1;
+
+  use action Edit;
+  use action Activate;
+  use action Resume;
+  use action Discard;
+  use action Prepare;
+
+  use association _item1 { create; }
+  use association _item { create; }
+
+}
+
+define behavior for ZC_bank_stat_LOG //alias <alias_name>
+{
+  //use update;
+
+  use association _Head;
+}
+
+define behavior for ZC_bank_stat_ITEM //alias <alias_name>
+{
+  //use update;
+
+  use association _Head;
+}

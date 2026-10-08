@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TmgForConvertingAmo', 
+    typeNamePlural: 'TmgForConvertingAmos', 
+    title: {
+      type: #STANDARD, 
+      label: 'Tmg for converting amount to word', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_TmgForConvertingAmo with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TmgForConvertingAmo', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Tmg for converting amount to word', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Num'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Num'
+  } ]
+  Num;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Word'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Word'
+  } ]
+  Word;
+}

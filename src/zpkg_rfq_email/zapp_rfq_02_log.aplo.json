@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Application Log of appl job RFQ 02",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "subobjects": [
+    {
+      "name": "ZAPP_RFQ_02_SUB",
+      "description": "Application Log 02"
+    }
+  ]
+}

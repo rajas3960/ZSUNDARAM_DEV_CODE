@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "DRI Production"
+  },
+  "ui5AppDetails": {
+    "appId": "zdrirep.zdrirep"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_D0232FA549650D4DA06544F5CF15FAE7DBE8D85F_TM",
+    "semanticObject": "zdri_rep",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_D0232FA549650D4DA06544F5CF15FAE7DBE8D85F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "DRI Production",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+managed implementation in class zbp_cds_taxinvoice_header unique;
+strict(1);
+
+define behavior for ZI_TAXINVOICE_HEADER //alias <alias_name>
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+with unmanaged save
+{
+  //create;
+  update;
+  //delete;
+  association _Item;
+  association _Item2;
+  action ( features : instance ) tprint result [1] $self;
+  action ( features : instance ) dcprint result [1] $self;
+  action ( features : instance ) anxprint result [1] $self;
+//  action ( features : instance ) EMAIL result [1] $self;
+  // Z_C_PdfDisplayResult;
+  field ( readonly ) DocumentType, OrderNumber, OrderDate, PaymentTerms,
+  //LCNumber, LCDate,
+  SerialInvoiceNo, DateOfInvoice, TimeOfInvoice, DateOfRemoval, TimeOfRemoval, IRNNumber, IRNDate, BitmapCode,
+  RBusinessName, RAddress, RCityName, RStateName, RStateCode, RGSTIN, RFullAddress,
+  CBusinessName, CAddress, CCityName, CStateName, CStateCode, CGSTIN, CFullAddress,
+  TransporterName, TransporterDate, VehicleNumber, Remarks, TransporterNo, IncotermsLocation1, Destination,
+  // LRNumber, LRDate, DispatchedThrough,
+  ExchangedRate,
+  //ContainerNumber,
+  Customer, PlantBank, BankName, BankAddress, AccountNumber, IfscCode,
+  //descofitems, AccountName,
+  Deliveryterms,CustomerName,
+  PlantNo, PlantName, PlantAddress, StateOfSupply, StateCode, amountinwords, GSTNo, ISONo, PurchaseOrderByCustomer, ReferenceSDDocument,
+  RegOffice, Contact, Email, Website, CIN,
+  //YY1_unitpackage_DLH,
+  Attachment;
+}
+
+define behavior for ZI_TAXINVOICE_ITEM //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  //delete;
+  field ( readonly ) BillingDocument, BillingDocumentItem,
+  DescOfGoods, HSNCode, OrderUnit, InvoiceQuantity,
+  RatePerUnit, PackingUnit, PackingQuantityMax, PackingQuantityMin, PackingQuantityTotal,
+  CGST, CGSTRate, SGST, SGSTRate, IGST, IGSTRate, UTGST, UTGSTRate, TCS, Freight, Discount,DiscountRate, Billingnetamount, RateNew;
+  association _Head;
+}
+
+define behavior for ZI_TAXINVOICE_ITEM2 //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  //delete;
+  field ( readonly ) BillingDocument, BillingDocumentItem, SerialNumber, MaterialDesc;
+  association _Head;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Define Final Input Register'
+define service ZSD_INPUTREGN_FINAL {
+  expose ZC_INPUTREGN_FINAL;
+}

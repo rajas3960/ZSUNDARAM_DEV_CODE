@@ -1,0 +1,44 @@
+managed implementation in class ZBP_R_DT_NUMWORD unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_DT_NUMWORD alias ZrDtNumword
+persistent table ZDT_NUMWORD
+draft table ZDT_NUMWORD_D
+etag master LastChanged
+lock master total etag LastChanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Num;
+
+  field ( readonly )
+   LocalLastChanges,
+   LastChanged,
+   CreationUser,
+   ChangeUser;
+
+  field ( readonly : update )
+   Num;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZDT_NUMWORD
+  {
+    Num = num;
+    Word = word;
+    LocalLastChanges = local_last_changes;
+    LastChanged = last_changed;
+    CreationUser = creation_user;
+    ChangeUser = change_user;
+  }
+}

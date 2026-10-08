@@ -1,0 +1,126 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZSMS_REPORT3 with
+{
+
+@UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [{  position: 5 }]
+ Material;
+@UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.selectionField: [{  position: 10 }]
+ Plant;
+@UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+//  @UI.selectionField: [{  position: 15 }]
+Product_name;
+@UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+//  @UI.selectionField: [{  position: 20 }]
+postingdate;
+@UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+//  @UI.selectionField: [{  position: 25 }]
+MaterialBaseUnit;
+@UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+ //// @UI.selectionField: [{  position: 30 }]
+OPENING;
+@UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+ // @UI.selectionField: [{  position: 35 }]
+PRODUCTION;
+@UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  //@UI.selectionField: [{  position: 40 }]
+CONSUMPTION;
+@UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+//  @UI.selectionField: [{  position: 45 }]
+PURCHASE_GR;
+
+@UI.identification: [ { position: 48 } ]
+  @UI.lineItem: [ { position: 48 } ]
+
+PURCHASE_GR_RETURN;
+
+@UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+//  @UI.selectionField: [{  position: 50 }]
+TRANSFER_OUT;
+@UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+//  @UI.selectionField: [{  position: 55 }]
+TRANSFER_IN;
+
+@UI.identification: [ { position: 58 } ]
+  @UI.lineItem: [ { position: 58 } ] 
+ STO_641;
+ @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ] 
+ 
+ COMP_COST_CENTER_201;
+ @UI.identification: [ { position: 62 } ]
+  @UI.lineItem: [ { position: 62 } ] 
+
+ 
+ TRF_MATE_2_MATE_309;
+@UI.identification: [ { position: 64 } ]
+  @UI.lineItem: [ { position: 64 } ]
+ // @UI.selectionField: [{  position: 60 }]
+
+SALES;
+@UI.identification: [ { position: 66 } ]
+  @UI.lineItem: [ { position: 66 } ]
+SALES_RETUN;
+@UI.identification: [ { position: 68 } ]
+  @UI.lineItem: [ { position: 68 } ]
+
+Return_to_Delivery;
+
+@UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+ // @UI.selectionField: [{  position: 65 }]
+CLOSING_STOCK;
+@UI.identification: [ { position: 72 } ]
+  @UI.lineItem: [ { position: 72 } ]
+//  @UI.selectionField: [{  position: 70 }]
+UOM;
+//@UI.adaptationHidden: true
+//@UI.identification: [ { position: 75 } ]
+//  @UI.lineItem: [ { position: 75 } ]
+// // @UI.selectionField: [{  position: 75 }]
+//PIECE;
+@UI.identification: [ { position: 80 } ]
+  @UI.lineItem: [ { position: 80 } ]
+ // @UI.selectionField: [{  position: 80 }]
+Recovery;
+@UI.identification: [ { position: 85 } ]
+  @UI.lineItem: [ { position: 85 } ]
+//  @UI.selectionField: [{  position: 85 }]
+Metal;
+@UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 90 } ]
+ // @UI.selectionField: [{  position: 90 }]
+PercentMetal;
+//@UI.adaptationHidden: true
+//@UI.identification: [ { position: 95 } ]
+//  @UI.lineItem: [ { position: 95 } ]
+////  @UI.selectionField: [{  position: 95 }]
+//CaptivePower;
+//@UI.adaptationHidden: true
+//@UI.identification: [ { position: 100 } ]
+//  @UI.lineItem: [ { position: 100 } ]
+////  @UI.selectionField: [{  position: 100 }]
+//Gridpower;
+//@UI.adaptationHidden: true
+//@UI.identification: [ { position: 105 } ]
+//  @UI.lineItem: [ { position: 105 } ]
+// // @UI.selectionField: [{  position: 105 }]
+//TotalPower;
+//@UI.adaptationHidden: true
+//@UI.identification: [ { position: 110 } ]
+//  @UI.lineItem: [ { position: 110 } ]
+////  @UI.selectionField: [{  position: 110 }]
+//Average;
+}

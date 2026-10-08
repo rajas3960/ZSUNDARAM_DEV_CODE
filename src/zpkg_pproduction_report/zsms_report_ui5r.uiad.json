@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "SMS"
+  },
+  "ui5AppDetails": {
+    "appId": "zsmsreport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_83AC985021D4F4E481D7A564ED00B4DE35FEBFA3_TM",
+    "semanticObject": "zsms_report",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_83AC985021D4F4E481D7A564ED00B4DE35FEBFA3_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "SMS",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

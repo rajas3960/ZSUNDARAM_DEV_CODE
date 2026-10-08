@@ -1,0 +1,82 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForPoPrint', 
+    typeNamePlural: 'TableForPoPrints', 
+    title: {
+      type: #STANDARD, 
+      label: 'TABLE FOR PO PRINT', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_TableForPoPrint with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForPoPrint', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'TABLE FOR PO PRINT', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Num'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Num'
+  } ]
+  Num;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Word'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Word'
+  } ]
+  Word;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

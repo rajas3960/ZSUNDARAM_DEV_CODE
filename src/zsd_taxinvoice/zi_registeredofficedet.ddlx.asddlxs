@@ -1,0 +1,128 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'RegisteredOfficeDet', 
+    typeNamePlural: 'RegisteredOfficeDets', 
+    title: {
+      type: #STANDARD, 
+      label: 'Registered Office Details', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_RegisteredOfficeDet with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyRegisteredOfficeDet', 
+    label: 'Copy Selected Entry', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_RegisteredOfficeDet', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Registered Office Details', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'CompanyCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'CompanyCode'
+  } ]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'RegOffice'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'RegOffice'
+  } ]
+  RegOffice;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Email'
+  } ]
+  Email;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Contact'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Contact'
+  } ]
+  Contact;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Website'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Website'
+  } ]
+  Website;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Cin'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Cin'
+  } ]
+  Cin;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

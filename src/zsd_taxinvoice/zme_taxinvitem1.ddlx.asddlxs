@@ -1,0 +1,143 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Tax Invoice Item', value: 'BillingDocument' } } }
+@UI.presentationVariant: [{ sortOrder: [{by: 'BillingDocumentItem',direction: #ASC}] }]
+annotate entity ZC_TAXINVITEM
+    with 
+{
+  @UI.facet: [
+  {
+  id: 'item',
+  isSummary: true,
+  label: 'Tax Invoice Item',
+  type: #COLLECTION,
+  purpose: #STANDARD
+  },
+
+  {
+  type: #FIELDGROUP_REFERENCE,
+  targetQualifier: 'item1',
+  parentId: 'item',
+  label: 'Primary Details',
+  id: 'item1'
+  }
+        ]
+  @UI: {    identification: [{position: 10 }],
+  lineItem: [{position: 10 }],
+  fieldGroup: [{qualifier: 'item1',position: 10,importance: #HIGH }] }
+  DescOfGoods;
+  @UI: {    identification: [{position: 20 }],
+  lineItem: [{position: 20 }],
+  fieldGroup: [{qualifier: 'item1',position: 20,importance: #HIGH }] }
+  HSNCode;
+  @UI: {    identification: [{position: 30 }],
+  lineItem: [{position: 30 }],
+  fieldGroup: [{qualifier: 'item1',position: 30,importance: #HIGH }] }
+  orderquantity;
+  @UI: {    identification: [{position: 40 }],
+  lineItem: [{position: 40 }],
+  fieldGroup: [{qualifier: 'item1',position: 40,importance: #HIGH }] }
+  OrderUnit;
+  @UI: {    identification: [{position: 60 }],
+  lineItem: [{position: 60 }],
+  fieldGroup: [{qualifier: 'item1',position: 60,importance: #HIGH }] }
+  InvoiceQuantity;
+  @UI: {    identification: [{position: 70 }],
+  lineItem: [{position: 70 }],
+  fieldGroup: [{qualifier: 'item1',position: 70,importance: #HIGH }] }
+  RatePerUnit;
+  @UI.hidden: true
+//  @UI: {    identification: [{position: 80 }],
+//  lineItem: [{position: 80 }],
+//  fieldGroup: [{qualifier: 'item1',position: 80,importance: #HIGH }] }
+  PackingQuantityMax;
+  @UI.hidden: true
+//  @UI: {    identification: [{position: 85 }],
+//  lineItem: [{position: 85 }],
+//  fieldGroup: [{qualifier: 'item1',position: 85,importance: #HIGH }] }
+  PackingQuantityMin;
+  @UI.hidden: true
+//  @UI: {    identification: [{position: 86 }],
+//  lineItem: [{position: 86 }],
+//  fieldGroup: [{qualifier: 'item1',position: 86,importance: #HIGH }] }
+  PackingQuantityTotal;
+  @UI.hidden: true
+//  @UI: {    identification: [{position: 90 }],
+//  lineItem: [{position: 90 }],
+//  fieldGroup: [{qualifier: 'item1',position: 90,importance: #HIGH }] }
+  PackingUnit;
+  @UI: {    identification: [{position: 100 }],
+  lineItem: [{position: 100 }],
+  fieldGroup: [{qualifier: 'item1',position: 100,importance: #HIGH }] }
+  CGST;
+  @UI: {    identification: [{position: 110 }],
+  lineItem: [{position: 110 }],
+  fieldGroup: [{qualifier: 'item1',position: 110,importance: #HIGH }] }
+  CGSTRate;
+  @UI: {    identification: [{position: 120 }],
+  lineItem: [{position: 120 }],
+  fieldGroup: [{qualifier: 'item1',position: 120,importance: #HIGH }] }
+  SGST;
+  @UI: {    identification: [{position: 130 }],
+  lineItem: [{position: 130 }],
+  fieldGroup: [{qualifier: 'item1',position: 130,importance: #HIGH }] }
+  SGSTRate;
+  @UI: {    identification: [{position: 140 }],
+  lineItem: [{position: 140 }],
+  fieldGroup: [{qualifier: 'item1',position: 140,importance: #HIGH }] }
+  IGST;
+  @UI: {    identification: [{position: 150 }],
+  lineItem: [{position: 150 }],
+  fieldGroup: [{qualifier: 'item1',position: 150,importance: #HIGH }] }
+  IGSTRate;
+  @UI: {    identification: [{position: 155 }],
+  lineItem: [{position: 155 }],
+  fieldGroup: [{qualifier: 'item1',position: 155,importance: #HIGH }] }
+  UTGST;
+  @UI: {    identification: [{position: 157 }],
+  lineItem: [{position: 157 }],
+  fieldGroup: [{qualifier: 'item1',position: 157,importance: #HIGH }] }
+  UTGSTRate;
+  @UI: {    identification: [{position: 160 }],
+  lineItem: [{position: 160 }],
+  fieldGroup: [{qualifier: 'item1',position: 160,importance: #HIGH }] }
+  TCSAmount;
+  @UI: {    identification: [{position: 170 }],
+  lineItem: [{position: 170 }],
+  fieldGroup: [{qualifier: 'item1',position: 170,importance: #HIGH }] }
+  Freight;
+  @UI: {    identification: [{position: 180 }],
+  lineItem: [{position: 180 }],
+  fieldGroup: [{qualifier: 'item1',position: 180,importance: #HIGH }] }
+  freightrate;
+  @UI: {    identification: [{position: 190 }],
+  lineItem: [{position: 190 }],
+  fieldGroup: [{qualifier: 'item1',position: 190,importance: #HIGH }] }
+  Discount;
+  @UI: {    identification: [{position: 195 }],
+  lineItem: [{position: 195 }],
+  fieldGroup: [{qualifier: 'item1',position: 195,importance: #HIGH }] }
+  RateNew;
+  @UI: {    identification: [{position: 200 }],
+  lineItem: [{position: 200 }],
+  fieldGroup: [{qualifier: 'item1',position: 200,importance: #HIGH }] }
+  DiscountRate;
+  @UI: {    identification: [{position: 210 }],
+  lineItem: [{position: 210 }],
+  fieldGroup: [{qualifier: 'item1',position: 210,importance: #HIGH }] }
+  ItemWeightUnit;
+  @UI: {    identification: [{position: 220 }],
+  lineItem: [{position: 220 }],
+  fieldGroup: [{qualifier: 'item1',position: 220,importance: #HIGH }] }
+  ItemNetWeight;
+  @UI: {    identification: [{position: 230 }],
+  lineItem: [{position: 230 }],
+  fieldGroup: [{qualifier: 'item1',position: 230,importance: #HIGH }] }
+  TaxableAmount;
+  @UI: {    identification: [{position: 240 }],
+  lineItem: [{position: 240 }],
+  fieldGroup: [{qualifier: 'item1',position: 240,importance: #HIGH }] }
+  CessAmount;
+  
+    
+}

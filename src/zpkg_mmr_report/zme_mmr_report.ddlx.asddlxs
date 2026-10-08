@@ -1,0 +1,157 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZMMR_REPORT12
+    with 
+{
+   @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [{  position: 5  }]
+  Material;
+   @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.selectionField: [{  position: 10  }]
+  @UI.hidden: true
+  Plant;
+   @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+//  @UI.selectionField: [{  position: 15  }]
+  MaterialType;
+   @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+ // @UI.selectionField: [{  position: 20  }]
+  MaterialDescription;
+   @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+ // @UI.selectionField: [{  position: 25  }]
+  BaseUom;
+   @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+//  @UI.selectionField: [{  position: 30  }]
+  MaterialGroup;
+   @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+//  @UI.selectionField: [{  position: 35  }]
+  ValuationClass;
+   @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+ // @UI.selectionField: [{  position: 40  }]
+  Currency;
+   @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+//  @UI.selectionField: [{  position: 45  }]
+  ProfitCenter;
+  @UI.adaptationHidden: true
+   @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+ // @UI.selectionField: [{  position: 50  }]
+  PeriodFrom;
+  @UI.adaptationHidden: true
+   @UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+ // @UI.selectionField: [{  position: 55  }]
+  PeriodTo;
+  @UI.adaptationHidden: true
+   @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.selectionField: [{  position: 60  }]
+  MaterialBaseUnit;
+   @UI.identification: [ { position: 65 } ]
+  @UI.lineItem: [ { position: 65 } ]
+//  @UI.selectionField: [{  position: 65  }]
+  OpeningQty;
+   @UI.identification: [ { position: 67 } ]
+  @UI.lineItem: [ { position: 67 } ]
+  OpeningValue;
+   @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+//  @UI.selectionField: [{  position: 70  }]
+  ClosingQty;
+   @UI.identification: [ { position: 73 } ]
+  @UI.lineItem: [ { position: 73 } ]
+  ClosingValue;
+   @UI.identification: [ { position: 75 } ]
+  @UI.lineItem: [ { position: 75 } ]
+//  @UI.selectionField: [{  position: 75  }]
+  ProductionQty;
+//  @UI.adaptationHidden: true
+//   @UI.identification: [ { position: 80 } ]
+//  @UI.lineItem: [ { position: 80 } ]
+//  @UI.selectionField: [{  position: 80  }]
+@UI.hidden: true
+  CompanyCodeCurrency;
+   @UI.identification: [ { position: 85 } ]
+  @UI.lineItem: [ { position: 85 } ]
+//  @UI.selectionField: [{  position: 85  }]
+  ProductionValue;
+   @UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 90 } ]
+//  @UI.selectionField: [{  position: 90  }]
+  PurchaseQty;
+   @UI.identification: [ { position: 95 } ]
+  @UI.lineItem: [ { position: 95 } ]
+ // @UI.selectionField: [{  position: 95  }]
+  PurchaseValue;
+   @UI.identification: [ { position: 100 } ]
+  @UI.lineItem: [ { position: 100 } ]
+//  @UI.selectionField: [{  position: 100  }]
+  ReturnQty;
+   @UI.identification: [ { position: 105 } ]
+  @UI.lineItem: [ { position: 105 } ]
+ // @UI.selectionField: [{  position: 105  }]
+  ReturnValue;
+   @UI.identification: [ { position: 110 } ]
+  @UI.lineItem: [ { position: 110 } ]
+//  @UI.selectionField: [{  position: 110  }]
+  IssueToOrderQty;
+   @UI.identification: [ { position: 115 } ]
+  @UI.lineItem: [ { position: 115 } ]
+ // @UI.selectionField: [{  position: 115  }]
+  IssueToOrderValue;
+   @UI.identification: [ { position: 120 } ]
+  @UI.lineItem: [ { position: 120 } ]
+ // @UI.selectionField: [{  position: 120  }]
+  IssueToAssetsQty;
+   @UI.identification: [ { position: 125 } ]
+  @UI.lineItem: [ { position: 125 } ]
+//  @UI.selectionField: [{  position: 125  }]
+  IssueToAssetsValue;
+   @UI.identification: [ { position: 130 } ]
+  @UI.lineItem: [ { position: 130 } ]
+ // @UI.selectionField: [{  position: 130  }]
+  SaleQty;
+   @UI.identification: [ { position: 135 } ]
+  @UI.lineItem: [ { position: 135 } ]
+ // @UI.selectionField: [{  position: 135  }]
+  SaleValue;
+   @UI.identification: [ { position: 140 } ]
+  @UI.lineItem: [ { position: 140 } ]
+//  @UI.selectionField: [{  position: 140  }]
+  ScrapQty;
+   @UI.identification: [ { position: 145 } ]
+  @UI.lineItem: [ { position: 145 } ]
+ // @UI.selectionField: [{  position: 145  }]
+  ScrapValue;
+   @UI.identification: [ { position: 150 } ]
+  @UI.lineItem: [ { position: 150 } ]
+ // @UI.selectionField: [{  position: 150  }]
+  PhysicalAdjustmentQty;
+   @UI.identification: [ { position: 155 } ]
+  @UI.lineItem: [ { position: 155 } ]
+//  @UI.selectionField: [{  position: 155  }]
+  PhysicalDifferenceValue;
+   @UI.identification: [ { position: 160 } ]
+  @UI.lineItem: [ { position: 160 } ]
+//  @UI.selectionField: [{  position: 160  }]
+  SubContractConsQty;
+   @UI.identification: [ { position: 165 } ]
+  @UI.lineItem: [ { position: 165 } ]
+ // @UI.selectionField: [{  position: 165  }]
+  SubContractConsValue;
+  
+  @UI.identification: [ { position: 170 } ]
+  @UI.lineItem: [ { position: 170 } ]
+  GenConsumpQty;
+  @UI.identification: [ { position: 175 } ]
+  @UI.lineItem: [ { position: 175 } ]
+  GenConsumpValue;
+    
+}

@@ -1,0 +1,165 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.title: { type: #STANDARD, label: 'Contract', value: 'SalesContract' }
+annotate entity ZC_CONTRACTRPT_VF with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Contract', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.fieldGroup: [ { position: 1, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 1 } ]
+  @UI.lineItem: [ { position: 1 } ]
+  @UI.selectionField: [{ position: 1 }]
+  SalesContract;
+  @UI.fieldGroup: [ { position: 2, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 2 } ]
+  @UI.lineItem: [ { position: 2 } ]
+  sales_order_no;
+  @UI.fieldGroup: [ { position: 3, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 3 } ]
+  @UI.lineItem: [ { position: 3 } ]
+  SalesContractItem;
+
+  @UI.fieldGroup: [ { position: 4, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 4 } ]
+  @UI.lineItem: [ { position: 4 } ]
+  SalesOrganization;
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  DistributionChannel;
+  @UI.fieldGroup: [ { position: 6, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 6 } ]
+  @UI.lineItem: [ { position: 6 } ]
+  OrganizationDivision;
+  @UI.fieldGroup: [ { position: 7, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 7 } ]
+  @UI.lineItem: [ { position: 7 } ]
+  PAYMENTTERMSDESCRIPTION;
+
+  @UI.fieldGroup: [ { position: 8, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 8 } ]
+  @UI.lineItem: [ { position: 8 } ]
+  Broker;
+
+  @UI.fieldGroup: [ { position: 9, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 9 } ]
+  @UI.lineItem: [ { position: 9 } ]
+  BrokerName;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  SalesContractDate;
+
+  @UI.fieldGroup: [ { position: 11, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 11 } ]
+  @UI.lineItem: [ { position: 11 } ]
+  SalesContractValidityEndDate;
+
+  @UI.fieldGroup: [ { position: 12, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 12 } ]
+  @UI.lineItem: [ { position: 12 } ]
+  @UI.selectionField: [{ position: 2 }]
+  SoldToParty;
+
+  @UI.fieldGroup: [ { position: 13, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 13 } ]
+  @UI.lineItem: [ { position: 13 } ]
+  @UI.selectionField: [{ position: 2 }]
+  CustomerFullName;
+
+  @UI.fieldGroup: [ { position: 14, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 14 } ]
+  @UI.lineItem: [ { position: 14 } ]
+  TransactionCurrency;
+
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  ConditionValue;
+
+  @UI.fieldGroup: [ { position: 16, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 16 } ]
+  @UI.lineItem: [ { position: 16 } ]
+  @UI.hidden: true
+  ConditionAmount;
+
+  @UI.fieldGroup: [ { position: 17, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 17 } ]
+  @UI.lineItem: [ { position: 17 } ]
+  @UI.hidden: true
+  RequestedQuantityUnit;
+  @UI.fieldGroup: [ { position: 18, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 18} ]
+  @UI.lineItem: [ { position: 18} ]
+  GrossPricePerTon;
+
+  @UI.fieldGroup: [ { position: 19, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 19 } ]
+  @UI.lineItem: [ { position: 19 } ]
+  ContractQty;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  InvoicedQty;
+
+  @UI.fieldGroup: [ { position: 21, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 21 } ]
+  @UI.lineItem: [ { position: 21 } ]
+  PendingQty;
+
+  @UI.fieldGroup: [ { position: 22, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 22} ]
+  @UI.lineItem: [ { position: 22 } ]
+  CreditSegmentCurrency;
+
+  @UI.fieldGroup: [ { position: 23, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 23 } ]
+  @UI.lineItem: [ { position: 23 } ]
+  @UI.hidden
+  ReserveValue;
+  @UI.fieldGroup: [ { position: 24, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 24 } ]
+  @UI.lineItem: [ { position: 24 } ]
+  Reserve;
+
+  //  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  //  @UI.identification: [ { position: 25 } ]
+  //  @UI.lineItem: [ { position: 25 } ]
+  //  creditlimit;
+
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25} ]
+  CreditLimitAmt;
+
+  @UI.fieldGroup: [ { position: 26, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 26 } ]
+  @UI.lineItem: [ { position: 26 } ]
+  DispatchableBalance;
+
+  @UI.fieldGroup: [ { position: 27, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 27 } ]
+  @UI.lineItem: [ { position: 27 } ]
+  DispatchableQty;
+
+  @UI.fieldGroup: [ { position: 28, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 28 } ]
+  @UI.lineItem: [ { position: 28 } ]
+  ProjectedValue;
+
+  @UI.fieldGroup: [ { position: 29, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 29 } ]
+  @UI.lineItem: [ { position: 29} ]
+  Receivable;
+  @UI.fieldGroup: [ { position: 30, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30} ]
+  EffectiveTotalCreditLimitAmt;
+
+}

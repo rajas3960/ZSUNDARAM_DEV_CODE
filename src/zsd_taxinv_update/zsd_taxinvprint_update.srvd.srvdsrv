@@ -1,0 +1,6 @@
+@EndUserText.label: 'service definition Taxinvoice Print'
+define service ZSD_TAXINVPRINT_UPDATE {
+  expose ZI_TAXINVOICE_HEADER_UPDATE;
+  expose ZCSDS_TAXINVOICE_ITEMUPDATE;
+  expose ZI_TAXINVOICE_ITEM2_UPDATE;
+}

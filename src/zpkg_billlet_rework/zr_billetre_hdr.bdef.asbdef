@@ -1,0 +1,89 @@
+managed implementation in class zbp_r_billetre_hdr unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZR_BILLETRE_HDR //alias <alias_name>
+persistent table zdt_billetre_hdr
+draft table zdr_billetre_hdr
+lock master
+total etag postingdate
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update, numbering : managed ) id;
+  field ( mandatory : create, readonly : update ) productionorder, postingdate, noofbatches;
+  field ( readonly  ) referenceid , material, materialdesc , orderquantity , uom , density, height, width , status, plant ;
+  association _101 { create; }
+  association _261 { create; }
+  association _531 { create; }
+
+  action ( features : instance ) POSTCNF result [1] $self;
+  action ( features : instance ) POSTCHECK result [1] $self;
+  action ( features : instance ) POST101 result [1] $self;
+  action ( features : instance ) POST261 result [1] $self;
+  action ( features : instance ) POST531 result [1] $self;
+  action ( features : instance ) GETCONS result [1] $self;
+
+  side effects
+  { action POSTCNF affects messages;
+    action POSTCHECK affects  messages;
+    action POST101 affects  messages;
+    action POST261 affects  messages;
+    action POST531 affects  messages;
+    action GETCONS affects  messages;
+  }
+
+  determination headeronmod on modify { field productionorder;  field postingdate; field noofbatches;}
+  determination headeronsave on save { create; }
+   draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+}
+
+define behavior for ZR_BILLETRE_101 //alias <alias_name>
+persistent table zdt_billetre_101
+draft table zdr_billetre_101
+lock dependent by _Head
+
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Id, Item , Quantity, Batch ;
+   determination billetdetails on modify { field heatnumber; field lengthmtr; field piece; }
+  association _Head;
+}
+
+define behavior for ZR_BILLETRE_261 //alias <alias_name>
+persistent table zdt_billetre_261
+draft table zdr_billetre_261
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Id, Item, Material, Materialdescription, Batch , Quantity , Uom , Storagelocation;
+   determination quantity on modify { field piece;}
+  association _Head;
+}
+
+define behavior for ZR_BILLETRE_531 //alias <alias_name>
+persistent table zdt_billetre_531
+draft table zdr_billetre_531
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Id, Item;
+  association _Head;
+}

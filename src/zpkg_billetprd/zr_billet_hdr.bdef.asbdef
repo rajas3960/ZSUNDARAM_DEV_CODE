@@ -1,0 +1,114 @@
+managed implementation in class zbp_r_billet_hdr unique;
+strict;
+with draft;
+
+define behavior for ZR_BILLET_HDR //alias <alias_name>
+persistent table zdt_billet_hdr
+draft table zdr_billet_hdr
+lock master
+total etag postingdate
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly : update, numbering : managed ) id;
+  field ( mandatory : create, readonly : update ) productionorder, caster, postingdate, noofbatches, activity;
+  draft action ( features : instance ) Edit;
+  field ( readonly ) status, Total, plant, material, materialdesc, height, density, orderquantity, uom, width, referenceid, noofheats,
+  post101, post261, post531, postcheck, postcnf, heatquantity, billetquantity, byproductquantity, balancequantity, yieldpercentage, totalpostquantity;
+  determination headerdetails1 on modify { field productionorder; field caster; field postingdate; }
+  determination headerdetails on save { create; }
+  determination dummyupdate on modify { field post101, post261, post531, postcheck, postcnf, getcons; }
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+  }
+
+  //Actions
+  action ( features : instance ) POSTCHECK result [1] $self;
+  action ( features : instance ) POSTCNF result [1] $self;
+  action ( features : instance ) POST101 result [1] $self;
+  action ( features : instance ) POST261 result [1] $self;
+  action ( features : instance ) POST531 result [1] $self;
+  action ( features : instance ) GETCONS result [1] $self;
+
+  side effects
+  { action POSTCNF affects field postcnf, messages;
+    action POSTCHECK affects field postcheck, entity _HTB, messages;
+    action POST101 affects field post101, messages;
+    action POST261 affects field post261, messages;
+    action POST531 affects field post531, field dummy, messages;
+    action GETCONS affects entity _261, entity _HTB, field getcons, field status, messages;
+  }
+
+  association _101 { create ( features : instance ); }
+  association _261 { create ( features : instance ); }
+  association _531 { create ( features : instance ); }
+  association _HTB { create ( features : instance ); }
+}
+
+define behavior for ZR_BILLET_101 //alias <alias_name>
+persistent table zdt_billet_101
+draft table zdr_billet_101
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) id, material, plant, batch, uom, quantity;
+  determination billetdetails on modify { field heatnumber; field lengthmtr; field piece; }
+  field ( readonly : update, numbering : managed ) item;
+
+  side effects
+  { field piece affects field quantity;
+    field lengthmtr affects field quantity; }
+
+  association _Head;
+}
+
+define behavior for ZR_BILLET_261 //alias <alias_name>
+persistent table zdt_billet_261
+draft table zdr_billet_261
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) id, batch, material, materialdescription, referenceid, uom, plant, quantity, storagelocation, heatnumber;
+  field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}
+
+define behavior for ZR_BILLET_531 //alias <alias_name>
+persistent table zdt_billet_531
+draft table zdr_billet_531
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) id, material, materialdescription, referenceid, uom, plant;
+  field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}
+
+define behavior for ZR_BILLET_HTB //alias <alias_name>
+persistent table zdt_billet_htb
+draft table zdr_billet_htb
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) id, Uom, balancequantity, billetquantity, byproductquantity, heatnumber, heatquantity, referenceid, yield;
+  field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}

@@ -1,0 +1,226 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.title: { type: #STANDARD, label: 'Billet Production Dashboard', value: 'referenceid' }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'referenceid', direction: #DESC } ],
+                             visualizations: [ { type: #AS_LINEITEM } ],
+                             text: 'Billet Production Dashboard' } ]
+
+annotate entity ZC_BILLET_HDR with
+
+{
+  @UI.facet: [ { id: 'GeneralZata',
+                 isSummary: true,
+                 label: 'Shop Floor Billet Production',
+                 position: 5,
+                 type: #COLLECTION },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData1',
+                 parentId: 'GeneralZata',
+                 position: 10,
+                 label: 'Header',
+                 id: 'GeneralData1' },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData2',
+                 parentId: 'GeneralZata',
+                 position: 20,
+                 label: 'Characteristics',
+                 id: 'GeneralData2' },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData3',
+                 parentId: 'GeneralZata',
+                 position: 25,
+                 label: 'Status',
+                 id: 'GeneralData3' },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData4',
+                 parentId: 'GeneralZata',
+                 position: 30,
+                 label: 'Yield',
+                 id: 'GeneralData4' },
+               { id: 'GeneralLine1',
+                 label: 'Billet Production Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_101',
+                 position: 20 },
+               { id: 'GeneralLine2',
+                 label: 'Consumption Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_261',
+                 position: 30 },
+               { id: 'GeneralLine3',
+                 label: 'By-Product Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_531',
+                 position: 40 },
+               { id: 'GeneralLine4',
+                 label: 'Heat Balancing Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_HTB',
+                 position: 50 } ]
+  @UI.hidden: true
+  id;
+
+
+  // General Data 1
+
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  referenceid;
+
+  @UI.fieldGroup: [ { qualifier: 'GeneralData1', position: 11, importance: #HIGH } ]
+  @UI.identification: [ { position: 11 } ]
+  @UI.lineItem: [ { position: 11 } ]
+  @UI.selectionField: [ { position: 11 } ]
+  status;
+
+
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'ManufacturingOrder', name: 'ZVPRODF4' },
+                                        distinctValues: true,
+                                        useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 7, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  productionorder;
+
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'Plant', name: 'ZVPLANTF401' },
+                                        distinctValues: true,
+                                        useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  plant;
+
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  postingdate;
+
+  @UI.hidden: true
+  Criticality;
+
+  @UI.dataPoint: { visualization: #PROGRESS,
+                   targetValueElement: 'Total',
+                   criticality: 'Criticality',
+                   criticalityRepresentation: #WITHOUT_ICON }
+  @UI.lineItem: [ { position: 26, type: #AS_DATAPOINT } ]
+  Progress;
+
+  @UI.hidden: true
+  Total;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  material;
+
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+  materialdesc;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  orderquantity;
+
+  @UI.fieldGroup: [ { position: 33, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 42 } ]
+  @UI.lineItem: [ { position: 42 } ]
+  totalpostquantity;
+
+  @UI.fieldGroup: [ { position: 34, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 43 } ]
+  @UI.lineItem: [ { position: 43 } ]
+  activity;
+
+  @UI.fieldGroup: [ { position: 35, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+  uom;
+
+  @UI.fieldGroup: [ { position: 38, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 47 } ]
+  @UI.lineItem: [ { position: 47 } ]
+  noofheats;
+
+  @UI.fieldGroup: [ { position: 38, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 48 } ]
+  @UI.lineItem: [ { position: 48 } ]
+  noofbatches;
+
+  // General Data 2
+
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'Caster', name: 'ZVCASTERF4' },
+                                        distinctValues: true,
+                                        useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData2', importance: #HIGH } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  caster;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData2', importance: #HIGH } ]
+  @UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+  width;
+
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData2', importance: #HIGH } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  height;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData2', importance: #HIGH } ]
+  @UI.identification: [ { position: 65 } ]
+  @UI.lineItem: [ { position: 65 } ]
+  density;
+
+
+
+  // General Data 3
+
+  @UI.identification: [{position: 70 },  { type: #FOR_ACTION, dataAction: 'POSTCHECK', label: 'Check' } ]
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData3', importance: #HIGH } ]
+  postcheck;
+
+  @UI.identification: [{position: 75 },  { type: #FOR_ACTION, dataAction: 'POSTCNF', label: 'Post Confirmation'} ]
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData3', importance: #HIGH } ]
+  postcnf;
+
+  @UI.identification: [{position: 80 },  { type: #FOR_ACTION, dataAction: 'POST101', label: 'Post GR'} ]
+  @UI.fieldGroup: [ { position: 35, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post101;
+
+  @UI.identification: [{position: 85 },  { type: #FOR_ACTION, dataAction: 'POST261', label: 'Post GI'} ]
+  @UI.fieldGroup: [ { position: 54, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post261;
+
+  @UI.identification: [{position: 90 },  { type: #FOR_ACTION, dataAction: 'POST531', label: 'Post By-Product'} ]
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post531;
+
+  @UI.identification: [{position: 90 },  { type: #FOR_ACTION, dataAction: 'GETCONS', label: 'Get Consumed'} ]
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData3', importance: #HIGH } ]
+  getcons;
+
+  // General Data 4
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData4', importance: #HIGH } ]
+  heatquantity;
+
+  @UI.fieldGroup: [ { position: 56, qualifier: 'GeneralData4', importance: #HIGH } ]
+  billetquantity;
+
+  @UI.fieldGroup: [ { position: 57, qualifier: 'GeneralData4', importance: #HIGH } ]
+  byproductquantity;
+
+  @UI.fieldGroup: [ { position: 58, qualifier: 'GeneralData4', importance: #HIGH } ]
+  balancequantity;
+
+  @UI.fieldGroup: [ { position: 59, qualifier: 'GeneralData4', importance: #HIGH } ]
+  yieldpercentage;
+
+  @UI.hidden: true
+  dummy;
+
+
+}

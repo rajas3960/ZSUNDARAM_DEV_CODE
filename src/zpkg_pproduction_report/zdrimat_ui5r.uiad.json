@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "DRI Material Maintanace",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "DRI Material"
+  },
+  "ui5AppDetails": {
+    "appId": "zdrimat"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_5C7D9B8AE6EFD5C91FDF05F3CF9592E83878C246_TM",
+    "semanticObject": "ZDRIMAT",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_5C7D9B8AE6EFD5C91FDF05F3CF9592E83878C246_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "DRI Material"
+      }
+    }
+  ]
+}

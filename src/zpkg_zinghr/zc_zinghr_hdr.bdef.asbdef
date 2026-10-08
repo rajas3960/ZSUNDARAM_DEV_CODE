@@ -1,0 +1,47 @@
+//projection;
+//strict ( 1 );
+//
+//define behavior for ZC_ZINGHR_HDR //alias <alias_name>
+//{
+//  use create;
+//  use update;
+//  use delete;
+//
+//  use association _Item { create; }
+//}
+//
+//define behavior for ZC_ZINGHR_ITM //alias <alias_name>
+//{
+//  use update;
+//  use delete;
+//
+//  use association _Head;
+//}
+
+projection;
+strict;
+//use draft;
+
+define behavior for ZC_ZINGHR_HDR alias Hdr
+{
+  use create;
+  use update;
+  use delete;
+
+//  use action Edit;
+//  use action Activate;
+//  use action Discard;
+//  use action Resume;
+//  use action Prepare;
+
+//  use association _Item { create; with draft; }
+  use association _Item { create; }
+}
+
+define behavior for ZC_ZINGHR_ITM alias Itm
+{
+  use update;
+  use delete;
+
+  use association _Head;
+}

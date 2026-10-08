@@ -1,0 +1,6 @@
+@EndUserText.label: 'SERVICE DEF FOR TX INV PRINT'
+define service ZSD_TAXINVPRINT1 {
+  expose ZI_TAXINVHDR_PRINT;
+  expose ZI_TAXINVITEM_PRINT;
+  expose ZI_TAXINVITEM2_PRINT;
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_DTDRI_PRD_01'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_DTDRI_PRD_01'
+  }
+}
+define service ZUI_DTDRI_PRD_01_O4 provider contracts odata_v4_ui {
+  expose ZC_DTDRI_PRD_01;
+}

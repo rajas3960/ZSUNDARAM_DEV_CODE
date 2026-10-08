@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Internal Pay ADV Jobs 01",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_FI_PAYADV_POST"
+  },
+  "groups": [
+    {
+      "name": "GRP_DEF",
+      "title": "Default"
+    }
+  ]
+}

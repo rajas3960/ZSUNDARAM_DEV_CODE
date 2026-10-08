@@ -1,0 +1,4 @@
+@EndUserText.label: 'Contract Report'
+define service ZSERV_D_CONTRACTRPT {
+  expose ZC_CONTRACTRPT_VF;
+}

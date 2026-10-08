@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def:Freight Summary'
+define service ZSD_FREIGHT_SUM {
+  expose ZC_FREIGHT_SUMMARY;
+}

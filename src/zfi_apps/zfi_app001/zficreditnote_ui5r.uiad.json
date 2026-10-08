@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "FI-MM Credit/Debit Note",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "FI-MM Credit/Debit Note"
+  },
+  "ui5AppDetails": {
+    "appId": "ficreditnote.zficreditnote"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_F1122230E7015D069E7569F64CE8639A95374FCC_TM",
+    "semanticObject": "zfi_creditnote",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_F1122230E7015D069E7569F64CE8639A95374FCC_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "FI-MM Credit/Debit Note"
+      }
+    }
+  ]
+}

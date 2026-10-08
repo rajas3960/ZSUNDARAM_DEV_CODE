@@ -1,0 +1,6 @@
+@EndUserText.label: 'Definition For Purchase Register'
+define service ZSD_PURCHAGE_REGISTER {
+  expose ZR_PURCHASE_REGISTER_001;
+  expose ZPURCHASE_REGISTER_002;
+  expose ZMM_PUR_REG;
+}

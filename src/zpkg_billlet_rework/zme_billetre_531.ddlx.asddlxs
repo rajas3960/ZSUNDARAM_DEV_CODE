@@ -1,0 +1,82 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Material', value: 'materialdescription' } } }
+annotate view ZC_BILLETRE_531 with
+{
+  @UI.facet:
+   [{ id: 'GeneralDataI', isSummary: true, label: 'By-Product', type: #COLLECTION, purpose: #STANDARD },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+   ]
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  plant;
+  @UI.hidden: true
+  Referenceid;
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @Consumption.valueHelpDefinition: [{ entity:{ element: 'heatnumber', name:'ZVBILLETHEATF4_5' },
+                                             distinctValues: true,
+                                             useForValidation: true ,
+                                             enabled: '',
+    additionalBinding:
+          [
+          {
+            localParameter: '',
+            localElement: 'plant',
+            localConstant: '',
+            parameter: '',
+            element: 'plant',
+            usage: #FILTER
+           }
+           ] } ]
+  Heatnumber;
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Material;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Materialdescription;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Quantity;
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.fieldGroup: [ { position: 40,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Uom;
+  @Consumption.valueHelpDefinition: [{
+       entity:{
+       element: 'storagelocation',
+       name:'ZVXSLOCF4'
+       },
+
+          distinctValues: true,
+       useForValidation: true,
+       enabled: '',
+
+               additionalBinding:
+       [
+       {
+         localParameter: '',
+         localElement: 'plant',
+         localConstant: '',
+         parameter: '',
+         element: 'plant',
+         usage: #FILTER
+        }
+        ]
+       }
+     ]
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 50,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Storagelocation;
+
+
+}

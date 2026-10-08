@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition for Tax Invoice Print'
+define service ZSD_TAXINVPRINT {
+  expose ZI_TAXINVHDR_PRINT;
+  expose ZI_TAXINVITEM_PRINT;
+  expose ZI_TAXINVITEM2_PRINT;
+}

@@ -1,0 +1,120 @@
+managed implementation in class zbp_i_quality_hdr unique;
+strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+with draft;
+
+define behavior for ZI_QUALITY_HDR alias head
+persistent table zdt_quality
+draft table zdt_quality_dr
+lock master
+total etag Invdate
+authorization master ( instance )
+with additional save
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Id;
+  field ( mandatory : create, readonly : update ) Billingdoc, material, tgroup;
+  field ( readonly ) Plant, Invdate, Salesitem, Salesord, inspecplan, inspecplangroup, qc_cert_no, attachment,
+  status, quantity, prod_name, pono, customer, vehicleno;
+  field ( features : instance ) remarks, textbox, chem_metal, treatment, coatside;
+  create;
+  update ( features : instance );
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) Print result [1] $self;
+  action ( features : instance ) Delete result [1] $self;
+
+  determination headerdetails on modify { field material; }
+  determination action on save { create; }
+  determination inspecplan on modify { field tgroup; }
+  //determination fetchData on modify { field material; }
+
+  validation resultchar on save { create; update; }
+  validation id on save { create; }
+
+  side effects
+  {
+
+    field tgroup affects field inspecplan, field inspecplangroup;
+    field material affects field treatment, field coatside, field chem_metal;
+    action Print affects messages;
+    action Delete affects messages;
+  }
+
+  association _Item { create; }
+  mapping for zi_quality_hdr
+    {
+
+      //    id              = id;
+      billingdoc      = billingdoc;
+      billingitem     = billingitem;
+      plant           = plant;
+      material        = material;
+      width           = width;
+      thickness       = thickness;
+      customer        = customer;
+      filmtype        = filmtype;
+      coatside        = coatside;
+      treatment       = treatment;
+      batch           = batch;
+      grade           = grade;
+      pono            = pono;
+      quantity        = quantity;
+      deliveryno      = deliveryno;
+      deliveryitem    = deliveryitem;
+      salesord        = salesord;
+      salesitem       = salesitem;
+      invdate         = invdate;
+      testcertprnt    = testcertprnt;
+      textbox         = textbox;
+      inspecplangroup = inspecplangroup;
+      inspecplan      = inspecplan;
+      qc_cert_no      = qc_cert_no;
+      remarks         = remarks;
+      tgroup          = tgroup;
+    }
+
+}
+
+define behavior for ZI_QUALITY_ITM alias item
+persistent table zdt_quality_itm
+draft table zdtqualityitm_dr
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) Item;
+  field ( readonly ) Id, CharDesc, CharName, MaxLimit, MinLimit, Uom, Test_Method_Text, batch, quantity;
+
+  association _Head;
+  mapping for zi_quality_itm
+    {
+
+      //id               = id;
+      Item             = item;
+      billingdoc       = billingdoc;
+      billingitem      = billingitem;
+      // char_name        = char_name;
+      //  Char_Desc        = char_desc;
+      //  Max_Limit        = max_limit;
+      //  Min_Limit        = min_limit;
+      charname         = CharName;
+      CharDesc         = CharDesc;
+      MaxLimit         = MaxLimit;
+      MinLimit         = MinLimit;
+      Results          = results;
+      Uom              = uom;
+      Test_Method_Text = test_method_text;
+      Test_Range       = test_range;
+    }
+
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Payment Status Dashboard",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Payment Status Dashboard"
+  },
+  "ui5AppDetails": {
+    "appId": "zfipaymentstat.zfipaymentstat"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_CB50876023A90A5B97F42879DA71919C0C27DA41_TM",
+    "semanticObject": "zfi_paymentstat",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_CB50876023A90A5B97F42879DA71919C0C27DA41_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Payment Status Dashboard"
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+managed with additional save implementation in class ZBP_I_APPROVALMATRIXFORPA_S unique;
+strict;
+with draft;
+define behavior for ZI_ApprovalMatrixForPa_S alias ApprovalMatrixFoAll
+draft table ZTMG_APPR_M_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ApprovalMatrixForPa { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+
+}
+
+define behavior for ZI_ApprovalMatrixForPa alias ApprovalMatrixForPa ##UNMAPPED_FIELD
+persistent table ZTMG_APPR_MATRIX
+draft table ZTMG_APPR_MAT_D
+lock dependent by _ApprovalMatrixFoAll
+authorization dependent by _ApprovalMatrixFoAll
+{
+  field ( mandatory : create )
+   Companycode,
+   Userid,
+   Apprlevel,
+   Final;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Companycode,
+   Userid,
+   Apprlevel,
+   Final;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZTMG_APPR_MATRIX
+  {
+    Companycode = COMPANYCODE;
+    Userid = USERID;
+    Apprlevel = APPRLEVEL;
+    Final = FINAL;
+  }
+
+  association _ApprovalMatrixFoAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+
+}

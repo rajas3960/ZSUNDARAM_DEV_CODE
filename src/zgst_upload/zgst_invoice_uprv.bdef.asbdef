@@ -1,0 +1,17 @@
+managed implementation in class zbp_gst_invoice_uprv unique;
+strict ( 2 );
+
+define behavior for ZGST_INVOICE_UPRV alias Header
+//persistent table <???>
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Invoiceno, BillingDocumentItem, AccountingDocument,AccountingDocumentItem;
+
+  action(features : instance) GSTUPLOAD result [1] $self;
+}

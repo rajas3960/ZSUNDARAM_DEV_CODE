@@ -1,0 +1,28 @@
+managed implementation in class zbp_po_i_po_gst_mass unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPO_I_PO_GST_MASS //alias <alias_name>
+persistent table zpo_gst_status
+draft table zpo_gst_status_d
+lock master
+total etag createdat
+authorization master ( instance )
+etag master createdat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) uuid;
+  field ( readonly ) createdby;
+  field ( readonly ) createdat;
+
+  action DateRange parameter ZPO_DATE_RANGEE result [1] $self;
+  action GetPost result [1] $self;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+}

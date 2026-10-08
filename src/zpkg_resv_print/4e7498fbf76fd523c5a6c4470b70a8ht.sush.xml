@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSH" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <HEAD>
+    <NAME>4E7498FBF76FD523C5A6C4470B70A8</NAME>
+    <TYPE>HT</TYPE>
+    <DISPLAY_NAME>R3TR APIS ZV_SERV_ITEM                        DDLS</DISPLAY_NAME>
+    <DEVCLASS>ZPKG_RESV_PRINT</DEVCLASS>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </HEAD>
+  </asx:values>
+ </asx:abap>
+</abapGit>

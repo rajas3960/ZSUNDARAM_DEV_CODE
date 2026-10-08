@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TaxInvoiceDatabaseT', 
+    typeNamePlural: 'TaxInvoiceDatabaseTs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Tax invoice database table', 
+      value: 'CompanyCode'
+    }
+  }
+}
+annotate view ZI_TaxInvoiceDatabaseT with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TaxInvoiceDatabaseT', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Tax invoice database table',
+    position: 1 
+  } ]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Email'
+  } ]
+  Email;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'ContactNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'ContactNo'
+  } ]
+  ContactNo;
+}

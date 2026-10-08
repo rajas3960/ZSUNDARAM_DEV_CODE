@@ -1,0 +1,99 @@
+@Metadata.layer: #CORE
+@UI: {
+  presentationVariant: [{ sortOrder: [{ by: 'SupplierInvoice'}, { by: 'SupplierInvoice', direction: #ASC } ],
+                          visualizations: [{type: #AS_LINEITEM}],
+                          text: 'Invoice Bifurcation' }]
+                          }
+annotate entity ZC_bank_stat_item
+    with 
+{
+      @UI.facet:
+   [
+
+   {
+   id: 'Generalitem',
+   isSummary: true,
+   label: 'Invoice Bifurcation',
+   type: #COLLECTION,
+   purpose: #STANDARD
+   },
+
+   { type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'GeneralData1',
+    parentId: 'Generalitem',
+    position: 1,
+    label: 'Section 1',
+    id: 'GeneralData1' } ]
+
+  @UI: { lineItem: [{ position: 10 }],
+    identification: [{ position: 10 }],
+    fieldGroup: [{ qualifier: 'GeneralData1', position: 10, importance: #HIGH }] }
+  CompanyCode;
+//  @UI: { lineItem: [{ position: 20 },{type: #FOR_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayFactSheet', requiresContext: false}],
+  @UI: { lineItem: [{ position: 20 }],
+  identification: [{ position: 20 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+//  @Consumption.semanticObject: 'AccountingDocument'
+  AccountingDocument;
+  @UI: { lineItem: [{ position: 30 }],
+  identification: [{ position: 30 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  ClearingJournalEntryFiscalYear;
+  @UI: { lineItem: [{ position: 35 }],
+  identification: [{ position: 35 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  FiscalYear;
+  @UI: { lineItem: [{ position: 40 },{type: #FOR_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayFactSheet'}],
+  identification: [{ position: 40 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  @Consumption.semanticObject: 'SupplierInvoice'
+  SupplierInvoice;
+  @UI.hidden: true
+  AccountingDocumentItem;
+  @UI: { lineItem: [{ position: 50 }],
+  identification: [{ position: 50 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  AccountingDocumentType;
+  @UI: { lineItem: [{ position: 60 }],
+  identification: [{ position: 60 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  SpecialGLCode;
+  @UI: { lineItem: [{ position: 70 }],
+  identification: [{ position: 70 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  DocumentDate;
+  @UI: { lineItem: [{ position: 80 }],
+  identification: [{ position: 80 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  PostingDate;
+  @UI: { lineItem: [{ position: 90 }],
+  identification: [{ position: 90 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  AmountInCompanyCodeCurrency;
+  @UI: { lineItem: [{ position: 100 }],
+  identification: [{ position: 100 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  CompanyCodeCurrency;
+  @UI: { lineItem: [{ position: 110 }],
+  identification: [{ position: 110 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  NetDueDate;
+  @UI: { lineItem: [{ position: 120 }],
+  identification: [{ position: 120 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  PaymentTerms;
+  @UI: { lineItem: [{ position: 130 }],
+  identification: [{ position: 130 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  WithholdingTaxAmount;
+  @UI: { lineItem: [{ position: 140 },{type: #FOR_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display'}],
+  identification: [{ position: 140 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  @Consumption.semanticObject: 'PurchaseOrder'
+  PurchasingDocument;
+   @UI: { lineItem: [{ position: 150 },{type: #FOR_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayFactSheet', requiresContext: false}],
+  identification: [{ position: 150 }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }] }
+  @Consumption.semanticObject: 'AccountingDocument'
+  FI_Invoice;   
+}

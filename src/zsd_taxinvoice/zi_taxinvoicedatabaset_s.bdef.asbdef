@@ -1,0 +1,75 @@
+managed with additional save implementation in class ZBP_I_TAXINVOICEDATABASET_S unique;
+strict;
+with draft;
+define behavior for ZI_TaxInvoiceDatabaseT_S alias TaxInvoiceDatabaAll
+draft table ZDT_TAXINVO_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TaxInvoiceDatabaseT { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+  }
+
+define behavior for ZI_TaxInvoiceDatabaseT alias TaxInvoiceDatabaseT ##UNMAPPED_FIELD
+persistent table ZDT_TAXINVOICE
+draft table ZDT_TAXINVOIC_D
+lock dependent by _TaxInvoiceDatabaAll
+authorization dependent by _TaxInvoiceDatabaAll
+
+{
+  field ( mandatory : create )
+   CompanyCode;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   CompanyCode;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZDT_TAXINVOICE
+  {
+    CompanyCode = COMPANY_CODE;
+    Email = EMAIL;
+    ContactNo = CONTACT_NO;
+  }
+
+  association _TaxInvoiceDatabaAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

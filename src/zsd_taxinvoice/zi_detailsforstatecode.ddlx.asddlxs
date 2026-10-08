@@ -1,0 +1,82 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'DetailsForStateCode', 
+    typeNamePlural: 'DetailsForStateCodes', 
+    title: {
+      type: #STANDARD, 
+      label: 'Details for State Code', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_DetailsForStateCode with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_DetailsForStateCode', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Details for State Code', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'StateCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'StateCode'
+  } ]
+  StateCode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'StateName'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'StateName'
+  } ]
+  StateName;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

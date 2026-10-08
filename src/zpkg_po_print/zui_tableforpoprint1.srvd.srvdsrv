@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForPoPrint1_S'
+define service ZUI_TABLEFORPOPRINT1 {
+  expose ZI_TABLEFORPOPRINT1_S as TableForPoPrint1All;
+  expose ZI_TABLEFORPOPRINT1 as TableForPoPrint1;
+}

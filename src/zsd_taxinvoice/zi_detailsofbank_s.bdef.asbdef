@@ -1,0 +1,90 @@
+managed with additional save implementation in class ZBP_I_DETAILSOFBANK_S unique;
+strict;
+with draft;
+define behavior for ZI_DetailsOfBank_S alias DetailsOfBankAll
+draft table ZDT_BANKDET_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _DetailsOfBank { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+  }
+
+define behavior for ZI_DetailsOfBank alias DetailsOfBank ##UNMAPPED_FIELD
+persistent table ZDT_BANKDETAILS
+draft table ZDT_BANKDETAI_D
+etag master LocalLastChangedAt
+lock dependent by _DetailsOfBankAll
+authorization dependent by _DetailsOfBankAll
+
+{
+  field ( readonly )
+   SingletonID,
+   Id,
+   LastChangedAt,
+   LocalLastChangedAt,
+   ConfigDeprecationCode,
+   ConfigDeprecationCode_Critlty;
+
+  field ( numbering : managed )
+   Id;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : instance );
+
+  action ( features : instance ) Deprecate result [1] $self;
+  action ( features : instance ) Invalidate result [1] $self;
+
+  mapping for ZDT_BANKDETAILS
+  {
+    Id = ID;
+    Customer = CUSTOMER;
+    BankName = BANK_NAME;
+    BankAddress = BANK_ADDRESS;
+    AccountNumber = ACCOUNT_NUMBER;
+    AccountName = ACCOUNT_NAME;
+    IfscCode = IFSC_CODE;
+    ConfigDeprecationCode = CONFIGDEPRECATIONCODE;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _DetailsOfBankAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

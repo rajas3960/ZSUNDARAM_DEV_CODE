@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "CPP Production Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "CPP Production Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zcppprodrep1.zcppprodrep1"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_59766A006420A518CC85B464E57D27835F7FF462_TM",
+    "semanticObject": "zccpprodrep1",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_59766A006420A518CC85B464E57D27835F7FF462_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "CPP Production Report"
+      }
+    }
+  ]
+}

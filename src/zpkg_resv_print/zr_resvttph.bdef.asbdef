@@ -1,0 +1,38 @@
+managed implementation in class zbp_r_resvttph unique;
+strict ;
+
+define behavior for ZR_RESVTTPH alias head
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+with unmanaged save
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) CostCenter, CreationDateTime, Criticality, Customer, GoodsMovementType, GoodsRecipientName, IssuingOrReceivingPlant,
+  IssuingOrReceivingStorageLoc, LastChangeDateTime, status, WBSElementInternalID, UserID, ResvnVerificationCompanyCode, ReservationOrigin,
+  ReservationDate, ReservationCreationCode, Reservation, ProfitCenter, OrderID, NetworkNumberForAcctAssgmt,
+  LastChangedByUser, Attachment;
+//  create;
+//  update;
+//  delete;
+  action ( features : instance ) APPR result [1] $self;
+  association _Item { create; }
+}
+
+define behavior for ZR_RESVITEMS alias item
+with unmanaged save
+//persistent table <???>
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Reservation, Batch, GoodsMovementType, Plant, Product, RecordType, ValuationType, StorageLocation, SpecialStockIdfgWBSElement,
+  ReservationItem;
+  association _Head;
+}

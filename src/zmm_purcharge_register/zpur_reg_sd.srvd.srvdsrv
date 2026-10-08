@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition'
+define service ZPUR_REG_SD {
+  expose ZPUR_REG_HPV;
+  expose ZPUR_REG_IPV;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'GST Posting Service'
+define service ZPO_SDEF_GST {
+  expose ZPO_C_GSTRUN as MainGSTRun;
+  expose ZPO_C_GST    as ItemGST;
+}

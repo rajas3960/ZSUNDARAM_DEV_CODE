@@ -1,0 +1,52 @@
+projection;
+strict ( 1 );
+use draft;
+use side effects;
+
+define behavior for ZC_BILLETRE_HDR //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action POSTCHECK;
+  use action POSTCNF;
+  use action POST101;
+  use action POST261;
+  use action POST531;
+  use action GETCONS;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _101 { create; }
+  use association _261 { create; }
+  use association _531 { create; }
+}
+
+define behavior for ZC_BILLETRE_101 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_BILLETRE_261 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_BILLETRE_531 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Head;
+}

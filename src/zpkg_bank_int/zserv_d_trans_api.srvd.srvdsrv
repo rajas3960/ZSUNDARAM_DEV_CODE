@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Transation API'
+define service ZSERV_D_TRANS_API {
+  expose ZI_TRANS_API;
+}

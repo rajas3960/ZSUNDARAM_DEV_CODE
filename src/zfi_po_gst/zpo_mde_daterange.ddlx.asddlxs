@@ -1,0 +1,19 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPO_A_DATERANGE with
+{
+  @UI.identification: [{ position: 10, label: 'Company Code' }]
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'I_CompanyCodeVH',
+      element: 'CompanyCode'
+    }
+  }]
+  CompanyCode;
+
+  @UI.identification: [{ position: 20, label: 'From Date' }]
+  FromDate;
+
+  @UI.identification: [{ position: 30, label: 'To Date' }]
+  ToDate;
+
+}

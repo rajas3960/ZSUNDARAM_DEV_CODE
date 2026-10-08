@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "{{ZMM_PURCHARGE_REGISTER-Display.flpTitle}}"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmpurchaseregister.zmmpurchaseregister"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_FBAB35C6AD49C4F5FA04826AA9F131AA8DD37938_TM",
+    "semanticObject": "ZMM_PURCHARGE_REGISTER",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_FBAB35C6AD49C4F5FA04826AA9F131AA8DD37938_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "{{ZMM_PURCHARGE_REGISTER-Display.flpTitle}}",
+        "subtitle": "{{ZMM_PURCHARGE_REGISTER-Display.flpSubtitle}}"
+      }
+    }
+  ]
+}

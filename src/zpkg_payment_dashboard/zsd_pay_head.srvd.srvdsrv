@@ -1,0 +1,6 @@
+@EndUserText.label: 'Payment Header'
+define service ZSD_PAY_HEAD {
+  expose ZC_PAY_HEADER;
+  expose ZC_INVOICE_ITEM;
+  expose ZC_APPR_LOG;
+}

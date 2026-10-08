@@ -1,0 +1,16 @@
+projection;
+strict ;
+
+define behavior for zc_resvttpp //alias <alias_name>
+{
+
+  use action APPR;
+
+  use association _Item;
+}
+
+define behavior for zc_resvitems //alias <alias_name>
+{
+
+  use association _Head;
+}

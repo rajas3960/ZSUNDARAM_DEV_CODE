@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_BankAuthorizerMailI_S'
+define service ZUI_BANKAUTHORIZERMAILI {
+  expose ZI_BANKAUTHORIZERMAILI_S as BankAuthorizerMaAll;
+  expose ZI_BANKAUTHORIZERMAILI as BankAuthorizerMailI;
+}

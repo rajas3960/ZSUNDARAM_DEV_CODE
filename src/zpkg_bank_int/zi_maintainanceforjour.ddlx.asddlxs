@@ -1,0 +1,47 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'MaintainanceForJour', 
+    typeNamePlural: 'MaintainanceForJours', 
+    title: {
+      type: #STANDARD, 
+      label: 'Maintainance For Journal Entry Posting', 
+      value: 'Prefix'
+    }
+  }
+}
+annotate view ZI_MaintainanceForJour with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_MaintainanceForJour', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Maintainance For Journal Entry Posting', 
+    position: 1 
+  } ]
+  Prefix;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  IParameter;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'EValue'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'EValue'
+  } ]
+  EValue;
+}

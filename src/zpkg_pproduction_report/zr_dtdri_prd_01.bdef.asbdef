@@ -1,0 +1,50 @@
+managed implementation in class ZBP_R_DTDRI_PRD_01 unique;
+strict ( 1 );
+with draft;
+extensible;
+define behavior for ZR_DTDRI_PRD_01 alias ZrDtdriPrd01
+persistent table ZDT_DRI_PRD_01
+extensible
+draft table ZDTDRI_PRD_01_D
+etag master Lastchangetstmpl
+lock master total etag Changetstmpl
+authorization master( global )
+{
+  field ( mandatory : create )
+   Material,
+   Plant;
+
+  field ( readonly )
+   Changedby,
+   Lastchangetstmpl,
+   Changetstmpl,
+   Createdby;
+
+  field ( readonly : update )
+   Material,
+   Plant;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZDT_DRI_PRD_01 corresponding extensible
+  {
+    Material = material;
+    Plant = plant;
+    Materialdesc = materialdesc;
+    percentrecovery = percentrecovery;       // ++ 12.09.25
+    Changedby = changedby;
+    Lastchangetstmpl = lastchangetstmpl;
+    Changetstmpl = changetstmpl;
+    Createdby = createdby;
+  }
+
+}

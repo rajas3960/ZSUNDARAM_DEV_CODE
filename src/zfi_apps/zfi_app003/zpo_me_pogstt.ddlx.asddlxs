@@ -1,0 +1,155 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'PO Input Register Integration',
+typeNamePlural: 'PO Input Register Integration',
+title: { type: #STANDARD, value: 'AccountingDocument' } } }
+@UI.deleteHidden: true
+@UI.updateHidden: true
+annotate entity ZPO_C_POGSTT
+    with 
+{
+   @UI.facet: [ { id:              'Header',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Purchase Input Register GST',
+                        position:        10 },
+                        
+                      { id : 'Amt',
+                        label: 'Basic Amount Details',
+                        type: #IDENTIFICATION_REFERENCE,
+                        purpose: #STANDARD,
+                        targetQualifier: 'Amt',
+                        position: 20 },
+                      { id : 'GSTP',
+                        label: 'GST Post Status',
+                        type: #IDENTIFICATION_REFERENCE,
+                        purpose: #STANDARD,
+                        targetQualifier: 'GSTPOST',
+                        position: 30 },
+
+                        { id: 'AckNo',
+                          purpose: #HEADER,
+                          type: #DATAPOINT_REFERENCE,
+                          position: 10,
+                          targetQualifier: 'ACKStatus'
+                          },
+                        { id: 'User',
+                          purpose: #HEADER,
+                          type: #DATAPOINT_REFERENCE,
+                          position: 20,
+                          targetQualifier: 'UserId'
+                          }                                                  
+                         ]
+
+  @UI:{ lineItem: [{ position: 10, label: 'Company Code' }],
+        identification: [{ position: 10, label: 'Company Code' },
+       { type: #FOR_ACTION, dataAction: 'POGST_POST', label: 'GST POST',position: 10 }          
+          ] } 
+//  @UI.selectionField: [{ position: 10 }]
+//  @Consumption.filter.mandatory: true
+  @EndUserText.label: 'Company Code'
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'I_CompanyCodeVH' , element: 'CompanyCode' } } ]  
+CompanyCode;
+  @UI:{ lineItem: [{ position: 20, label: 'Invoice No' }],
+        identification: [{ position: 20, label: 'Invoice No' } ] }
+  @EndUserText.label: 'Invoice No'
+//  @UI.selectionField: [{ position: 20 }]  
+AccountingDocument;
+  @UI:{ lineItem: [{ position: 30, label: 'Accounting Type' }],
+        identification: [{ position: 30, label: 'Accounting Type' } ] }
+  @EndUserText.label: 'Accounting Type'
+AccountingDocumentType;
+  @UI:{ lineItem: [{ position: 40, label: 'Line Item' }],
+        identification: [{ position: 40, label: 'Line Item' } ] }
+  @EndUserText.label: 'Line Item'
+LedgerGLLineItem;
+  @UI:{ lineItem: [{ position: 50, label: 'Invoice Date' }],
+        identification: [{ position: 50, label: 'Invoice Date' } ] }
+  @EndUserText.label: 'Invoice Date'
+DocumentDate;
+@UI: {
+    lineItem: [{ position: 55, label: 'Posting Date' }],
+    identification: [{ position: 55, label: 'Posting Date' }]
+}
+//@UI.selectionField: [{ position: 30 }]
+//@Consumption.filter.mandatory: true
+@EndUserText.label: 'Posting Date'
+PostingDate;
+  @UI:{ lineItem: [{ position: 60, label: 'Supplier' }],
+        identification: [{ position: 60, label: 'Supplier' } ] }
+  @EndUserText.label: 'Supplier'
+Supplier;
+  @UI:{ lineItem: [{ position: 70, label: 'Fiscal Period' }],
+        identification: [{ position: 70, label: 'Fiscal Period' } ] }
+  @EndUserText.label: 'Fiscal Period'
+Fiscalperiod;
+  @UI:{ lineItem: [{ position: 80, label: 'Self GSTIN' }],
+        identification: [{ position: 80, label: 'Self GSTIN' } ] }
+  @EndUserText.label: 'Self GSTIN'
+Selfgstin;
+  @UI:{ lineItem: [{ position: 90, label: 'Supplier name' }],
+        identification: [{ position: 90, label: 'Supplier name' } ] }
+  @EndUserText.label: 'Supplier name'
+BPSupplierFullName;
+  @UI:{ lineItem: [{ position: 100, label: 'Supplier GSTIN' }],
+        identification: [{ position: 100, label: 'Supplier GSTIN' } ] }
+  @EndUserText.label: 'Supplier GSTIN'
+SupGSTIN;
+  @UI:{ lineItem: [{ position: 110, label: 'Transaction Type' }],
+        identification: [{ position: 110, label: 'Transaction Type' } ] }
+  @EndUserText.label: 'Transaction Type'
+TransType;
+  @UI:{ lineItem: [{ position: 120, label: 'Result Flag' }],
+        identification: [{ position: 120, label: 'Result Flag' } ] }
+  @EndUserText.label: 'Result Flag'
+Resultflag;
+  @UI.identification: [{ position: 10,label: 'Taxable Value',qualifier: 'Amt' }]
+InvoiceValue;
+  @UI.identification: [{ position: 20,label: 'Invoice Value',qualifier: 'Amt' }]
+TaxableValue;
+  @UI.identification: [{ position: 25,label: 'Tax Code',qualifier: 'Amt' }]
+TaxCode;
+  @UI.identification: [{ position: 30,label: 'CGST AMT',qualifier: 'Amt' }]
+CgstAmt;
+  @UI.identification: [{ position: 40,label: 'SGST AMT',qualifier: 'Amt' }]
+SgstAmt;
+  @UI.identification: [{ position: 50,label: 'IGST AMT',qualifier: 'Amt' }]
+IgstAmt;
+
+
+  @UI.identification: [{ position: 10,label: 'ACK No',qualifier: 'GSTPOST' }]
+  @UI.dataPoint: { qualifier: 'ACKStatus', title: 'ACK Number' }  
+ackno;
+  @UI.identification: [{ position: 20,label: 'Status Code',qualifier: 'GSTPOST' }]
+statuscode;
+  @UI.identification: [{ position: 30,label: 'GST Posted By',qualifier: 'GSTPOST' }]
+  @UI.dataPoint: { qualifier: 'UserId', title: 'GST Posted By' }  
+createdby;
+
+@UI.hidden: true
+SourceLedger;
+@UI.hidden: true
+FiscalYear;
+@UI.hidden: true
+clientid;
+
+
+@UI.hidden: true
+CgstRate;
+@UI.hidden: true
+CgstType;
+
+
+@UI.hidden: true
+IgstRate;
+@UI.hidden: true
+IgstType;
+
+
+@UI.hidden: true
+createdname;
+
+@UI.hidden: true
+createdat;
+    
+}

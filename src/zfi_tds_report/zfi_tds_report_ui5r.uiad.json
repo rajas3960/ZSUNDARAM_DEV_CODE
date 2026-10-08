@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "TDS GST REPORT",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TDS GST REPORT GSTR-7"
+  },
+  "ui5AppDetails": {
+    "appId": "tdsgstreport.zfitdsreport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_D51253EB31DB57F154D2C0DE3F4FBD4DEC18717F_TM",
+    "semanticObject": "ZFI_TDS_REPORT",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_D51253EB31DB57F154D2C0DE3F4FBD4DEC18717F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TDS GST REPORT GSTR-7"
+      }
+    }
+  ]
+}

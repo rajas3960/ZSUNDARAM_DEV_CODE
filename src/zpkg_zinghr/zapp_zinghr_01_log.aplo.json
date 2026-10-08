@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ZINGHR Posting 01",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "subobjects": [
+    {
+      "name": "ZAPP_ZINGHR_01_SUB",
+      "description": "ZINGHR Posting App Log 01"
+    }
+  ]
+}

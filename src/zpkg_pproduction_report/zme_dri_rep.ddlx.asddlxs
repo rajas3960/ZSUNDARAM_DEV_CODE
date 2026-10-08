@@ -1,0 +1,179 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZI_DRI_REPORT1 with
+{
+  // @UI.facet: [ { id: 'GeneralZata',
+  //                  isSummary: true,
+  //                  label: 'Sales Register',
+  //                  position: 5,
+  //                  type: #COLLECTION } ,
+  //                  { type: #FIELDGROUP_REFERENCE,
+  //                 targetQualifier: 'GeneralData1',
+  //                 parentId: 'GeneralZata',
+  //                 position: 10,
+  //                 label: 'Header',
+  //                 id: 'GeneralData1' } ]
+  //   @UI.hidden: true
+  // @UI.fieldGroup: [ { position: 3, qualifier: 'GeneralData1', importance: #HIGH } ]
+   @UI.identification: [ { position: 3 } ]
+  @UI.lineItem: [ { position: 3 } ]
+  @UI.selectionField: [{  position: 3 }]
+  postingdate;
+  
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [{  position: 5  }]
+  Material;
+  @UI.hidden: true
+  //   @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.selectionField: [{  position: 10 }]
+  Plant;
+  
+  
+  //  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  //@UI.selectionField: [{  position: 15  }]
+  Product_name;
+  @UI.hidden: true
+  //   @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  //@UI.selectionField: [{  position: 20  }]
+  MaterialBaseUnit;
+  //   @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+ // @UI.selectionField: [{  position: 25  }]
+  OPENING;
+   @UI.identification: [ { position: 26 } ]
+  @UI.lineItem: [ { position: 26 } ]
+  //@UI.selectionField: [{  position: 26 }]
+  
+  PRODUCTION_KILN1;
+  
+   @UI.identification: [ { position: 27 } ]
+  @UI.lineItem: [ { position: 27 } ]
+ // @UI.selectionField: [{  position: 27 }]
+  PRODUCTION_KILN2;
+  
+   @UI.identification: [ { position: 28 } ]
+  @UI.lineItem: [ { position: 28 } ]
+ // @UI.selectionField: [{  position: 28 }]
+  PRODUCTION_KILN3;
+  
+   @UI.identification: [ { position: 29 } ]
+  @UI.lineItem: [ { position: 29 } ]
+//  @UI.selectionField: [{  position: 29 }]
+  PRODUCTION_KILN4;
+  
+  
+  //  @UI.fieldGroup: [ { position: 30, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+//  @UI.selectionField: [{  position: 30  }]
+  PRODUCTION;
+  
+  @UI.identification: [ { position: 31 } ]
+  @UI.lineItem: [ { position: 31 } ]
+ // @UI.selectionField: [{  position: 31  }]
+  
+  CONSUMPTION_KILN1;
+  
+  @UI.identification: [ { position: 32 } ]
+  @UI.lineItem: [ { position: 32 } ]
+ // @UI.selectionField: [{  position: 32  }]
+  
+  CONSUMPTION_KILN2;
+  
+  
+  @UI.identification: [ { position: 33 } ]
+  @UI.lineItem: [ { position: 33 } ]
+ // @UI.selectionField: [{  position: 33 }]
+  
+  CONSUMPTION_KILN3;
+  
+  
+  @UI.identification: [ { position: 34 } ]
+  @UI.lineItem: [ { position: 34 } ]
+//  @UI.selectionField: [{  position: 34  }]
+  
+  CONSUMPTION_KILN4;
+  
+  
+  
+  //  @UI.fieldGroup: [ { position: 35, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+//  @UI.selectionField: [{  position: 35  }]
+  CONSUMPTION;
+  //  @UI.fieldGroup: [ { position: 40, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+ // @UI.selectionField: [{  position: 40  }]
+  PURCHASE_GR;
+  //  @UI.fieldGroup: [ { position: 45, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+//  @UI.selectionField: [{  position: 45  }]
+  TRANSFER_OUT;
+  //  @UI.fieldGroup: [ { position: 50, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+ // @UI.selectionField: [{  position: 50  }]
+  TRANSFER_IN;
+  //   @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+ // @UI.selectionField: [{  position: 55  }]
+  SALES;
+   @UI.identification: [ { position: 57 } ]
+  @UI.lineItem: [ { position: 57 } ]
+  SALES_RETURN;
+  
+  //  @UI.fieldGroup: [ { position: 60, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+//  @UI.selectionField: [{  position: 60  }]
+  CLOSING_STOCK;
+  
+   // ADDED BY SAR TEAM DT-01-07-2026
+   @UI.identification: [ { position: 63 } ]
+  @UI.lineItem: [ { position: 63 } ] 
+   STO_641;
+   
+   
+  @UI.identification: [ { position: 66 } ]
+  @UI.lineItem: [ { position: 66 } ]
+  COMP_COST_CENTER_201;
+  
+   @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+  TRF_MATE_2_MATE;
+  
+  // ADDED BY SAR TEAM DT-01-07-2026 
+  @UI.hidden: true
+  periodtype;
+  //  @UI.hidden: true
+  //  EndDate;
+  @UI.hidden: true
+  yearperiod;
+  @UI.hidden: true
+  storagelocation;
+  @UI.hidden: true
+  batch;
+  @UI.hidden: true
+  supplier;
+  @UI.hidden: true
+  sddocument;
+  @UI.hidden: true
+  sddocumentitem;
+  //       @UI.hidden: true
+  //      wbselementinternalid;
+  @UI.hidden: true
+
+  inventoryspecialstocktype;
+  @UI.hidden: true
+  fiscalyearvariant;
+}

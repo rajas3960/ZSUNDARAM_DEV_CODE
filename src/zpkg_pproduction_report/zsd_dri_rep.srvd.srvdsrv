@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For DRI report'
+define service ZSD_DRI_REP {
+  expose ZI_DRI_REPORT1;
+}

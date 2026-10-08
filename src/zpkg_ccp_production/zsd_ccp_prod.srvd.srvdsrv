@@ -1,0 +1,4 @@
+@EndUserText.label: 'CCP Production Report'
+define service ZSD_CCP_PROD {
+  expose ZI_CCP_PRODUCTION;
+}

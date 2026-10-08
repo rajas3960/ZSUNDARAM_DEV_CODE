@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service Defn. Billet'
+define service ZSERV_D_BILLET {
+  expose ZC_BILLET_HDR;
+  expose ZC_BILLET_101;
+  expose ZC_BILLET_261;
+  expose ZC_BILLET_531;
+  expose ZC_BILLET_HTB;
+  expose ZVCASTERF4;
+  expose ZVBILLETHEATF4;
+  expose ZVBILLETHEATF4_1;
+}

@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_GstIsoDetails_S'
+define service ZUI_GSTISODETAILS {
+  expose ZI_GSTISODETAILS_S as GstIsoDetailsAll;
+  expose ZI_GSTISODETAILS as GstIsoDetails;
+}

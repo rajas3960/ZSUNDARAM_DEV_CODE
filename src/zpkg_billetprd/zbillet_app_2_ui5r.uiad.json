@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Billet Production",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Billet Production"
+  },
+  "ui5AppDetails": {
+    "appId": "zbilletapp"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_AE27D46FD58CB5358BDA3DAD8B4B18E8E9C8421A_TM",
+    "semanticObject": "zbillet_application",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_AE27D46FD58CB5358BDA3DAD8B4B18E8E9C8421A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Billet Production",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

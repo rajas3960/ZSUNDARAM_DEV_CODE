@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_DTUSER_AUTH unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_DTUSER_AUTH alias ZrDtuserAuth
+persistent table ZDT_USER_AUTH
+extensible
+draft table ZDTUSER_AUTH_D
+etag master Lastchangetstmpl
+lock master total etag Changetstmpl
+authorization master( global )
+{
+  field ( readonly )
+   ID,
+   Changedby,
+   Lastchangetstmpl,
+   Changetstmpl,
+   Createdby;
+
+  field ( numbering : managed )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZDT_USER_AUTH corresponding extensible
+  {
+    ID = id;
+    Cbuser = cbuser;
+    Companycode = companycode;
+    Changedby = changedby;
+    Lastchangetstmpl = lastchangetstmpl;
+    Changetstmpl = changetstmpl;
+    Createdby = createdby;
+  }
+
+}

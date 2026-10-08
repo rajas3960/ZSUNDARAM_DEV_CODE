@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service def. for reservation print'
+define service ZSD_Resv_Print {
+  expose zc_resvttpp;
+  expose zc_resvitems;
+}

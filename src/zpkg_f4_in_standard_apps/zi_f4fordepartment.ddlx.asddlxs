@@ -1,0 +1,29 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'F4ForDepartment', 
+    typeNamePlural: 'F4ForDepartments', 
+    title: {
+      type: #STANDARD, 
+      label: 'F4 For Department', 
+      value: 'DeptName'
+    }
+  }
+}
+annotate view ZI_F4ForDepartment with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_F4ForDepartment', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'F4 For Department', 
+    position: 1 
+  } ]
+  DeptName;
+}

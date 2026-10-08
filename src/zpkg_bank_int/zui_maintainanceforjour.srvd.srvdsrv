@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_MaintainanceForJour_S'
+define service ZUI_MAINTAINANCEFORJOUR {
+  expose ZI_MaintainanceForJour_S as MaintainanceForJAll;
+  expose ZI_MaintainanceForJour   as MaintainanceForJour;
+}

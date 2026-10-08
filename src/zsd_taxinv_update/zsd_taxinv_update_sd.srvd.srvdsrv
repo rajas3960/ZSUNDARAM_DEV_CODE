@@ -1,0 +1,6 @@
+@EndUserText.label: 'service definition Taxinvoice'
+define service ZSD_TAXINV_UPDATE_SD {
+  expose ZC_TAXINVHDR_UPDATE;
+  expose ZC_TAXINVITEM_UPDATE;
+  expose ZC_TAXINVITEM2_UPDATE;
+}

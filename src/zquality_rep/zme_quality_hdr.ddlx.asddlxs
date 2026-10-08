@@ -1,0 +1,292 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Quality Print',
+typeNamePlural: 'Quality Print',
+title: { type: #STANDARD, value : 'qc_cert_no'}
+}}
+@UI: { presentationVariant: [{ sortOrder: [{ by: 'Invdate', direction: #DESC }],
+                               visualizations: [{ type: #AS_LINEITEM }],
+                               text: 'Invoice No' }] }
+annotate view ZC_QUALITY_HDR with
+{
+
+  @UI.facet:
+    [{ id: 'header', isSummary: true, label: 'Header', type: #COLLECTION },
+
+    // { type: #FIELDGROUP_REFERENCE,  purpose: #STANDARD, targetQualifier: 'fg2', parentId: 'header', position: 10, label: 'Quality Header', id: 'fg1' },
+     { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg1', parentId: 'header', position: 15, label: 'User Details', id: 'fg2' },
+
+     { id: 'item', label: 'Item', type: #LINEITEM_REFERENCE, position : 25, targetElement: '_Item' }]
+  @UI.lineItem: [ { position: 1 } ]
+  @UI.identification: [ { position: 1 } ]
+  @UI.fieldGroup: [ { position: 1,  qualifier: 'fg1', importance: #HIGH } ]
+  @UI.selectionField: [ { position: 10 } ]
+
+  @UI.hidden: true
+  Id;
+  @UI: { lineItem: [{ position: 05 }],
+     identification: [{ position: 05 }],
+     fieldGroup: [{ qualifier: 'fg1', position: 05, importance: #HIGH }] }
+  qc_cert_no;
+
+  @UI.lineItem: [ { position: 06 }, { criticality: 'Criticality' } ]
+  @UI.identification: [  { position: 06 } ]
+  @UI.fieldGroup: [ { position: 06,  qualifier: 'fg1', importance: #HIGH } ]
+  status;
+
+  @UI: { selectionField: [{ position: 10 }],
+       lineItem: [{ position: 10 }],
+       identification: [{ position: 10 }],
+       fieldGroup: [{ qualifier: 'fg1', position: 10, importance: #HIGH }] }
+
+  @Consumption.valueHelpDefinition: [{
+        entity:{
+        element: 'BillingDocument',
+        name:'ZI_BillingDocument_QA'
+        },
+
+           distinctValues: true,
+        useForValidation: true,
+        enabled: ''
+        }
+      ]
+  Billingdoc;
+
+  @UI.hidden: true
+  billingitem;
+
+  @UI: {lineItem: [{ position: 70 }],
+  identification: [{ position: 70 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 70, importance: #HIGH }] }
+  vehicleno;
+
+  @UI: {lineItem: [{ position: 30 }],
+  identification: [{ position: 30 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 30, importance: #HIGH }] }
+  Plant;
+
+  @UI: {lineItem: [{ position: 30 }],
+  identification: [{ position: 30 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 30 , importance: #HIGH }] }
+  quantity;
+
+  @UI: {lineItem: [{ position: 30 }],
+  identification: [{ position: 30 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 30, importance: #HIGH }] }
+
+  @Consumption.valueHelpDefinition: [{
+        entity:{
+        element: 'Material',
+        name:'ZI_INVMATQUAL_V1'
+        },
+
+    distinctValues: true,
+        useForValidation: true,
+        enabled: '',
+
+  additionalBinding:
+       [
+
+       {
+        localParameter: '',
+        localElement: 'Billingdoc',
+        localConstant: '',
+        parameter: '',
+        element: 'BillingDocument',
+        usage: #FILTER
+         }
+          ]
+
+        }
+      ]
+  material;
+
+  @UI: { lineItem: [{ position: 50 }],
+  identification: [{ position: 50 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 50, importance: #HIGH }] }
+  //@UI.hidden: true
+  prod_name;
+
+  @UI: { lineItem: [{ position: 60 }],
+  identification: [{ position: 60 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 60, importance: #HIGH }] }
+  @UI.hidden: true
+  prod_group;
+  @UI: { lineItem: [{ position: 70 }],
+  identification: [{ position: 70 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 70, importance: #HIGH }] }
+  @UI.hidden: true
+  Deliveryno;
+
+  @UI: { lineItem: [{ position: 80 }],
+  identification: [{ position: 80 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 80, importance: #HIGH }] }
+  @UI.hidden: true
+  Deliveryitem;
+
+  @UI: { lineItem: [{ position: 90 }],
+  identification: [{ position: 90 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 90, importance: #HIGH }] }
+  Salesord;
+
+  @UI: { lineItem: [{ position: 100 }],
+  identification: [{ position: 100 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 100, importance: #HIGH }] }
+  @UI.hidden: true
+  Salesitem;
+
+  @UI: { lineItem: [{ position: 110 }],
+  identification: [{ position: 110 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 110, importance: #HIGH }] }
+  Invdate;
+
+  @UI: { lineItem: [{ position: 111 }],
+  identification: [{ position: 111 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 111, importance: #HIGH }] }
+  pono;
+
+  @UI: { lineItem: [{ position: 112 }],
+  identification: [{ position: 112 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 112, importance: #HIGH }] }
+  customer;
+
+  @UI: { lineItem: [{ position: 120 }],
+  identification: [{ position: 120 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 120, importance: #HIGH }] }
+  @UI.hidden: true
+  Testcertprnt;
+
+  @UI: { lineItem: [{ position: 130 }],
+  identification: [{ position: 130 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 130, importance: #HIGH }] }
+  @UI.hidden: true
+  textbox;
+
+  @UI.hidden: true
+  @UI: { lineItem: [{ position: 131 }],
+  identification: [{ position: 131 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 131, importance: #HIGH }] }
+  Criticality;
+
+
+  @UI: { lineItem: [{ position: 140 }],
+  identification: [{ position: 140 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 140, importance: #HIGH }] }
+  @UI.hidden: true
+  chem_metal;
+
+  @UI: { lineItem: [{ position: 150 }],
+  identification: [{ position: 150 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 150, importance: #HIGH }] }
+  @UI.hidden: true
+  treatment;
+
+  @UI: { lineItem: [{ position: 160 }],
+  identification: [{ position: 160 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 160, importance: #HIGH }] }
+  @UI.hidden: true
+  coatside;
+
+  @UI: { lineItem: [{ position: 170 }],
+  identification: [{ position: 170 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 170, importance: #HIGH }] }
+  @UI.hidden: true
+  inspecplan;
+
+  @UI: { lineItem: [{ position: 180 }],
+  identification: [{ position: 180 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 180, importance: #HIGH }] }
+  @UI.hidden: true
+  inspecplangroup;
+
+  @UI: { lineItem: [{ position: 190 }],
+  identification: [{ position: 190 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 190, importance: #HIGH }] }
+  @Consumption.valueHelpDefinition: [{
+        entity:{
+        element: 'TGroup',
+        name:'ZI_INSPECTIONPLAN02'
+        },
+
+           distinctValues: true,
+        useForValidation: true,
+        enabled: '',
+
+  additionalBinding:
+       [
+
+       {
+        localParameter: '',
+        localElement: 'material',
+        localConstant: '',
+        parameter: '',
+        element: 'Material',
+        usage: #FILTER_AND_RESULT
+         },
+
+       {
+        localParameter: '',
+        localElement: 'Plant',
+        localConstant: '',
+        parameter: '',
+        element: 'Plant',
+        usage: #FILTER_AND_RESULT
+         } ,
+
+       {
+        localParameter: '',
+        localElement: 'inspecplan',
+        localConstant: '',
+        parameter: '',
+        element: 'InspectionPlan',
+        usage: #RESULT
+         },
+
+       {
+        localParameter: '',
+        localElement: 'inspecplangroup',
+        localConstant: '',
+        parameter: '',
+        element: 'InspectionPlanGroup',
+        usage: #RESULT
+         }
+          ]
+
+        }
+      ]
+  tgroup;
+
+  @UI: { lineItem: [{ position: 200 }],
+  identification: [{ position: 200 }],
+  fieldGroup: [{ qualifier: 'fg1', position: 190, importance: #HIGH }] }
+  remarks;
+  @UI: { fieldGroup: [{ position: 150, qualifier: 'fg1' , label: 'Check Attachment' }] }
+
+  Attachment;
+  @UI.hidden: true
+  Mimetype;
+  @UI.hidden: true
+  Filename;
+
+  @UI: {
+          identification: [{position: 100 },  { type: #FOR_ACTION, dataAction: 'Print', label: 'Print'} ]
+  }
+  tprint;
+  @UI: {
+        identification: [{position: 110 },  { type: #FOR_ACTION, dataAction: 'Delete', label: 'Delete'} ]
+  }
+  tdelete;
+  //  @UI: { lineItem: [{ position: 220 }],
+  //  identification: [{ position: 220 }],
+  //  fieldGroup: [{ qualifier: 'fg1', position: 220, importance: #HIGH }]
+  //// attachment;
+  //   @UI: { lineItem: [{ position: 220 }],
+  //  identification: [{ position: 220 }],
+  //  fieldGroup: [{ qualifier: 'fg1', position: 220, importance: #HIGH }] }
+  //  mimetype;
+  //    @UI: { lineItem: [{ position: 230 }],
+  //  identification: [{ position: 230 }],
+  //  fieldGroup: [{ qualifier: 'fg1', position: 230, importance: #HIGH }] }
+  //  filename;
+
+}

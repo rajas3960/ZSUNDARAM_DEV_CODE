@@ -1,0 +1,141 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Contract Report'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+define view entity ZV_CONTRACTRPT_V3
+
+  as select from ZV_CONTRACTRPT_V2
+
+{
+  key SalesContract,
+  key SalesContractItem,
+ 
+      SalesOrganization,
+      DistributionChannel,
+      OrganizationDivision,
+      Broker,
+      BrokerName,
+      SalesContractDate,
+      SalesContractValidityEndDate,
+      SoldToParty,
+      CustomerFullName,
+      TransactionCurrency,
+      ConditionValue,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      ConditionAmount,
+      RequestedQuantityUnit,
+      @Semantics.quantity.unitOfMeasure: 'RequestedQuantityUnit'
+      ContractQty,
+      @Semantics.quantity.unitOfMeasure: 'RequestedQuantityUnit'
+      InvoicedQty,
+      @Semantics.quantity.unitOfMeasure: 'RequestedQuantityUnit'
+      PendingQty,
+      CreditSegmentCurrency,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      // cast(EffectiveTotalCreditLimitAmt as  abap.dec( 15,2 )) - cast( Receivable  as abap.dec( 15,2 ) )     as EffectiveTotalCreditLimitAmt1,
+      //      case
+      //      when EffectiveTotalCreditLimitAmt is not null and Receivable is not null
+      //      then cast( EffectiveTotalCreditLimitAmt as abap.dec( 21,2 ) ) -  cast( Receivable as abap.dec( 21,2 ) )
+      //      when  EffectiveTotalCreditLimitAmt is not null and Receivable is null
+      //      then cast( EffectiveTotalCreditLimitAmt as abap.dec( 21,2 ) )
+      //      when  EffectiveTotalCreditLimitAmt is null and Receivable is not null
+      //      then 0
+      //      else 0
+      //      end as EffectiveTotalCreditLimitAmt,
+      case
+           when EffectiveTotalCreditLimitAmt is not null and EffectiveTotalCreditLimitAmt > 0
+           then  cast( EffectiveTotalCreditLimitAmt  as abap.dec( 21,2 ) )
+           when  EffectiveTotalCreditLimitAmt is null or EffectiveTotalCreditLimitAmt < 0
+           then 0
+           else 0
+           end as EffectiveTotalCreditLimitAmt,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      CreditLimitAmt,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      ReserveValue,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      Reserve,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      case
+      when CreditLimitAmt is not null and Reserve is not null
+      then cast( CreditLimitAmt as abap.dec( 21,2 ) ) -  cast( Reserve as abap.dec( 21,2 ) )
+      when CreditLimitAmt is not null and Reserve is null
+      then cast( CreditLimitAmt as abap.dec( 21,2 ) )
+      else 0
+      end      as DispatchableBalance,
+
+      //  DispatchableBalance,
+      @Semantics.quantity.unitOfMeasure: 'RequestedQuantityUnit'
+      // division( cast( DispatchableBalance as abap.dec( 31,2 ) ), 47200, 2 ) as DispatchableQty,//divide it with pending qty
+      case when GrossPricePerTon is not initial then
+      division( cast( DispatchableBalance as abap.dec( 15,2 ) ) , cast( GrossPricePerTon as abap.dec( 15,2 )) , 2)
+      else 0
+      end      as DispatchableQty,
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      ProjectedValue,
+      CompanyCodeCurrency,
+      @Semantics.amount.currencyCode: 'CompanyCodeCurrency'
+      // Receivable,
+      //      case
+      //      when Receivable is not null and Receivable > 0
+      //      then cast (Receivable as abap.dec( 21,2 ) )
+      //      when Receivable is null or Receivable < 0
+      //      then 0
+      //      else 0
+      //      end      as Receivable,
+      //      case
+      //      when Receivable is not null and Receivable > 0
+      //      then cast( ProjectedValue   as abap.dec(21,2) )
+      //         - ( cast( CreditLimitAmt as abap.dec(21,2) )
+      //           + cast( Reserve        as abap.dec(21,2) ) )
+      //      when Receivable is null or Receivable < 0
+      //      then 0
+      //      else 0
+      //      end      as Receivable,
+
+      //      cast( ProjectedValue   as abap.dec(21,2) )
+      //         - ( cast( CreditLimitAmt as abap.dec(21,2) )
+      //           + cast( Reserve        as abap.dec(21,2) ) ) as Receivable,
+
+      //      cast( ProjectedValue as abap.dec(21,2) )
+      //        - cast( CreditLimitAmt as abap.dec(21,2) ) as Receivable,
+
+      //      case
+      //          when CreditLimitAmt > 0
+      //          then cast( ProjectedValue as abap.dec(21,2) )
+      //               - ( cast( CreditLimitAmt as abap.dec(21,2) )
+      //                   + cast( Reserve as abap.dec(21,2) ) )
+      //
+      //          when CreditLimitAmt < 0
+      //          then cast( ProjectedValue as abap.dec(21,2) )
+      //               - ( cast( TotalAmount as abap.dec(21,2) )
+      //                   + cast( Reserve as abap.dec(21,2) ) )
+      //
+      //          else 0
+      //      end      as Receivable,
+
+      case
+          when coalesce(CreditLimitAmt, 0) >= 0 then
+               cast( ProjectedValue as abap.dec(21,2) )
+               - ( cast( coalesce(CreditLimitAmt, 0) as abap.dec(21,2) )
+                   + cast( Reserve as abap.dec(21,2) ) )
+
+          when coalesce(CreditLimitAmt, 0) < 0 then
+               cast( ProjectedValue as abap.dec(21,2) )
+               - ( cast( TotalAmount as abap.dec(21,2) )
+                   + cast( Reserve as abap.dec(21,2) ) )
+
+          else 0
+      end      as Receivable,
+
+      sales_order_no,
+      GrossPricePerTon,
+      PaymentTermsDescription, // ++ 11.09.25
+      @Semantics.amount.currencyCode: 'TransactionCurrency'
+      TotalAmount
+}

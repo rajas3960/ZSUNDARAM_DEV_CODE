@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Application Log of appl job debit credit 03",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "subobjects": [
+    {
+      "name": "ZAPP_DC_01_03_SUB",
+      "description": "Application Log 03"
+    }
+  ]
+}

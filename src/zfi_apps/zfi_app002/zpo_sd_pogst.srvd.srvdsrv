@@ -1,0 +1,4 @@
+@EndUserText.label: 'PO GST Integration Service Definition'
+define service ZPO_SD_POGST {
+  expose ZPO_C_POGST as MainPOGST;
+}

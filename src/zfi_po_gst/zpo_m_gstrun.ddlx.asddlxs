@@ -1,0 +1,187 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: {
+  headerInfo: {
+    typeName: 'GST Posting Run',
+    typeNamePlural: 'GST Posting Runs',
+    title: { type: #STANDARD, value: 'Companycode' }
+  }
+}
+
+annotate entity ZPO_C_GSTRUN with
+{
+
+  @UI.facet: [
+    {
+      id: 'Header',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Run Details',
+      position: 10
+    },
+
+    {
+      id: 'Items',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'PO Records',
+      targetElement: '_Items',
+      position: 20
+    }
+  ]
+
+
+  @UI.lineItem: [{ position: 10, label: 'Company Code' }]
+  @UI.identification: [{ position: 10, label: 'Company Code' }]
+  @Consumption.valueHelpDefinition: [
+    {
+      entity: {
+        name: 'I_CompanyCodeVH',
+        element: 'CompanyCode'
+      }
+    }
+  ]
+  Companycode;
+
+
+  @UI.lineItem: [{ position: 20, label: 'From Date' }]
+  @UI.identification: [{ position: 20, label: 'From Date' }]
+  Fromdate;
+
+
+  @UI.lineItem: [{ position: 30, label: 'To Date' }]
+
+@UI: {
+  identification: [
+    {
+      position: 30,
+      label: 'To Date'
+    },
+    {
+      type: #FOR_ACTION,
+      dataAction: 'SetDateRange',
+      label: 'Date Range',
+      position: 40
+    }
+//    {
+//      type: #FOR_ACTION,
+//      dataAction: 'GetPost',
+//      label: 'Get Post',
+//      position: 50
+//    }
+  ]
+}
+  Todate;
+
+
+  @UI.hidden: true
+  Status;
+
+
+  @UI.hidden: true
+  Postedcount;
+
+  @UI.hidden: true
+  Runid;
+
+
+  @UI.hidden: true
+  Createdby;
+
+
+  @UI.hidden: true
+  Createdat;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@Metadata.layer: #CUSTOMER
+//@UI: { headerInfo: {
+//  typeName: 'GST Posting Run',
+//  typeNamePlural: 'GST Posting Runs',
+//  title: { type: #STANDARD, value: 'Companycode' } } }
+//annotate entity ZPO_C_GSTRUN with
+//{
+//  @UI.facet: [
+//  { id: 'Header', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Run Details', position: 10 },
+//  { id: 'Items', purpose: #STANDARD, type: #LINEITEM_REFERENCE, label: 'PO Records', targetElement: '_Items', position: 20 }
+//  ]
+//
+//  @UI.lineItem: [{ position: 10, label: 'Company Code' }]
+//  @UI.identification: [{ position: 10, label: 'Company Code' }]
+//  //  @UI.selectionField: [{ position: 10 }]
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CompanyCodeVH', element: 'CompanyCode' } }]
+//  Companycode;
+//
+//  @UI.lineItem: [{ position: 20, label: 'From Date' }]
+//  @UI.identification: [{ position: 20, label: 'From Date' }]
+//  Fromdate;
+//
+//  @UI.lineItem: [{ position: 30, label: 'To Date' }]
+//@UI: {
+//  identification: [
+//
+//    {
+//      position: 30,
+//      label: 'To Date'
+//    },
+//
+//    {
+//      type: #FOR_ACTION,
+//      dataAction: 'SETDATERANGE',
+//      label: 'Date Range',
+//      position: 20
+//    },
+//
+//    {
+//      type: #FOR_ACTION,
+//      dataAction: 'GETPOST',
+//      label: 'Get Post',
+//      position: 30
+//    }
+//
+//  ]
+//}
+//  Todate;
+//
+//  //  @UI.lineItem: [{ position: 40, label: 'Status' }]
+//  //  @UI.identification: [{ position: 40, label: 'Status' }]
+//  @UI.hidden: true
+//  Status;
+//
+//  //  @UI.lineItem: [{ position: 50, label: 'Posted Count' }]
+//  //  @UI.identification: [{ position: 50, label: 'Posted Count' }]
+//  @UI.hidden: true
+//  Postedcount;
+//  @UI.identification: [{type: #FOR_ACTION,dataAction: 'SetDateRange',label: 'Date Range',position: 10}]
+//  //                       {type: #FOR_ACTION,dataAction: 'GetPost',label: 'Get Post',position: 20}]
+//  Runid;
+//
+//  @UI.hidden: true
+//  Createdby;
+//  @UI.hidden: true
+//  Createdat;
+//
+//}

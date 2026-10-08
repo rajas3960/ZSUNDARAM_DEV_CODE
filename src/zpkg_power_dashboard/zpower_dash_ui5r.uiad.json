@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Power",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Power"
+  },
+  "ui5AppDetails": {
+    "appId": "zpowerdashboard"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_EBFB33F2A87A6FAAAB3BC438BD71B11D2997554C_TM",
+    "semanticObject": "zpower_dashboard",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_EBFB33F2A87A6FAAAB3BC438BD71B11D2997554C_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Power",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

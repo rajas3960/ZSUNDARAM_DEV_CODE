@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Gate Pass App User Matrix",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "GatePass App - User Validation"
+  },
+  "ui5AppDetails": {
+    "appId": "zgatepassuser.zmmgatepassuser"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_184DDE88D44409CB378E002685A1C4795CD1CF80_TM",
+    "semanticObject": "zmm_gatepass_user",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_184DDE88D44409CB378E002685A1C4795CD1CF80_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "GatePass App - User Validation"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TmgForTaxInvoice', 
+    typeNamePlural: 'TmgForTaxInvoices', 
+    title: {
+      type: #STANDARD, 
+      label: 'TMG for Tax Invoice', 
+      value: 'CompanyCode'
+    }
+  }
+}
+annotate view ZI_TmgForTaxInvoice with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TmgForTaxInvoice', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'TMG for Tax Invoice', 
+    position: 1 
+  } ]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Email'
+  } ]
+  Email;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'ContactNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'ContactNo'
+  } ]
+  ContactNo;
+}

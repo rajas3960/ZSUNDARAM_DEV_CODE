@@ -1,0 +1,77 @@
+@Metadata.layer:#CUSTOMER
+
+@UI: {
+  headerInfo: { typeName: 'TDS Report',
+                typeNamePlural: 'TDS Report',
+                title: { type: #STANDARD, label: 'TDS Report', value: 'AccountingDocument' } },
+  presentationVariant: [{ sortOrder: [{ by: 'AccountingDocument', direction:  #ASC }] }] }
+  
+annotate entity ZTDS_PV
+    with 
+{
+   @UI: {  lineItem:       [ { position: 10, label: 'AccountingDocument' } ],
+          identification: [ { position: 10, label: 'AccountingDocument' } ],
+          selectionField: [ { position: 10}  ]}
+   AccountingDocument;
+  
+    @UI: {  lineItem:       [ { position: 30, label: 'Document Ref.' } ],
+           identification: [ { position: 30, label: 'Document Ref.' } ]} 
+   ReferenceDocument;
+  
+    @UI:   {  lineItem:       [ { position: 60, label: 'PostingDate' } ], 
+            identification: [ { position: 60, label: 'PostingDate' } ]}
+  PostingDate;
+
+  @UI:   {  lineItem:       [ { position: 80, label: 'Vendor Name' } ], 
+            identification: [ { position: 80, label: 'Vendor Name' } ]}
+ SupplierFullName;
+  
+   @UI:   {  lineItem:       [ { position: 90, label: 'GST Number' } ], 
+            identification: [ { position: 90, label: 'GST Number' } ]}
+ TaxNumber3; 
+  
+  @UI:   {  lineItem:       [ { position: 100, label: 'PAN Number' } ], 
+            identification: [ { position: 100, label: 'PAN Number' } ]}
+  BusinessPartnerPanNumber;
+  
+  @UI:   {  lineItem:       [ { position: 120, label: 'Taxable Value ' } ], 
+            identification: [ { position: 120, label: 'Taxable Value ' } ]}
+ WhldgTaxBaseAmtInTransacCrcy;
+  
+  @UI:   {  lineItem:       [ { position: 140, label: 'IGST Amount' } ], 
+            identification: [ { position: 140, label: 'IGST Amount   ' } ]}
+  igstamount;
+  
+  @UI:   {  lineItem:       [ { position: 160, label: 'CGST Amount' } ], 
+            identification: [ { position: 160, label: 'CGST Amount' } ]}
+  cgstamount;
+  
+  @UI:   {  lineItem:       [ { position: 180, label: 'SGST Amount' } ], 
+            identification: [ { position: 180, label: 'SGST Amount' } ]}
+  sgstamount;
+  
+    @UI:   {  lineItem:       [ { position: 200, label: 'IGST TDS Amount' } ], 
+            identification: [ { position: 200, label: 'IGST TDS Amount   ' } ]}
+  IGSTTDSAMOUNT;
+  
+  @UI:   {  lineItem:       [ { position: 210, label: 'CGST TDS Amount' } ], 
+            identification: [ { position: 210, label: 'CGST TDS Amount' } ]}
+  CGSTTDSAMOUNT;
+  
+  @UI:   {  lineItem:       [ { position: 220, label: 'SGST TDS Amount' } ], 
+            identification: [ { position: 220, label: 'SGST TDS Amount' } ]}
+  SGSTTDSAMOUNT;
+   
+  @UI:   {  lineItem:       [ { position: 230, label: 'Total Value' } ], 
+            identification: [ { position: 230, label: 'Total Value' } ]}
+  TotalValue;
+  
+  @UI:   {  lineItem:       [ { position: 240, label: 'TDS Amount' } ], 
+            identification: [ { position: 240, label: 'TDS Amount' } ]}
+  TDSAmount;
+  
+    @UI:   {  lineItem:       [ { position: 260, label: 'Rate' } ], 
+            identification: [ { position: 260, label: 'Rate' } ]}
+  WithholdingTaxPercent;
+    
+}

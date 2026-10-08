@@ -1,0 +1,112 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: {
+typeName: 'Quality Print',
+typeNamePlural: 'Quality Print',
+title: { type: #STANDARD}
+}}
+@UI: {
+  presentationVariant: [{ sortOrder: [{ by: 'Billingdoc'}, { by: 'Billingitem', direction: #ASC } ],
+                          visualizations: [{type: #AS_LINEITEM}],
+                          text: 'Item No' }]
+                          }
+annotate view ZC_QUALITY_ITM with
+{
+  @UI.facet:
+   [
+   {
+   id: 'GeneralI',
+   isSummary: true,
+   label: 'Characteristics!',
+   type: #COLLECTION,
+   purpose: #STANDARD
+   }
+   ]
+
+  @UI.hidden: true
+  Id;
+
+  @UI.hidden: true
+  Item;
+
+  @UI.hidden: true
+  Billingdoc;
+
+  @UI.hidden: true
+  Billingitem;
+  @UI: {    identification: [{position: 21 }],
+      lineItem: [{position: 21 }],
+      fieldGroup: [{qualifier: 'GeneralData1',position: 21,importance: #HIGH }]
+  }
+  batch;
+  @UI: {    identification: [{position: 22 }],
+      lineItem: [{position: 22 }],
+      fieldGroup: [{qualifier: 'GeneralData1',position: 22,importance: #HIGH }]
+  }
+  quantity;
+  //  @UI: {    identification: [{position: 23 }],
+  //        lineItem: [{position: 23 }],
+  //        fieldGroup: [{qualifier: 'GeneralData1',position: 23,importance: #HIGH }]
+  //  }
+  //  Uom;
+  @UI: {    identification: [{position: 30 }],
+            lineItem: [{position: 30 }],
+            fieldGroup: [{qualifier: 'GeneralData1',position: 30,importance: #HIGH }]
+  }
+  CharName;
+
+  @UI: {    identification: [{position: 40 }],
+             lineItem: [{position: 40 }],
+             fieldGroup: [{qualifier: 'GeneralData1',position: 40,importance: #HIGH }]
+     }
+  CharDesc;
+
+  @UI: {    identification: [{position: 60 }],
+           lineItem: [{position: 60 }],
+           fieldGroup: [{qualifier: 'GeneralData1',position: 60,importance: #HIGH }]
+  }
+  MaxLimit;
+
+  @UI: {    identification: [{position: 50 }],
+           lineItem: [{position: 50 }],
+           fieldGroup: [{qualifier: 'GeneralData1',position: 50,importance: #HIGH }]
+  }
+  MinLimit;
+
+  @UI: {    identification: [{position: 62 }],
+      lineItem: [{position: 62 }],
+      fieldGroup: [{qualifier: 'GeneralData1',position: 62,importance: #HIGH }]
+  }
+  Uom;
+
+  @UI: {    identification: [{position: 70 }],
+           lineItem: [{position: 70 }],
+           fieldGroup: [{qualifier: 'GeneralData1',position: 70,importance: #HIGH }]
+  }
+  Results;
+
+
+
+
+  @UI: {    identification: [{position: 90 }],
+            lineItem: [{position: 90 }],
+            fieldGroup: [{qualifier: 'GeneralData1',position: 90,importance: #HIGH }]
+
+  }
+  Uomname;
+
+  @UI: {    identification: [{position: 100 }],
+            lineItem: [{position: 100 }],
+            fieldGroup: [{qualifier: 'GeneralData1',position: 100,importance: #HIGH }]
+
+  }
+  @UI.hidden: true
+  Test_Method_Text;
+
+  @UI: {    identification: [{position: 110 }],
+            lineItem: [{position: 110 }],
+            fieldGroup: [{qualifier: 'GeneralData1',position: 110,importance: #HIGH }]
+
+  }
+  Test_Range;
+
+}

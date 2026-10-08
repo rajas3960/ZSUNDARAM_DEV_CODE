@@ -1,0 +1,14 @@
+unmanaged implementation in class zbp_i_trans_api unique;
+strict ( 1 );
+
+define behavior for ZI_TRANS_API //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+//  field ( readonly ) Transactionid, Utr;
+}

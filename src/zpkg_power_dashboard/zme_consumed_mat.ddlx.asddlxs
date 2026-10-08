@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_CONSUMED_MAT with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Consumed Material', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  Referenceid;
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  Turbine;
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  Description;
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  Material;
+  @UI.fieldGroup: [ { position: 35, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+  Materialdescription;
+  @UI.fieldGroup: [ { position: 45, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+  Quantity;
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'BaseUnit', name: 'ZV_UOM_F4' },
+                                   distinctValues: true,
+                                   useForValidation: true } ]
+  Uom;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'StorageLocation', name: 'ZV_STORAGELOC_F4_2' },
+                                     distinctValues: true,
+                                     useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 65, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 65 } ]
+  @UI.lineItem: [ { position: 65 } ]
+  Storagelocation;
+
+
+}

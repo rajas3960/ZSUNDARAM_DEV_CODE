@@ -1,0 +1,7 @@
+@EndUserText.label: 'SD Quality Print'
+define service ZSD_QLTYPRINT {
+  expose ZI_QAL_PRINT;
+  expose ZI_QAL_PRINT_ITM;
+  expose zi_qal_print_itm2;
+  expose zi_qal_print_itm3;
+}

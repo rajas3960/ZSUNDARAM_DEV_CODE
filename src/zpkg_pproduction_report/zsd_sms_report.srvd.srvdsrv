@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For SMS Report'
+define service ZSD_SMS_REPORT {
+  expose ZSMS_REPORT3;
+}

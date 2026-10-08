@@ -1,0 +1,5 @@
+@EndUserText.label: 'GST Integration Service Definition'
+define service ZGST_INVOICE_SD {
+  expose ZGST_INVOICE_UPPV as MainHead;
+  expose ZGST_STATUS;
+}

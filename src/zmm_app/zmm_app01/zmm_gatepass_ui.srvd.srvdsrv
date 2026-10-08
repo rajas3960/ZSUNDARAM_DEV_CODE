@@ -1,0 +1,6 @@
+@EndUserText.label: 'Gate Pass Application UI Version'
+define service ZMM_GATEPASS_UI {
+  expose ZMM_GATEHEAD_PVC as ZC_GATEHEAD;
+  expose ZMM_POHEAD_PVC   as ZC_PO_DETAILS;
+  expose ZMM_GATEITEM_PVC as ZC_GATEITEM;
+}

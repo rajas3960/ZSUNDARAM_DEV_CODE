@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINITION'
+define service ZSD_POGST {
+  expose ZPO_C_POGSTT;
+}

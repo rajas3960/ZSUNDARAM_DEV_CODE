@@ -1,0 +1,13 @@
+@EndUserText.label: 'Service Definition For TMT'
+define service ZSD_TMT {
+  expose ZC_TMT_HEAD;
+  expose ZC_TMT_PROD;
+  expose ZC_TMT_BYPROD;
+  expose ZC_METAL_BAL;
+  expose ZC_CONS_BUNDLE;
+  expose ZC_CONSUMED;
+  expose ZC_BUNDLE_GEN;
+  expose ZVGRADEF4;
+  expose ZVSECTIONF4;
+  expose ZVBILLETHEATF4_006;
+}

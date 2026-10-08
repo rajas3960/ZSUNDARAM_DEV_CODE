@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "GST Input Register - 2B"
+  },
+  "ui5AppDetails": {
+    "appId": "zinputregpo.zpoinputreg"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_238D79EF71CE92510A9060E7FC7186EB7374BD6F_TM",
+    "semanticObject": "zpo_input_reg",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_238D79EF71CE92510A9060E7FC7186EB7374BD6F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "GST Input Register - 2B"
+      }
+    }
+  ]
+}

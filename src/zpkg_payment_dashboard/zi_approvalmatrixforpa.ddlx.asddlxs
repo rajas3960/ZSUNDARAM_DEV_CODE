@@ -1,0 +1,55 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ApprovalMatrixForPa', 
+    typeNamePlural: 'ApprovalMatrixForPas', 
+    title: {
+      type: #STANDARD, 
+      label: 'Approval Matrix For Payments', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZI_ApprovalMatrixForPa with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_ApprovalMatrixForPa', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Approval Matrix For Payments', 
+    position: 1 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Userid;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Apprlevel'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Apprlevel'
+  } ]
+  Apprlevel;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  Final;
+}

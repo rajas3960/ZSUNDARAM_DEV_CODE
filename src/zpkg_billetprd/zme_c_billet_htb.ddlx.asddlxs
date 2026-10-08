@@ -1,0 +1,56 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Balancing', value: 'referenceid' } } }
+annotate entity ZC_BILLET_HTB with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Heat Balancing', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  id;
+  @UI.hidden: true
+  item;
+  @UI.hidden: true
+  referenceid;
+
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  heatnumber;
+
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  heatquantity;
+
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 15,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  billetquantity;
+
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.hidden: true
+  byproductquantity;
+
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.fieldGroup: [ { position: 25,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.hidden: true
+  balancequantity;
+
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.hidden: true
+  yield;
+
+  @UI.lineItem: [ { position: 35 } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.fieldGroup: [ { position: 35,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Uom;
+}

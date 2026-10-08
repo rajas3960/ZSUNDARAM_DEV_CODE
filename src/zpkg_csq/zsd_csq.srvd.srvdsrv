@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for CSQ'
+define service ZSD_CSQ {
+  expose ZC_CSQ_ITEM;
+}

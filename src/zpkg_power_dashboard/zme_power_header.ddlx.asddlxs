@@ -1,0 +1,128 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo.title: { type: #STANDARD, label: 'Power Dashboard', value: 'Referenceid' }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'Referenceid', direction: #DESC } ],
+                             visualizations: [ { type: #AS_LINEITEM } ],
+                             text: 'Power Dashboard' } ]
+annotate entity ZC_POWER_HEADER with
+{
+  @UI.facet: [ { id: 'GeneralZata',
+                   isSummary: true,
+                   label: 'Power Dashboard',
+                   position: 5,
+                   type: #COLLECTION },
+                 { type: #FIELDGROUP_REFERENCE,
+                   targetQualifier: 'GeneralData1',
+                   parentId: 'GeneralZata',
+                   position: 10,
+                   label: 'Header',
+                   id: 'GeneralData1' },
+  //                 { type: #FIELDGROUP_REFERENCE,
+  //                   targetQualifier: 'GeneralData2',
+  //                   parentId: 'GeneralZata',
+  //                   position: 20,
+  //                   label: 'Characteristics',
+  //                   id: 'GeneralData2' },
+                 { type: #FIELDGROUP_REFERENCE,
+                   targetQualifier: 'GeneralData3',
+                   parentId: 'GeneralZata',
+                   position: 25,
+                   label: 'Status',
+                   id: 'GeneralData3' },
+                 { id: 'GeneralLine1',
+                   label: 'Power Generation',
+                   type: #LINEITEM_REFERENCE,
+                   targetElement: '_POW',
+                   position: 20 },
+                   { id: 'GeneralLine2',
+                   label: 'Consumed Materials',
+                   type: #LINEITEM_REFERENCE,
+                   targetElement: '_MAT',
+                   position: 30 },
+                 { id: 'GeneralLine3',
+                   label: 'Power Consumption',
+                   type: #LINEITEM_REFERENCE,
+                   targetElement: '_CONS',
+                   position: 40 } ]
+
+
+
+  @UI.hidden: true
+  Id;
+
+
+  @UI.fieldGroup: [ { position: 3, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 3 } ]
+  @UI.lineItem: [ { position: 3 } ]
+  @UI.selectionField: [ { position: 3 } ]
+  Referenceid;
+
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'value_low', name: 'ZV_PLANT_F4' },
+                                        distinctValues: true,
+                                        useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [ { position: 5 } ]
+  Plant;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'ManufacturingOrder', name: 'ZV_PRODUCTION_ORDER_F4' },
+                                        distinctValues: true,
+                                        useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.selectionField: [ { position: 15 } ]
+  Productionorder;
+
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.selectionField: [ { position: 15 } ]
+  material;
+
+  @UI.fieldGroup: [ { position: 17, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 17 } ]
+  @UI.lineItem: [ { position: 17 } ]
+  @UI.selectionField: [ { position: 17 } ]
+  materialdesc;
+
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.selectionField: [ { position: 25 } ]
+  Postingdate;
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  Status;
+  @UI.fieldGroup: [ { position: 27, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 27 } ]
+  @UI.lineItem: [ { position: 27 } ]
+  Activity;
+  @UI.fieldGroup: [ { position: 28, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 28 } ]
+  @UI.lineItem: [ { position: 28 } ]
+  NoOfTurbine;
+  @UI.identification: [{position: 50 },  { type: #FOR_ACTION, dataAction: 'CONSISTENCY', label: 'Consistency Check'} ]
+  @UI.fieldGroup: [ { position: 50, qualifier: 'GeneralData3', importance: #HIGH } ]
+  Consistency;
+  @UI.identification: [{position: 50 },  { type: #FOR_ACTION, dataAction: 'POSTCNF', label: 'Post Confirmation'} ]
+  @UI.fieldGroup: [ { position: 50, qualifier: 'GeneralData3', importance: #HIGH } ]
+  Postcnf;
+  @UI.identification: [{position: 60 },  { type: #FOR_ACTION, dataAction: 'POSTGEN', label: 'Post Power Generation'} ]
+  @UI.fieldGroup: [ { position: 60, qualifier: 'GeneralData3', importance: #HIGH } ]
+  Postgen;
+  @UI.identification: [{position: 70 },  { type: #FOR_ACTION, dataAction: 'POSTCONS', label: 'Post Material Consumption'} ]
+  @UI.fieldGroup: [ { position: 70, qualifier: 'GeneralData3', importance: #HIGH } ]
+  postcons;
+  @UI.identification: [{position: 80 },  { type: #FOR_ACTION, dataAction: 'POWER', label: 'Post Power Consumption'} ]
+  @UI.fieldGroup: [ { position: 80, qualifier: 'GeneralData3', importance: #HIGH } ]
+  Power;
+  @UI.identification: [{position: 85 },  { type: #FOR_ACTION, dataAction: 'GETCONS', label: 'Fetch Consumption'} ]
+  @UI.fieldGroup: [ { position: 85, qualifier: 'GeneralData3', importance: #HIGH } ]
+  getcons;
+  @UI.identification: [{position: 85 },  { type: #FOR_ACTION, dataAction: 'TRANSFER', label: 'Transfer'} ]
+  @UI.fieldGroup: [ { position: 85, qualifier: 'GeneralData3', importance: #HIGH } ]
+  transfer;
+
+}

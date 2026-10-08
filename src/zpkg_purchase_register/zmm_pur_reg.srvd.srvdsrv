@@ -1,0 +1,4 @@
+@EndUserText.label: 'Definition For Purchase Register'
+define service ZMM_PUR_REG {
+  expose ZR_PURCHASE_REG_003 as ZR_PURCHASE_REG_001;
+}

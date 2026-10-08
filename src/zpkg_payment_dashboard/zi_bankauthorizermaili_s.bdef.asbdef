@@ -1,0 +1,73 @@
+managed with additional save implementation in class ZBP_I_BANKAUTHORIZERMAILI_S unique;
+strict;
+with draft;
+define behavior for ZI_BankAuthorizerMailI_S alias BankAuthorizerMaAll
+draft table ZTMGBANKAUT_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _BankAuthorizerMailI { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+
+}
+
+define behavior for ZI_BankAuthorizerMailI alias BankAuthorizerMailI ##UNMAPPED_FIELD
+persistent table ZTMGBANKAUTHMAIL
+draft table ZTMGBANKAUTHM_D
+lock dependent by _BankAuthorizerMaAll
+authorization dependent by _BankAuthorizerMaAll
+{
+  field ( mandatory : create )
+   Email;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Email;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZTMGBANKAUTHMAIL
+  {
+    Email = EMAIL;
+  }
+
+  association _BankAuthorizerMaAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+
+}

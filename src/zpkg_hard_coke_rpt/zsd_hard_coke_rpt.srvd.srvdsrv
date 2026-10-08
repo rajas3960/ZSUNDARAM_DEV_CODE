@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defn for hard coke report'
+define service ZSD_HARD_COKE_RPT {
+  expose ZC_HARD_COKE_RPT;
+}

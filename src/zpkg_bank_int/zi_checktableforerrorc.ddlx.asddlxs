@@ -1,0 +1,31 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'CheckTableForErrorC', 
+    typeNamePlural: 'CheckTableForErrorCs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Check Table For Error Count', 
+      value: 'ErrorCount'
+    }
+  }
+}
+annotate view ZI_CheckTableForErrorC with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'ErrorCount'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'ErrorCount'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_CheckTableForErrorC', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Check Table For Error Count', 
+    position: 1 
+  } ]
+  ErrorCount;
+}

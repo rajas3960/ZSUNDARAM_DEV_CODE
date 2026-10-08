@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Register Freight Report"
+  },
+  "ui5AppDetails": {
+    "appId": "purchaseregreport.zmmpurregreport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_79DC5F88C266FA27B4FCC524ACDEB1B6D87EA836_TM",
+    "semanticObject": "zmm_pur_reg",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_79DC5F88C266FA27B4FCC524ACDEB1B6D87EA836_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Register Freight Report"
+      }
+    }
+  ]
+}

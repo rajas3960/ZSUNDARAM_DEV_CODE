@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_ApprovalMatrixForPa_S'
+define service ZUI_APPROVALMATRIXFORPA {
+  expose ZI_APPROVALMATRIXFORPA_S as ApprovalMatrixFoAll;
+  expose ZI_APPROVALMATRIXFORPA as ApprovalMatrixForPa;
+}

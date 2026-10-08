@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_F4ForDepartment_S'
+define service ZUI_F4FORDEPARTMENT {
+  expose ZI_F4FORDEPARTMENT_S as F4ForDepartmentAll;
+  expose ZI_F4FORDEPARTMENT as F4ForDepartment;
+}

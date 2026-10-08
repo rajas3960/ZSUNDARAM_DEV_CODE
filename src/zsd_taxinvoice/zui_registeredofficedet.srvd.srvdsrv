@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_RegisteredOfficeDet_S'
+define service ZUI_REGISTEREDOFFICEDET {
+  expose ZI_REGISTEREDOFFICEDET_S as RegisteredOfficeAll;
+  expose ZI_REGISTEREDOFFICEDET as RegisteredOfficeDet;
+}

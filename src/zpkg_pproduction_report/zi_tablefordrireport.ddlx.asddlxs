@@ -1,0 +1,45 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TableForDriReport', 
+    typeNamePlural: 'TableForDriReports', 
+    title: {
+      type: #STANDARD, 
+      label: 'Table for DRI report', 
+      value: 'Material'
+    }
+  }
+}
+annotate view ZI_TableForDriReport with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TableForDriReport', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Table for DRI report', 
+    position: 1 
+  } ]
+  Material;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Materialdesc;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Plant;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Maintain User Authorization",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Maintain User Authorization"
+  },
+  "ui5AppDetails": {
+    "appId": "zusrauth.zusrauth"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_640F2166BA7FE4724D648C30F070E47ECB31BCFC_TM",
+    "semanticObject": "zusrauth",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_640F2166BA7FE4724D648C30F070E47ECB31BCFC_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Maintain User Authorization"
+      }
+    }
+  ]
+}

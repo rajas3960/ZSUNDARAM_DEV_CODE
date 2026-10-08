@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000020</LENG>
+    <OUTPUTLEN>000020</OUTPUTLEN>
+    <LOWERCASE>X</LOWERCASE>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Status</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>In Approva</DOMVALUE_L>
+     <DDTEXT>In Approval</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>UTR Genera</DOMVALUE_L>
+     <DDTEXT>UTR Generated</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>Failed</DOMVALUE_L>
+     <DDTEXT>Failed</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>Rejected</DOMVALUE_L>
+     <DDTEXT>Rejected</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDMN_PAYSTATUS</DOMNAME>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>Sent to Ba</DOMVALUE_L>
+     <DDTEXT>Sent to Bank</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

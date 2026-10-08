@@ -1,0 +1,98 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { presentationVariant: [{ sortOrder: [{ by: 'Reservation', direction:  #DESC }],
+                               visualizations: [{ type: #AS_LINEITEM }],
+                               text: 'Reservation' }] }
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Reservation', value: 'Reservation' } } }
+annotate entity zc_resvttpp with
+{
+
+  @UI.facet:
+  [{ id: 'header', isSummary: true, label: 'Reservation Details', type: #COLLECTION },
+   { id: 'Reservation',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Reservation',
+                parentId: 'GeneralInfo',
+                position: 10 },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg1', parentId: 'header', position: 10, label: 'Reservation Header', id: 'fg1' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg2', parentId: 'header', position: 15, label: 'User Details', id: 'fg2' },
+
+   { id: 'item', label: 'Reservation Item', type: #LINEITEM_REFERENCE, position : 25, targetElement: '_Item' }]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'fg1', importance: #HIGH } ]
+  @UI.selectionField: [ { position: 10 } ]
+  Reservation;
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 }, { type: #FOR_ACTION, dataAction: 'APPR', label: 'Print', iconUrl: 'sap-icon://close-command-field' } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'fg1', importance: #HIGH } ]
+  OrderID;
+  @UI.lineItem: [ { position: 15 } , { criticality: 'Criticality' } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 50,  qualifier: 'fg2', importance: #HIGH } ]
+  @UI.selectionField: [ { position: 10 } ]
+  status;
+  @UI.hidden: true
+  Criticality;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'fg1', importance: #HIGH } ]
+  GoodsMovementType;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'fg1', importance: #HIGH } ]
+  CostCenter;
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.fieldGroup: [ { position: 40,  qualifier: 'fg1', importance: #HIGH } ]
+  ProfitCenter;
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.fieldGroup: [ { position: 50,  qualifier: 'fg1', importance: #HIGH } ]
+  GoodsRecipientName;
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.fieldGroup: [ { position: 60,  qualifier: 'fg1', importance: #HIGH } ]
+  Customer;
+  @UI.lineItem: [ { position: 70 } ]
+  @UI.identification: [ { position: 70 } ]
+  @UI.fieldGroup: [ { position: 70,  qualifier: 'fg1', importance: #HIGH } ]
+  WBSElementInternalID;
+  @UI.lineItem: [ { position: 80 } ]
+  @UI.identification: [ { position: 80 } ]
+  @UI.fieldGroup: [ { position: 80,  qualifier: 'fg1', importance: #HIGH } ]
+  IssuingOrReceivingPlant;
+  @UI.lineItem: [ { position: 90 } ]
+  @UI.identification: [ { position: 90 } ]
+  @UI.fieldGroup: [ { position: 90,  qualifier: 'fg1', importance: #HIGH } ]
+  IssuingOrReceivingStorageLoc;
+  @UI.lineItem: [ { position: 100 } ]
+  @UI.identification: [ { position: 100 } ]
+  @UI.fieldGroup: [ { position: 100,  qualifier: 'fg1', importance: #HIGH } ]
+  ResvnVerificationCompanyCode;
+  @UI.lineItem: [ { position: 110 } ]
+  @UI.identification: [ { position: 110 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'fg2', importance: #HIGH } ]
+  UserID;
+  @UI.lineItem: [ { position: 120 } ]
+  @UI.identification: [ { position: 120 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'fg2', importance: #HIGH } ]
+  CreationDateTime;
+  @UI.lineItem: [ { position: 130 } ]
+  @UI.identification: [ { position: 130 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'fg2', importance: #HIGH } ]
+  LastChangedByUser;
+  @UI.lineItem: [ { position: 140 } ]
+  @UI.identification: [ { position: 140 } ]
+  @UI.fieldGroup: [ { position: 40,  qualifier: 'fg2', importance: #HIGH } ]
+  LastChangeDateTime;
+  @UI.hidden: true
+  tpprint;
+  @UI: { fieldGroup: [{ position: 150, qualifier: 'fg1' , label: 'Check Attachment' }] }
+  Attachment;
+  @UI.hidden: true
+  Mimetype;
+  @UI.hidden: true
+  Filename;
+}

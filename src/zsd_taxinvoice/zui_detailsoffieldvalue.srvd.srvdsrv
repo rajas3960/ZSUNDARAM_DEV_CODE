@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_DetailsOfFieldValue_S'
+define service ZUI_DETAILSOFFIELDVALUE {
+  expose ZI_DETAILSOFFIELDVALUE_S as DetailsOfFieldVaAll;
+  expose ZI_DETAILSOFFIELDVALUE as DetailsOfFieldValue;
+}

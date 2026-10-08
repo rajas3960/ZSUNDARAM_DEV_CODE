@@ -1,0 +1,118 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BankDetails', 
+    typeNamePlural: 'BankDetailss', 
+    title: {
+      type: #STANDARD, 
+      label: 'Bank Details', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_BankDetails with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyBankDetails', 
+    label: 'Copy Selected Entry', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_BankDetails', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Bank Details', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'CompanyCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'CompanyCode'
+  } ]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'AccountNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'AccountNumber'
+  } ]
+  AccountNumber;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'BankName'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'BankName'
+  } ]
+  BankName;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'BankAddress'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'BankAddress'
+  } ]
+  BankAddress;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'IfscCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'IfscCode'
+  } ]
+  IfscCode;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

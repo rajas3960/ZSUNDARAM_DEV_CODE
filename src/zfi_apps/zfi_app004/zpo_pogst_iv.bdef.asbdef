@@ -1,0 +1,25 @@
+managed implementation in class zbp_po_pogst_iv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPO_POGST_IV //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+draft table zpo_gst_sts_d
+lock master total etag DocumentDate
+authorization master ( instance )
+etag master DocumentDate
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) FiscalYear, CompanyCode, AccountingDocument, SourceLedger, LedgerGLLineItem;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) POGST_POST result [1] $self;
+}

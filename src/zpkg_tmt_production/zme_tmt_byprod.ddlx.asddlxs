@@ -1,0 +1,40 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.title: { type: #STANDARD, label: 'TMT By Product', value: 'Material' }
+annotate view ZC_TMT_BYPROD with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Consumption', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  Referenceid;
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  Material;
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  Materialdes;
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  Quantity;
+  @UI.hidden: true
+  Uom;
+   @Consumption.valueHelpDefinition: [ { entity: { element: 'SLOC', name: 'ZVSTRLOC' },
+                                           distinctValues: true,
+                                           useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  Storageloc;
+
+
+}

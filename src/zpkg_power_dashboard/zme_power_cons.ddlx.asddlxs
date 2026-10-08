@@ -1,0 +1,100 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_POWER_CONS with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Power Concumption', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  Referenceid;
+
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'ManufacturingOrder', name: 'ZV_PRODUCTION_ORDER_F4_2' },
+                                      distinctValues: true,
+                                      useForValidation: true } ]
+  Productionorderno;
+
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @Consumption.valueHelpDefinition: [{ entity:
+  {name: 'ZV_PLANTNAME_F4' , element: 'Plant' },
+  distinctValues: true,
+  additionalBinding: [{ localElement: 'Plantname',
+                element: 'Plantname',
+                usage: #FILTER_AND_RESULT
+                 }]
+  }]
+  Plant;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.hidden: true
+  Plantname;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Material;
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.fieldGroup: [ { position: 40,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Materialdescription;
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.fieldGroup: [ { position: 60,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Consumption;
+  @UI.lineItem: [ { position: 70 } ]
+  @UI.identification: [ { position: 70 } ]
+  @UI.fieldGroup: [ { position: 70,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Uom;
+
+  @UI.lineItem: [ { position: 75 } ]
+  @UI.identification: [ { position: 75 } ]
+  @UI.fieldGroup: [ { position: 75,  qualifier: 'GeneralData1', importance: #HIGH } ]
+
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'StorageLocation', name: 'ZV_STORAGELOC_F4_2' },
+                                     distinctValues: true,
+                                     useForValidation: true,
+  additionalBinding: [{ localElement: 'Plant',
+                element: 'Plant',
+                usage: #FILTER
+                 },
+                 { localElement: 'Material',
+                element: 'Product',
+                usage: #FILTER
+                 }
+                 ]
+
+                                      } ]
+
+  storagelocation;
+
+  @UI.lineItem: [ { position: 85 } ]
+  @UI.identification: [ { position: 85 } ]
+  @UI.fieldGroup: [ { position: 85,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @Consumption.valueHelpDefinition: [{ entity:
+  {name: 'ZV_COSTCENTER_F4_2' , element: 'Costcenter' },
+  distinctValues: true,
+  additionalBinding: [{ localElement: 'Costcentertext',
+              element: 'Costcentertext',
+              usage: #FILTER_AND_RESULT
+               }]
+  }]
+  @UI.hidden: true
+  Costcenter;
+  @UI.lineItem: [ { position: 90 } ]
+  @UI.identification: [ { position: 90 } ]
+  @UI.fieldGroup: [ { position: 90,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.hidden: true
+  Costcentertext;
+
+
+}

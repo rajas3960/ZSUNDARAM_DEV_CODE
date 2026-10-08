@@ -1,0 +1,92 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Input Register ',
+                typeNamePlural:'Input Register',
+                title: { type: #STANDARD, label: 'Input Register', value: 'CompanyCode' }
+              }
+     }
+annotate entity ZC_INPUTREGN_FINAL with
+{
+  @UI.facet:
+       [{id: 'GeneralData', isSummary: true, label: 'Item Details', type: #IDENTIFICATION_REFERENCE, position: 5},
+       { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralData', position: 10, label: 'Input Register', id: 'GeneralData1' }]
+
+  @UI: { lineItem: [ { position: 5} ], identification: [{position: 5 }], selectionField: [{ position: 5 }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ element: 'value_low', name:'ZCDS_COMAPNYCODE_F4' },
+  distinctValues: true,
+  useForValidation: true }]
+  CompanyCode;
+  @UI.hidden: true
+  FiscalYear;
+//  @UI: { lineItem: [ { position: 10} ], identification: [{position: 10 }], selectionField: [{ position: 10 }] }
+  @UI.hidden: true
+  ProductType;
+  @UI: { lineItem: [ { position: 20} ], identification: [{position: 20 }], selectionField: [{ position: 20 }] }
+  AccountingDocument;
+  @UI: { lineItem: [ { position: 30} ], identification: [{position: 30 }], selectionField: [{ position: 30 }] }
+  AccountingDocumentType;
+  @UI.hidden: true
+  AccountingDocumentItem;
+  @UI.hidden: true
+  AccountingDocumentItemType;
+  @UI: { lineItem: [ { position: 35} ], identification: [{position: 35 }]}
+  Invoiceno;
+  @UI: { lineItem: [ { position: 40} ], identification: [{position: 40 }],selectionField: [{ position: 40 }] }
+  DocumentDate;
+  @UI: { lineItem: [ { position: 50} ], identification: [{position: 50 }] }
+  creationdate;
+  @UI: { lineItem: [ { position: 60} ], identification: [{position: 60 }] }
+  ProfitCenter;
+  @UI: { lineItem: [ { position: 70} ], identification: [{position: 70 }] }
+  PurchasingDocument;
+  @UI: { lineItem: [ { position: 80} ], identification: [{position: 80 }] }
+  PurchaseOrderDate;
+  @UI: { lineItem: [ { position: 90} ], identification: [{position: 90 }],selectionField: [{ position: 90 }] }
+  GLAccount;
+  @UI: { lineItem: [ { position: 100} ], identification: [{position: 100 }] }
+  GLAccountLongName;
+  @UI: { lineItem: [ { position: 110} ], identification: [{position: 110 }],selectionField: [{ position: 110 }] }
+  IN_GSTPartner;
+  @UI: { lineItem: [ { position: 120} ], identification: [{position: 120 }] }
+  SupplierName;
+  @UI: { lineItem: [ { position: 130} ], identification: [{position: 130 }] }
+  DocumentReferenceID;
+  //  Invoiceno;
+  @UI: { lineItem: [ { position: 140} ], identification: [{position: 140 }] }
+  Invoicedate;
+  @UI: { lineItem: [ { position: 150} ], identification: [{position: 150 }] }
+  Product;
+  @UI: { lineItem: [ { position: 160} ], identification: [{position: 160 }] }
+  ProductName;
+  @UI: { lineItem: [ { position: 170} ], identification: [{position: 170 }] }
+  AmountInTransactionCurrency;
+  @UI: { lineItem: [ { position: 180} ], identification: [{position: 180 }] }
+  TaxCode;
+  @UI: { lineItem: [ { position: 190} ], identification: [{position: 190 }] }
+  TaxCodeName;
+  @UI: { lineItem: [ { position: 191} ], identification: [{position: 191 }] }
+  CGST;
+  @UI: { lineItem: [ { position: 192} ], identification: [{position: 192 }] }
+  SGST;
+  @UI: { lineItem: [ { position: 193} ], identification: [{position: 193 }] }
+  IGST;
+  @UI: { lineItem: [ { position: 195} ], identification: [{position: 195 }] }
+  Rcmstat;
+  @UI: { lineItem: [ { position: 196} ], identification: [{position: 196 }] }
+  RCMCGST;
+  @UI: { lineItem: [ { position: 197} ], identification: [{position: 197 }] }
+  RCMSGST;
+  @UI: { lineItem: [ { position: 198} ], identification: [{position: 198 }] }
+  RCMIGST;
+  @UI: { lineItem: [ { position: 200} ], identification: [{position: 200 }] }
+  ttlinvvalue;
+  @UI: { lineItem: [ { position: 210} ], identification: [{position: 210 }] }
+  TransactionCurrency;
+  @UI: { lineItem: [ { position: 220} ], identification: [{position: 220 }] }
+  TaxNumber3;
+  @UI: { lineItem: [ { position: 230} ], identification: [{position: 230}] }
+  RegionName;
+  @UI: { lineItem: [ { position: 240} ], identification: [{position: 240 }] }
+  IN_HSNOrSACCode;
+
+}

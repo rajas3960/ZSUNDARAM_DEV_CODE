@@ -1,0 +1,5 @@
+@EndUserText.label: 'Credit - Debit Service Definition'
+define service ZFI_FORM_SD {
+  expose ZFI_FORM_OUTPUT as MainHeader;
+  expose ZFI_ITEM_OUT    as MainItem;
+}

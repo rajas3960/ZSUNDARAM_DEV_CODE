@@ -1,0 +1,45 @@
+managed implementation in class zbp_pur_reg_hre unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPUR_REG_HRE alias _Hdr
+with unmanaged save
+//persistent table zpur_reg_hdr
+draft table zpur_reg_hdr_d
+lock master
+total etag createdon
+authorization master ( instance )
+etag master createdon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly : update, numbering : managed ) Uuid;
+  field (readonly) Createdby,Createdon;
+  field ( mandatory ) PurchaseOrder,Fromdate,Todate;
+  association _Items { create; with draft; }
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination gt_data1 on save { create; update; }
+  mapping for zpur_reg_hdr corresponding;
+}
+
+define behavior for ZPUR_REG_IRE alias _Items
+with unmanaged save
+draft table zpur_reg_itm_d
+//persistent table zpur_reg_itm
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid,sno,PurchaseOrder,PurchaseOrderItem,MaterialDocument,MaterialDocumentItem,MaterialDocumentYear,Supplierinvoice,Supplierinvoiceitem,Supplier,Suppliername,PoCreationDate,Material,Poitemtext,
+  Documentdate,Supplierinvoice1,Freightsupplier,Freightsuppliername,Invoicingparty,SupplierName1,Stransactioncurrency,Accountingdocument,Glaccount,Glaccountname,MovementType,
+  Movementtypename, Companycode, Quantity, Materialbaseunit,Materialdocumentheadertext,Conditiontypename,Freightamount,Amountincompanycodecurrency,Frghtglaccount,Totalquantity,status,remain,Podate;
+  association _Hdr{ with draft; }
+  mapping for zpur_reg_itm corresponding;
+}

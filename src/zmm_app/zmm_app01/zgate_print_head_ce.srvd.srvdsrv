@@ -1,0 +1,5 @@
+@EndUserText.label: 'Gate Pass Print XML Schema'
+define service ZGATE_PRINT_HEAD_CE {
+  expose ZGATE_PRINT_HEAD_CE;
+  expose ZGATE_PRINT_ITEM_VIEW;
+}

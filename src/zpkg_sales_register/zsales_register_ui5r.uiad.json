@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Sales",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Sales"
+  },
+  "ui5AppDetails": {
+    "appId": "zsalesregister"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_BC668ACA7C443E9A8F1E93135A8F2EC5A06C3815_TM",
+    "semanticObject": "zsales_register",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_BC668ACA7C443E9A8F1E93135A8F2EC5A06C3815_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sales",
+        "subtitle": "Register"
+      }
+    }
+  ]
+}

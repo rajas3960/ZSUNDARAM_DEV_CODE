@@ -1,0 +1,4 @@
+@EndUserText.label: 'Gate Pass User Matrix UI Version'
+define service ZMM_GATE_USER_UI {
+  expose ZMM_GATE_USER_PVC as GatePassUserMatrix;
+}

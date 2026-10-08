@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZTDS_SD {
+  expose ZTDS_PV as TDSREPORT;
+}

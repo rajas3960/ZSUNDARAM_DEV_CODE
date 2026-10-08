@@ -1,0 +1,132 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'DataOfBank', 
+    typeNamePlural: 'DataOfBanks', 
+    title: {
+      type: #STANDARD, 
+      label: 'Data of Bank', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_DataOfBank with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_DataOfBank', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Data of Bank', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Plant'
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Customer'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Customer'
+  } ]
+  Customer;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'BankName'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'BankName'
+  } ]
+  BankName;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'BankAddress'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'BankAddress'
+  } ]
+  BankAddress;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'AccountNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'AccountNumber'
+  } ]
+  AccountNumber;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'AccountName'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'AccountName'
+  } ]
+  AccountName;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    label: 'IfscCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    label: 'IfscCode'
+  } ]
+  IfscCode;
+  
+  @UI.identification: [ {
+    position: 9 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

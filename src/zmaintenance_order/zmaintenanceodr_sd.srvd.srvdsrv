@@ -1,0 +1,4 @@
+@EndUserText.label: 'Maintenance Order Service Definition'
+define service ZMAINTENANCEODR_SD {
+  expose ZMAINTENANCEODR_CV;
+}

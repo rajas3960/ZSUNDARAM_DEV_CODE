@@ -1,0 +1,30 @@
+managed implementation in class zbp_sales_hdr_i unique;
+strict ( 2 );
+
+define behavior for ZSALES_HDR_I //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) SalesDocument;
+  association _item { create; }
+  action ( features : instance ) PDF  result [1] $self;
+}
+
+define behavior for ZSALES_ITEM_I //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock dependent by _header
+authorization dependent by _header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) SalesDocument, SalesDocumentItem;
+  association _header;
+}

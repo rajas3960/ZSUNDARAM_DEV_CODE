@@ -1,0 +1,29 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BankAuthorizerMailI', 
+    typeNamePlural: 'BankAuthorizerMailIs', 
+    title: {
+      type: #STANDARD, 
+      label: 'Bank Authorizer Mail ID', 
+      value: 'Email'
+    }
+  }
+}
+annotate view ZI_BankAuthorizerMailI with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_BankAuthorizerMailI', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Bank Authorizer Mail ID', 
+    position: 1 
+  } ]
+  Email;
+}

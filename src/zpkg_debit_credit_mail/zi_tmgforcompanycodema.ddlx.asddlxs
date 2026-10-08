@@ -1,0 +1,45 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'TmgForCompanyCodeMa', 
+    typeNamePlural: 'TmgForCompanyCodeMas', 
+    title: {
+      type: #STANDARD, 
+      label: 'TMG for company code mail IDs', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZI_TmgForCompanyCodeMa with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TmgForCompanyCodeMa', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'TMG for company code mail IDs', 
+    position: 1 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Purchase;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Accounts;
+}

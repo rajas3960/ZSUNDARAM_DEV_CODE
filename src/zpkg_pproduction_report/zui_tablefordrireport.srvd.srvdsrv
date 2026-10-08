@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForDriReport_S'
+define service ZUI_TABLEFORDRIREPORT {
+  expose ZI_TABLEFORDRIREPORT_S as TableForDriReporAll;
+  expose ZI_TABLEFORDRIREPORT as TableForDriReport;
+}

@@ -1,0 +1,268 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Purchase Register Report',
+                typeNamePlural: 'Purchase Register Reports',
+                title: { type: #STANDARD, label: 'Purchase Register Report', value: 'Purchase_Order' } }}
+annotate entity ZMM_PUR_REG_REPORT_CV
+    with 
+{
+       @UI.facet: [ {   id:           'Purchase_Order',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE,
+                     label:           'Purchase Register Report',
+                     position:        10 }]
+    @UI.lineItem: [{ position: 10, label: 'GR Number' }]
+    @UI.identification: [{ position: 10, label: 'GR Number' }]
+    @UI.selectionField: [{ position: 10 }]
+    @EndUserText.label: 'GR Number'
+    Material_Document;
+     @UI.lineItem: [{ position: 20, label: 'GR Year' }]
+    @UI.identification: [{ position: 20, label: 'GR Year' }]
+//    @UI.selectionField: [{ position: 20 }]
+    @EndUserText.label: 'GR Year'
+    Material_Document_Year;
+//    @UI.lineItem: [{ position: 30, label: 'GR Item' }]
+//    @UI.identification: [{ position: 30, label: 'GR Item' }]
+////    @UI.selectionField: [{ position: 30 }]
+//    @EndUserText.label: 'GR Item'
+    @UI.hidden: true
+    Material_Document_Item;
+    @UI.lineItem: [{ position: 40, label: 'Purchase Order' }]
+    @UI.identification: [{ position: 40, label: 'Purchase Order' }]
+    @UI.selectionField: [{ position: 20 }]
+    @EndUserText.label: 'Purchase Order'
+    Purchase_Order;
+    @UI.lineItem: [{ position: 50, label: 'Purchase Order Item' }]
+    @UI.identification: [{ position: 50, label: 'Purchase Order Item'}] 
+    @UI.selectionField: [{ position: 30 }]
+    @EndUserText.label: 'Purchase Order Item' 
+    Purchase_Order_Item;
+    @UI.lineItem: [{ position: 60, label: 'MIRO Doc. No' }]
+    @UI.identification: [{ position: 60, label: 'MIRO Doc. No' }]
+    @EndUserText.label: 'MIRO Doc. No'
+    Supplier_Invoice;
+//    @UI.lineItem: [{ position: 70, label: 'MIRO Doc. No Item' }]
+//    @UI.identification: [{ position: 70, label: 'MIRO Doc. No Item'}]
+//    @EndUserText.label: 'MIRO Doc. No Item'
+    @UI.hidden: true
+    SupplierInvoice_Item;
+    @UI.hidden: true
+    SupplierInvoice_Year;
+//    @UI.lineItem: [{ position: 80, label: 'gross_amount' }]
+//    @UI.identification: [{ position: 80, label: 'gross_amount'}]
+//    @EndUserText.label: 'Gross Amount'
+    @UI.hidden: true
+    gross_amount;
+    @UI.lineItem: [{ position: 90, label: 'Document Currency' }]
+    @UI.identification: [{ position: 90, label: 'Document Currency'}]
+    @EndUserText.label: 'Document Currency'
+    Document_Currency;
+    @UI.lineItem: [{ position: 80, label: 'Tax Code' }]
+    @UI.identification: [{ position: 80, label: 'Tax Code'}]
+    @EndUserText.label: 'Tax Code'
+    Tax_Code;
+    @UI.lineItem: [{ position: 90, label: 'Company Code' }]
+    @UI.identification: [{ position: 90, label: 'Company Code'}]
+    @EndUserText.label: 'Company Code'
+    Company_Code;
+    @UI.lineItem: [{ position: 100, label: 'GR Date' }]
+    @UI.identification: [{ position: 100, label: 'GR Date'}]
+    @EndUserText.label: 'GR Date'
+    Material_Document_Date;
+    @UI.lineItem: [{ position: 110, label: 'Movement Type' }]
+    @UI.identification: [{ position: 110, label: 'Movement Type'}]
+    @EndUserText.label: 'Movement Type'
+    Goods_Movement_Type;
+    @UI.lineItem: [{ position: 120, label: 'Supplier' }]
+    @UI.identification: [{ position: 120, label: 'Supplier'}]
+    @EndUserText.label: 'Supplier'
+    Supplier;
+    @UI.lineItem: [{ position: 130, label: 'MIRO Posting Date' }]
+    @UI.identification: [{ position: 130, label: 'MIRO Posting Date'}]
+    @EndUserText.label: 'MIRO Posting Date'
+    Supplier_Invoice_Posting_Date;
+    @UI.lineItem: [{ position: 140, label: 'Supplier Invoice ID' }]
+    @UI.identification: [{ position: 140, label: 'Supplier Invoice ID'}]
+    @EndUserText.label: 'Supplier Invoice ID'
+    Supplier_Invoice_ID;
+    @UI.lineItem: [{ position: 150, label: 'Invoice Document Date' }]
+    @UI.identification: [{ position: 150, label: 'Invoice Document Date'}]
+    @EndUserText.label: 'Invoice Document Date'
+    Supplier_Invoice_Date;
+    @UI.lineItem: [{ position: 160, label: 'Supplier Name' }]
+    @UI.identification: [{ position: 160, label: 'Supplier Name'}]
+    @EndUserText.label: 'Supplier Name'
+    Supplier_Name;
+    @UI.lineItem: [{ position: 170, label: 'Supplier GSTIN' }]
+    @UI.identification: [{ position: 170, label: 'Supplier GSTIN'}]
+    @EndUserText.label: 'Supplier GSTIN'
+    Supplier_GSTIN;
+    @UI.lineItem: [{ position: 180, label: 'Supplier Region' }]
+    @UI.identification: [{ position: 180, label: 'Supplier Region'}]
+    @EndUserText.label: 'Supplier Region'
+    Supplier_Region;
+    @UI.lineItem: [{ position: 190, label: 'Supplier Country' }]
+    @UI.identification: [{ position: 190, label: 'Supplier Country'}]
+    @EndUserText.label: 'Supplier Country'
+    Supplier_Country;
+    @UI.lineItem: [{ position: 200, label: 'Supplier Address' }]
+    @UI.identification: [{ position: 200, label: 'Supplier Address'}]
+    @EndUserText.label: 'Supplier Address'
+    Supplier_Street;
+    @UI.lineItem: [{ position: 210, label: 'Supplier City Name' }]
+    @UI.identification: [{ position: 210, label: 'Supplier City Name'}]
+    @EndUserText.label: 'Supplier City Name'
+    Supplier_CityName;
+    @UI.lineItem: [{ position: 220, label: 'Supplier Postal Code' }]
+    @UI.identification: [{ position: 220, label: 'Supplier Postal Code'}]
+    @EndUserText.label: 'Supplier Postal Code'
+    Supplier_PostalCode;
+    @UI.lineItem: [{ position: 230, label: 'Purchase_Requisition' }]
+    @UI.identification: [{ position: 230, label: 'Purchase_Requisition'}]
+    @EndUserText.label: 'Purchase Req.'
+    Purchase_Requisition;
+    @UI.lineItem: [{ position: 240, label: 'Material' }]
+    @UI.identification: [{ position: 240, label: 'Material'}]
+    @EndUserText.label: 'Material'
+    Material;
+    @UI.lineItem: [{ position: 250, label: 'PO Item Text' }]
+    @UI.identification: [{ position: 250, label: 'PO Item Text'}]
+    @EndUserText.label: 'PO Item Text'
+    Purchase_Order_Item_Text;
+    @UI.lineItem: [{ position: 260, label: 'Material Group' }]
+    @UI.identification: [{ position: 260, label: 'Material Group'}]
+    @EndUserText.label: 'Material Group'
+    Material_Group;
+    @UI.lineItem: [{ position: 270, label: 'Material Type' }]
+    @UI.identification: [{ position: 270, label: 'Material Type'}]
+    @EndUserText.label: 'Material Type'
+    Material_Type;
+    @UI.lineItem: [{ position: 280, label: 'PO Creation Date' }]
+    @UI.identification: [{ position: 280, label: 'PO Creation Date'}]
+    @EndUserText.label: 'PO Creation Date'
+    Purchase_Order_Creation_Date;
+    @UI.lineItem: [{ position: 290, label: 'Incoterms' }]
+    @UI.identification: [{ position: 290, label: 'Incoterms'}]
+    @EndUserText.label: 'Incoterms'
+    Purchase_Order_Incoterms;
+    @UI.lineItem: [{ position: 300, label: 'Payment Terms' }]
+    @UI.identification: [{ position: 300, label: 'Payment Terms'}]
+    @EndUserText.label: 'Payment Terms'
+    Purchase_Order_Payment_Terms;
+    @UI.lineItem: [{ position: 310, label: 'PaymentTerms Desc' }]
+    @UI.identification: [{ position: 310, label: 'PaymentTerms Desc'}]
+    @EndUserText.label: 'PaymentTerms Desc'
+    Purchase_Order_PaymTerms_Des;
+    @UI.lineItem: [{ position: 320, label: 'Purchase Order Type' }]
+    @UI.identification: [{ position: 320, label: 'Purchase Order Type'}]
+    @EndUserText.label: 'Purchase Order Type'
+    Purchase_Order_Type;
+    @UI.lineItem: [{ position: 330, label: 'Created By' }]
+    @UI.identification: [{ position: 330, label: 'Created By'}]
+    @EndUserText.label: 'Created By'
+    Created_By;
+    @UI.lineItem: [{ position: 340, label: 'Movementtype_Description' }]
+    @UI.identification: [{ position: 340, label: 'Movementtype_Description'}]
+    @EndUserText.label: 'Movementtype_Description'
+    Goods_Movement_TypeDescription;
+    @UI.lineItem: [{ position: 350, label: 'HSN Code' }]
+    @UI.identification: [{ position: 350, label: 'HSN Code'}]
+    @EndUserText.label: 'HSN Code'
+    HSN_Code;
+    @UI.lineItem: [{ position: 360, label: 'Taxable Amount' }]
+    @UI.identification: [{ position: 360, label: 'Taxable Amount'}]
+    @EndUserText.label: 'Taxable Amount'
+    Taxable_Amount;
+//    @UI.lineItem: [{ position: 370, label: 'Taxable Currency' }]
+//    @UI.identification: [{ position: 370, label: 'Taxable Currency'}]
+//    @EndUserText.label: 'Taxable Currency'
+    @UI.hidden: true
+    TransactionCurrency;
+    @UI.lineItem: [{ position: 380, label: 'CGST Rate' }]
+    @UI.identification: [{ position: 380, label: 'CGST Rate'}]
+    @EndUserText.label: 'CGST Rate'
+    CGST_Rate;
+    @UI.lineItem: [{ position: 390, label: 'SGST Rate' }]
+    @UI.identification: [{ position: 390, label: 'SGST Rate'}]
+    @EndUserText.label: 'SGST Rate'
+    SGST_Rate;
+    @UI.lineItem: [{ position: 400, label: 'IGST Rate' }]
+    @UI.identification: [{ position: 400, label: 'IGST Rate'}]
+    @EndUserText.label: 'IGST Rate'
+    IGST_Rate;
+    @UI.lineItem: [{ position: 410, label: 'TaxCode Description' }]
+    @UI.identification: [{ position: 410, label: 'TaxCode Description'}]
+    @EndUserText.label: 'TaxCode Description'
+    Tax_Code_Description;
+    @UI.lineItem: [{ position: 420, label: 'ExchangeRate' }]
+    @UI.identification: [{ position: 420, label: 'ExchangeRate'}]
+    @EndUserText.label: 'ExchangeRate'
+    ExchangeRate;
+    @UI.lineItem: [{ position: 430, label: 'Asset' }]
+    @UI.identification: [{ position: 430, label: 'Asset'}]
+    @EndUserText.label: 'Asset'
+    WBS;
+    @UI.lineItem: [{ position: 440, label: 'Invoice Qty' }]
+    @UI.identification: [{ position: 440, label: 'Invoice Qty'}]
+    @EndUserText.label: 'Invoice Qty'
+    invoice_qty_real;
+    @UI.lineItem: [{ position: 450, label: 'Order Unit' }]
+    @UI.identification: [{ position: 450, label: 'Order Unit'}]
+    @EndUserText.label: 'Order Unit'
+    Order_Unit;
+    @UI.lineItem: [{ position: 460, label: 'Compensation Cess' }]
+    @UI.identification: [{ position: 460, label: 'Compensation Cess'}]
+    @EndUserText.label: 'Compensation Cess'
+    CompensationCess;
+    @UI.lineItem: [{ position: 460, label: 'Total Tax Value' }]
+    @UI.identification: [{ position: 460, label: 'Total Tax Value'}]
+    @EndUserText.label: 'Total Tax Value'
+    Total_tax_value;
+    @UI.lineItem: [{ position: 470, label: 'Invoice Value' }]
+    @UI.identification: [{ position: 470, label: 'Invoice Value'}]
+    @EndUserText.label: 'Invoice Value'
+    InvoiceValue;
+//    @UI.lineItem: [{ position: 480, label: 'TotalMaterialCost' }]
+//    @UI.identification: [{ position: 480, label: 'TotalMaterialCost'}]
+//    @EndUserText.label: 'Total Material Cost'
+//    TotalMaterialCost;
+    @UI.lineItem: [{ position: 480, label: 'Total Freight Cost' }]
+    @UI.identification: [{ position: 480, label: 'Total Freight Cost'}]
+    @EndUserText.label: 'Total Freight Cost'
+    Frigtamount;
+    @UI.hidden: true
+    Posting_Key;
+    @UI.lineItem: [{ position: 490, label: 'Total Material Cost' }]
+    @UI.identification: [{ position: 490, label: 'Total Material Cost'}]
+    @EndUserText.label: 'Total Material Cost'
+    TotalMaterialCost;
+    @UI.lineItem: [{ position: 500, label: 'CostPerQty' }]
+    @UI.identification: [{ position: 500, label: 'CostPerQty'}]
+    @EndUserText.label: 'CostPerQty'
+    CostperQty;
+    @UI.lineItem: [{ position: 510, label: 'Posting Type' }]
+    @UI.identification: [{ position: 510, label: 'Posting Type'}]
+    @EndUserText.label: 'Posting Type'
+    PostingType;
+    @UI.lineItem: [{ position: 520, label: 'Original MIRO Doc No' }]
+    @UI.identification: [{ position: 520, label: 'Original MIRO Doc No'}]
+    @EndUserText.label: 'Original MIRO Doc No'
+    OriginalMIRODocNo;
+    
+    @UI.lineItem: [{ position: 530, label: 'CGST Value' }]
+    @UI.identification: [{ position: 530, label: 'CGST Value'}]
+    @EndUserText.label: 'CGST Value'
+    CGST_VAL;
+    
+    @UI.lineItem: [{ position: 540, label: 'SGST Value' }]
+    @UI.identification: [{ position: 540, label: 'SGST Value'}]
+    @EndUserText.label: 'CGST Value'
+    SGST_VAL;
+    
+    @UI.lineItem: [{ position: 550, label: 'IGST Value' }]
+    @UI.identification: [{ position: 550, label: 'IGST Value'}]
+    @EndUserText.label: 'IGST Value'
+    IGST_VAL;
+    
+    
+}

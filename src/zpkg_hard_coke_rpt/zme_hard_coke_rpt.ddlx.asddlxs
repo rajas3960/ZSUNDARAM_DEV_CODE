@@ -1,0 +1,135 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Hard Coken Report',
+                typeNamePlural:'Hard Coke Report',
+                title: { type: #STANDARD, label: 'Hard Coke Report', value: 'MaterialDocument' }
+              }
+     }
+annotate entity ZC_HARD_COKE_RPT with
+{
+  @UI.facet: [{ id : 'GeneralData', isSummary: true, label: 'Hard Coke Report', position: 5, type: #COLLECTION },
+            { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralData', position: 10, label: 'Report Details', id: 'GeneralData1' }]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  MaterialDocument;
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 15,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  MaterialDocumentItem;
+  @UI.hidden: true
+  MaterialDocumentYear;
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.selectionField: [{  position: 25 }]
+  @UI.fieldGroup: [ { position: 25,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  PostingDate;
+  @UI.lineItem: [ { position: 35 } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.selectionField: [{  position: 25 }]
+  @UI.fieldGroup: [ { position: 35,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Supplier;
+  @UI.lineItem: [ { position: 45 } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.fieldGroup: [ { position: 45,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  SupplierName;
+  @UI.lineItem: [ { position: 55 } ]
+  @UI.identification: [ { position: 55 } ]
+  @UI.fieldGroup: [ { position: 55,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  ChallanNo;
+  @UI.lineItem: [ { position: 65 } ]
+  @UI.identification: [ { position: 65 } ]
+  @UI.selectionField: [{  position: 65 }]
+  @UI.fieldGroup: [ { position: 65,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Material;
+  @UI.lineItem: [ { position: 75 } ]
+  @UI.identification: [ { position: 75 } ]
+  @UI.fieldGroup: [ { position: 75,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  ProductName;
+  @UI.lineItem: [ { position: 85 } ]
+  @UI.identification: [ { position: 85 } ]
+  @UI.selectionField: [{  position: 85 }]
+  @UI.fieldGroup: [ { position: 85,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Plant;
+  @UI.lineItem: [ { position: 95 } ]
+  @UI.identification: [ { position: 95 } ]
+  @UI.fieldGroup: [ { position: 95,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  StorageLocation;
+  @UI.lineItem: [ { position: 105 } ]
+  @UI.identification: [ { position: 105 } ]
+  @UI.fieldGroup: [ { position: 105,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  QuantityInEntryUnit;
+  @UI.hidden: true
+  MaterialBaseUnit;
+  @UI.lineItem: [ { position: 115 } ]
+  @UI.identification: [ { position: 115 } ]
+  @UI.fieldGroup: [ { position: 115,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  plantqty;
+  @UI.lineItem: [ { position: 125 } ]
+  @UI.identification: [ { position: 125 } ]
+  @UI.fieldGroup: [ { position: 125,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  wtdiff;
+  @UI.lineItem: [ { position: 135 } ]
+  @UI.identification: [ { position: 135 } ]
+  @UI.fieldGroup: [ { position: 135,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  NetPriceAmount;
+  @UI.hidden: true
+  DocumentCurrency;
+  @UI.lineItem: [ { position: 145 } ]
+  @UI.identification: [ { position: 145 } ]
+  @UI.fieldGroup: [ { position: 145,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  totbill;
+  @UI.lineItem: [ { position: 155 } ]
+  @UI.identification: [ { position: 155 } ]
+  @UI.fieldGroup: [ { position: 155,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  totpay;
+  @UI.lineItem: [ { position: 165 } ]
+  @UI.identification: [ { position: 165 } ]
+  @UI.fieldGroup: [ { position: 165,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  pricediff;
+  @UI.lineItem: [ { position: 175 } ]
+  @UI.identification: [ { position: 175 } ]
+  @UI.fieldGroup: [ { position: 175,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  uash;
+  @UI.lineItem: [ { position: 185 } ]
+  @UI.identification: [ { position: 185 } ]
+  @UI.fieldGroup: [ { position: 185,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  umois;
+  @UI.lineItem: [ { position: 195 } ]
+  @UI.identification: [ { position: 195 } ]
+  @UI.fieldGroup: [ { position: 195,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  uashup;
+  @UI.lineItem: [ { position: 205 } ]
+  @UI.identification: [ { position: 205 } ]
+  @UI.fieldGroup: [ { position: 205,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  umoisup;
+  @UI.lineItem: [ { position: 215 } ]
+  @UI.identification: [ { position: 215 } ]
+  @UI.fieldGroup: [ { position: 215,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  ashwt;
+  @UI.lineItem: [ { position: 225 } ]
+  @UI.identification: [ { position: 225 } ]
+  @UI.fieldGroup: [ { position: 225,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  ashamt;
+  @UI.lineItem: [ { position: 235 } ]
+  @UI.identification: [ { position: 235 } ]
+  @UI.fieldGroup: [ { position: 235,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  moiswt;
+  @UI.lineItem: [ { position: 245 } ]
+  @UI.identification: [ { position: 245 } ]
+  @UI.fieldGroup: [ { position: 245,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  moisamt;
+  @UI.lineItem: [ { position: 255 } ]
+  @UI.identification: [ { position: 255 } ]
+  @UI.fieldGroup: [ { position: 255,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  netamt;
+  @UI.lineItem: [ { position: 265 } ]
+  @UI.identification: [ { position: 265 } ]
+  @UI.fieldGroup: [ { position: 265,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  totwt;
+  @UI.lineItem: [ { position: 275 } ]
+  @UI.identification: [ { position: 275 } ]
+  @UI.fieldGroup: [ { position: 275,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  unitrate;
+
+}

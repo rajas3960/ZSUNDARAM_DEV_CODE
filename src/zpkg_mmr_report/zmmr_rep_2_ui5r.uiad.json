@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "MMR"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmrreport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_B6419E1B5A716E08F4F909CA87AFA46E4074B5BA_TM",
+    "semanticObject": "zmmr_report",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_B6419E1B5A716E08F4F909CA87AFA46E4074B5BA_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "MMR",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

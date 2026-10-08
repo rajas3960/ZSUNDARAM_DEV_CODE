@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD for print queue'
+define service Zsd_print_queue {
+  expose ZC_PRINT_QUEUE;
+}

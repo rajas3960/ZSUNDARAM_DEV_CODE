@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Register"
+  },
+  "ui5AppDetails": {
+    "appId": "zpurregapp"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_064F82B467ACFBA64DF3E59693B0A00AAE8E825E_TM",
+    "semanticObject": "zpurreg_app",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_064F82B467ACFBA64DF3E59693B0A00AAE8E825E_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Register",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

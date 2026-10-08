@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service Binding for power dashboard'
+define service ZSRV_D_POWER_HEAD {
+  expose ZC_POWER_HEADER;
+  expose ZC_POWER_GENERATION;
+  expose ZC_CONSUMED_MAT;
+  expose ZC_POWER_CONS;
+  expose ZV_MATERIAL_F4;
+  expose ZV_PRODUCTION_ORDER_F4;
+  expose ZV_TURNBINE_F4;
+}

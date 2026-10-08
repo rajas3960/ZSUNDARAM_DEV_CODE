@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Maintenance Order Reports"
+  },
+  "ui5AppDetails": {
+    "appId": "maintenanceorderreports.zmaintenanceodr"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_B130F8B89D6D94072D7BA21D36F362A255BC9364_TM",
+    "semanticObject": "zmaintenanceodr",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_B130F8B89D6D94072D7BA21D36F362A255BC9364_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Maintenance Order Reports"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "TMT",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TMT"
+  },
+  "ui5AppDetails": {
+    "appId": "ztmtdashboard"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_CEAAB2907F569741E156C42E1C1476FCE621D00B_TM",
+    "semanticObject": "ztmt_dashboard",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_CEAAB2907F569741E156C42E1C1476FCE621D00B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TMT",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

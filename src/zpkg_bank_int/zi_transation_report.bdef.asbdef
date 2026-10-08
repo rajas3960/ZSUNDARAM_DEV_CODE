@@ -1,0 +1,76 @@
+managed
+implementation in class zbp_i_transation_report unique;
+strict(2) ;
+with draft;
+
+define behavior for ZI_TRANSATION_REPORT //alias <alias_name>
+persistent table zdt_trans_api
+//with unmanaged save
+draft table zdr_trans_api
+lock master
+total etag createdon
+authorization master ( instance )
+with additional save
+{
+//    create ;
+    update;
+//    delete;
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) Post result [1] $self;
+  determination postdoc on save { field Post ; }
+  field ( features : instance ) error_count,  Virtualaccount ;
+  field ( readonly ) Transactionid, Utr, Waers, remittername, fromaccountnumber, frombankname, remitterifsc, amount, mmid, valuedate, transfermode,
+  creditdate, credittime, chequeno, narration, createdon, createdat,  Criticality, Progress, Total , accountingdoc, companycode, fiscalyear , Status;
+
+  association _Item { create ; with draft; }
+  mapping for zi_transation_report
+    {
+      remittername      = Remittername;
+      fromaccountnumber = Fromaccountnumber;
+      frombankname      = Frombankname;
+      remitterifsc      = Remitterifsc;
+      virtualaccount    = Virtualaccount;
+      amount            = Amount;
+      mmid              = Mmid;
+      valuedate         = Valuedate;
+      transfermode      = Transfermode;
+      creditdate        = Creditdate;
+      credittime        = Credittime;
+      chequeno          = Chequeno;
+      narration         = Narration;
+      accountingdoc     = Accountingdoc;
+      companycode       = Companycode;
+      fiscalyear        = Fiscalyear;
+      createdon         = Createdon;
+      createdat         = Createdat;
+      Status            = Status;
+      Criticality       = Criticality;
+      Progress          = Progress;
+      Total             = Total;
+      error_count        = error_count;
+    }
+}
+
+define behavior for ZI_error_item //alias <alias_name>
+persistent table zdt_post_log
+draft table zdr_post_log
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+ // delete ( features : instance );
+  field ( readonly ) Transactionid, Utr, Error_Count , Error ;
+  //association _Head;
+  association _Head { with draft; }
+
+  mapping for ZI_error_item
+    {
+      Error = Error;
+    }
+}

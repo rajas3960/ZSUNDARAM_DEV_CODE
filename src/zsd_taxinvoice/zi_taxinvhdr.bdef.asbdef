@@ -1,0 +1,42 @@
+managed implementation in class zbp_cds_taxinvhdr unique;
+strict(1);
+
+define behavior for ZI_TAXINVHDR //alias <alias_name>
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+with unmanaged save
+{
+  //create;
+  update;
+  //delete;
+  association _Item;
+  action ( features : instance ) tprint result [1] $self;
+  field ( readonly ) DocumentType, OrderNumber, OrderDate, PaymentTerms,
+//  LCNumber, LCDate,
+SerialInvoiceNo, DateOfInvoice, IRNNumber, IRNDate, BitmapCode,
+      RBusinessName, RAddress, RCityName, RStateName,
+      RGSTIN, RFullAddress,
+      CBusinessName, CAddress, CCityName, CStateName, CStateCode, CGSTIN, CFullAddress,
+//      TransporterName, LRNumber, LRDate, VehicleNumber, DispatchedThrough, ExchangedRate, ContainerNumber,
+      Customer, BankName, BankAddress, AccountNumber, AccountName, IfscCode,
+      CGST, CGSTRate, SGST, SGSTRate, IGST, IGSTRate, TCS,
+      PlantNo, PlantName, PlantAddress, StateOfSupply, StateCode, amountinwords;
+      //YY1_unitpackage_DLH;
+}
+
+define behavior for ZI_TAXINVITEM //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  //delete;
+  field ( readonly ) BillingDocument, BillingDocumentItem,
+        DescOfGoods, HSNCode, OrderUnit, InvoiceQuantity,
+        RatePerUnit, PackingUnit, PackingQuantityMax, PackingQuantityMin;
+  association _Head;
+}

@@ -1,0 +1,9 @@
+CLASS zbp_fi_head_rv DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zfi_head_rv.
+puBLIC SECTION.
+    CLASS-DATA: upform type table of zfi_form_db.
+ENDCLASS.
+
+
+
+CLASS ZBP_FI_HEAD_RV IMPLEMENTATION.
+ENDCLASS.

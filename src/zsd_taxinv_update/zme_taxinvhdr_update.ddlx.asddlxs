@@ -1,0 +1,389 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo.title: { type: #STANDARD, label: 'Tax Invoice', value: 'SerialInvoiceNo' }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'SerialInvoiceNo', direction: #ASC } ],
+                             visualizations: [ { type: #AS_LINEITEM } ],
+                             text: 'Tax Invoice' } ]
+
+annotate entity ZC_TAXINVHDR_UPDATE
+    with 
+{
+    @UI.facet:
+  [{ id: 'header', isSummary: true, label: 'Tax Invoice Header', type: #COLLECTION },
+   
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg1', parentId: 'header', position: 10, label: 'Supplier Details', id: 'fg1' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg2', parentId: 'header', position: 15, label: 'Receiver Details', id: 'fg2' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg3', parentId: 'header', position: 20, label: 'Consignee Details', id: 'fg3' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg4', parentId: 'header', position: 25, label: 'Transporter Details', id: 'fg4' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg5', parentId: 'header', position: 30, label: 'Bank Details', id: 'fg5' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg7', parentId: 'header', position: 40, label: 'Plant Details', id: 'fg7' },
+   { type: #FIELDGROUP_REFERENCE, targetQualifier: 'fg8', parentId: 'header', position: 50, label: 'Registered Office Details', id: 'fg8' },
+
+   { id: 'item', label: 'Tax Invoice Item', type: #LINEITEM_REFERENCE, position : 20, targetElement: '_Item' }
+//   { id: 'item2', label: 'Serial Number', type: #LINEITEM_REFERENCE, position : 25, targetElement: '_Item2' }
+       ]
+  @UI: { lineItem: [{ position: 10 }],
+       identification: [{ position: 10 } ],
+//        { type: #FOR_ACTION, dataAction: 'anxprint', label: 'Annexure Print', iconUrl: 'sap-icon://close-command-field' } ],
+    fieldGroup: [ { position: 10,  qualifier: 'fg1', importance: #HIGH } ],
+    selectionField: [ { position: 10 } ] }
+  SerialInvoiceNo;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  OrderNumber;
+   @UI.fieldGroup: [ { position: 25, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.selectionField: [ { position: 25 } ]
+  SalesOrder;
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  OrderDate;
+ 
+  @UI.fieldGroup: [ { position: 35, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+  DocumentType;
+
+  @UI.fieldGroup: [ { position: 38, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 38 } ]
+  @UI.lineItem: [ { position: 38 } ]
+  Deliveryterms;
+
+  @UI.fieldGroup: [ { position: 35, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.lineItem: [ { position: 35 } ]
+  PaymentTerms;
+//
+//  @UI.fieldGroup: [ { position: 40, qualifier: 'fg1', importance: #HIGH } ]
+//  @UI.identification: [ { position: 40 } ]
+//  @UI.lineItem: [ { position: 40 } ]
+//  lcnumber;
+//
+//  @UI.fieldGroup: [ { position: 50, qualifier: 'fg1', importance: #HIGH } ]
+//  @UI.identification: [ { position: 50 } ]
+//  @UI.lineItem: [ { position: 50 } ]
+//  lcdate;
+
+  @UI.fieldGroup: [ { position: 60, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  DateOfInvoice;
+
+  @UI.fieldGroup: [ { position: 65, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 65 } ]
+  @UI.lineItem: [ { position: 65 } ]
+  TimeOfInvoice;
+
+  @UI.fieldGroup: [ { position: 75, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 75 } ]
+  @UI.lineItem: [ { position: 75 } ]
+  DateOfRemoval;
+
+  @UI.fieldGroup: [ { position: 70, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+  TimeOfRemoval;
+
+  @UI.fieldGroup: [ { position: 80, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 80 } ]
+  @UI.lineItem: [ { position: 80 } ]
+  IRNNumber;
+
+  @UI.fieldGroup: [ { position: 85, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 85 } ]
+  @UI.lineItem: [ { position: 85 } ]
+  IRNDate;
+
+  @UI.fieldGroup: [ { position: 90, qualifier: 'fg1', importance: #HIGH } ]
+  @UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 90 } ]
+  BitmapCode;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 110 } ]
+  @UI.lineItem: [ { position: 110 } ]
+  RBusinessName;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 120 } ]
+  @UI.lineItem: [ { position: 120 } ]
+  RAddress;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 130 } ]
+  @UI.lineItem: [ { position: 130 } ]
+  RCityName;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 140 } ]
+  @UI.lineItem: [ { position: 140 } ]
+  RStateName;
+
+  @UI.fieldGroup: [ { position: 50, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 150 } ]
+  @UI.lineItem: [ { position: 150 } ]
+  RStateCode;
+
+  @UI.fieldGroup: [ { position: 60, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 160 } ]
+  @UI.lineItem: [ { position: 160 } ]
+  RGSTIN;
+
+  @UI.fieldGroup: [ { position: 70, qualifier: 'fg2', importance: #HIGH } ]
+  @UI.identification: [ { position: 170 } ]
+  @UI.lineItem: [ { position: 170 } ]
+  RFullAddress;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 210 } ]
+  @UI.lineItem: [ { position: 210 } ]
+  CBusinessName;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 220 } ]
+  @UI.lineItem: [ { position: 220 } ]
+  CAddress;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 230 } ]
+  @UI.lineItem: [ { position: 230 } ]
+  CCityName;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 240 } ]
+  @UI.lineItem: [ { position: 240 } ]
+  CStateName;
+
+  @UI.fieldGroup: [ { position: 50, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 250 } ]
+  @UI.lineItem: [ { position: 250 } ]
+  CStateCode;
+
+  @UI.fieldGroup: [ { position: 60, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 260 } ]
+  @UI.lineItem: [ { position: 260 } ]
+  CGSTIN;
+
+  @UI.fieldGroup: [ { position: 70, qualifier: 'fg3', importance: #HIGH } ]
+  @UI.identification: [ { position: 270 } ]
+  @UI.lineItem: [ { position: 270 } ]
+  CFullAddress;
+  
+  @UI.fieldGroup: [ { position: 5, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 305 } ]
+  @UI.lineItem: [ { position: 305 } ]
+  Destination;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 310 } ]
+  @UI.lineItem: [ { position: 310 } ]
+  TransporterName;
+  
+  @UI.fieldGroup: [ { position: 15, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 315 } ]
+  @UI.lineItem: [ { position: 315 } ]
+  TransporterNo;
+  
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 320 } ]
+  @UI.lineItem: [ { position: 320 } ]
+  TransporterDate;
+  
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 330 } ]
+  @UI.lineItem: [ { position: 330 } ]
+  VehicleNumber;
+  
+  @UI.fieldGroup: [ { position: 35, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 335 } ]
+  @UI.lineItem: [ { position: 335 } ]
+  IncotermsLocation1;
+  
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg4', importance: #HIGH } ]
+  @UI.identification: [ { position: 340 } ]
+  @UI.lineItem: [ { position: 340 } ]
+  Remarks;
+//
+//  @UI.fieldGroup: [ { position: 20, qualifier: 'fg4', importance: #HIGH } ]
+//  @UI.identification: [ { position: 320 } ]
+//  @UI.lineItem: [ { position: 320 } ]
+//  lrnumber;
+//
+//  @UI.fieldGroup: [ { position: 30, qualifier: 'fg4', importance: #HIGH } ]
+//  @UI.identification: [ { position: 330 } ]
+//  @UI.lineItem: [ { position: 330 } ]
+//  lrdate;
+//
+//  @UI.fieldGroup: [ { position: 50, qualifier: 'fg4', importance: #HIGH } ]
+//  @UI.identification: [ { position: 350 } ]
+//  @UI.lineItem: [ { position: 350 } ]
+//  dispatchedthrough;
+//
+//  @UI.fieldGroup: [ { position: 60, qualifier: 'fg4', importance: #HIGH } ]
+//  @UI.identification: [ { position: 360 } ]
+//  @UI.lineItem: [ { position: 360 } ]
+//  ExchangedRate;
+//
+//  @UI.fieldGroup: [ { position: 70, qualifier: 'fg4', importance: #HIGH } ]
+//  @UI.identification: [ { position: 370 } ]
+//  @UI.lineItem: [ { position: 370 } ]
+//  containernumber;
+
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 410 } ]
+  @UI.lineItem: [ { position: 410 } ]
+  Customer;
+  @UI.fieldGroup: [ { position: 15, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 415 } ]
+  @UI.lineItem: [ { position: 415 } ]
+  CustomerName;
+
+  @UI.fieldGroup: [ { position: 25, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 425 } ]
+  @UI.lineItem: [ { position: 425 } ]
+  PlantBank;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 420 } ]
+  @UI.lineItem: [ { position: 420 } ]
+  BankName;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 430 } ]
+  @UI.lineItem: [ { position: 430 } ]
+  BankAddress;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 440 } ]
+  @UI.lineItem: [ { position: 440 } ]
+  AccountNumber;
+
+//  @UI.fieldGroup: [ { position: 50, qualifier: 'fg5', importance: #HIGH } ]
+//  @UI.identification: [ { position: 450 } ]
+//  @UI.lineItem: [ { position: 450 } ]
+//  AccountName;
+
+  @UI.fieldGroup: [ { position: 60, qualifier: 'fg5', importance: #HIGH } ]
+  @UI.identification: [ { position: 460 } ]
+  @UI.lineItem: [ { position: 460 } ]
+  IfscCode;
+  @UI.fieldGroup: [ { position: 5, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 605 } ]
+  @UI.lineItem: [ { position: 605 } ]
+  CompanyCode;
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 610 } ]
+  @UI.lineItem: [ { position: 610 } ]
+  PlantNo;
+
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 620 } ]
+  @UI.lineItem: [ { position: 620 } ]
+  PlantName;
+
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 630 } ]
+  @UI.lineItem: [ { position: 630 } ]
+  PlantAddress;
+
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 640 } ]
+  @UI.lineItem: [ { position: 640 } ]
+  StateOfSupply;
+
+  @UI.fieldGroup: [ { position: 50, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 650 } ]
+  @UI.lineItem: [ { position: 650 } ]
+  StateCode;
+    @UI.hidden: true
+//  @UI.fieldGroup: [ { position: 60, qualifier: 'fg7', importance: #HIGH } ]
+//  @UI.identification: [ { position: 660 } ]
+//  @UI.lineItem: [ { position: 660 } ]
+  amountinwords;
+
+  @UI.fieldGroup: [ { position: 70, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 670 } ]
+  @UI.lineItem: [ { position: 670 } ]
+  GSTNo;
+
+  @UI.fieldGroup: [ { position: 80, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 680 } ]
+  @UI.lineItem: [ { position: 680 } ]
+  ISONo;
+  
+  @UI.fieldGroup: [ { position: 85, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 685 } ]
+  @UI.lineItem: [ { position: 685 } ]
+  ReferenceSDDocument;
+  
+  @UI.fieldGroup: [ { position: 90, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 690 } ]
+  @UI.lineItem: [ { position: 690 } ]
+  PurchaseOrderByCustomer;
+  
+  @UI.fieldGroup: [ { position: 10, qualifier: 'fg8', importance: #HIGH } ]
+  @UI.identification: [ { position: 695 } ]
+  @UI.lineItem: [ { position: 695 } ]
+  CIN;
+  
+  @UI.fieldGroup: [ { position: 20, qualifier: 'fg8', importance: #HIGH } ]
+  @UI.identification: [ { position: 700 } ]
+  @UI.lineItem: [ { position: 700 } ]
+  Contact;
+  
+  @UI.fieldGroup: [ { position: 30, qualifier: 'fg8', importance: #HIGH } ]
+  @UI.identification: [ { position: 705 } ]
+  @UI.lineItem: [ { position: 705 } ]
+  Email;
+  
+  @UI.fieldGroup: [ { position: 40, qualifier: 'fg8', importance: #HIGH } ]
+  @UI.identification: [ { position: 710 } ]
+  @UI.lineItem: [ { position: 710 } ]
+  Website;
+  
+  @UI.fieldGroup: [ { position: 50, qualifier: 'fg8', importance: #HIGH } ]
+  @UI.identification: [ { position: 715 } ]
+  @UI.lineItem: [ { position: 715 } ]
+  RegOffice;
+
+//  @UI.fieldGroup: [ { position: 685, qualifier: 'fg7', importance: #HIGH } ]
+//  @UI.identification: [ { position: 685 } ]
+//  @UI.lineItem: [ { position: 685 } ]
+//  descofitems;
+//
+//  @UI.fieldGroup: [ { position: 690, qualifier: 'fg7', importance: #HIGH } ]
+//  @UI.identification: [ { position: 690 } ]
+//  @UI.lineItem: [ { position: 690 } ]
+//  freight;
+//  @UI.fieldGroup: [ { position: 695, qualifier: 'fg7', importance: #HIGH } ]
+//  @UI.identification: [ { position: 695 } ]
+//  @UI.lineItem: [ { position: 695 } ]
+//  yy1_unitpackage_dlh;
+  @UI.fieldGroup: [ { qualifier: 'fg7', position: 300, importance: #HIGH } ]
+  @UI.identification: [ { position: 610 },
+                        { type: #FOR_ACTION,
+                          dataAction: 'tprint',
+                          label: 'Generate Print',
+                          iconUrl: 'sap-icon://close-command-field',
+                          invocationGrouping: #ISOLATED }]
+//                        { type: #FOR_ACTION,
+//                          dataAction: 'dcprint',
+//                          label: 'Delivery Challan Print',
+//                          iconUrl: 'sap-icon://close-command-field',
+//                          invocationGrouping: #ISOLATED } ]
+  @UI.hidden: true
+  tprint;
+  @UI.fieldGroup: [ { position: 750, qualifier: 'fg7', importance: #HIGH } ]
+  @UI.identification: [ { position: 750 } ]
+  @UI.lineItem: [ { position: 750 } ]
+  Attachment;
+    
+    
+}

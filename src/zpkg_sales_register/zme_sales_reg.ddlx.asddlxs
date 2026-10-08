@@ -1,0 +1,288 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.title: { type: #STANDARD, label: 'Sales Register', value: 'BillingDocument' }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'BillingDocument', direction: #DESC } ],
+                             visualizations: [ { type: #AS_LINEITEM } ],
+                             text: 'Sales Register' } ]
+annotate view ZR_SALES_REG_01 with
+{
+
+  @UI.facet: [ { id: 'GeneralZata',
+                  isSummary: true,
+                  label: 'Sales Register',
+                  position: 5,
+                  type: #COLLECTION } ,
+                  { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData1',
+                 parentId: 'GeneralZata',
+                 position: 10,
+                 label: 'Header',
+                 id: 'GeneralData1' } ]
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [{  position: 5  }]
+  BillingDocument;
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  BillingDocumentItem;
+  @UI.fieldGroup: [ { position: 12, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 12 } ]
+  @UI.lineItem: [ { position: 12 } ]
+  billtype;
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  BillingDocumentDate;
+  @UI.fieldGroup: [ { position: 16, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 16 } ]
+  @UI.lineItem: [ { position: 16 } ]
+  Orginalinvno;
+  @UI.fieldGroup: [ { position: 17, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 17 } ]
+  @UI.lineItem: [ { position: 17 } ]
+  Orginalinvdate;
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  SalesDocument;
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  OrderItem;
+  @UI.fieldGroup: [ { position: 30, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  SalesDocumentDate;
+  @UI.fieldGroup: [ { position: 40, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  DeliveryNo;
+  @UI.fieldGroup: [ { position: 45, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 45 } ]
+  DeliveryItem;
+  @UI.fieldGroup: [ { position: 50, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  deliverydate;
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 55 } ]
+  @UI.lineItem: [ { position: 55 } ]
+  salescontract;
+  @UI.fieldGroup: [ { position: 60, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  SalesOrganization;
+  @UI.fieldGroup: [ { position: 65, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 65 } ]
+  @UI.lineItem: [ { position: 65 } ]
+  DistributionChannel;
+  @UI.fieldGroup: [ { position: 70, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 70 } ]
+  @UI.lineItem: [ { position: 70 } ]
+  Division;
+  @UI.fieldGroup: [ { position: 75, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 75 } ]
+  @UI.lineItem: [ { position: 75 } ]
+  SoldToParty;
+  @UI.fieldGroup: [ { position: 80, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 80 } ]
+  @UI.lineItem: [ { position: 80 } ]
+  SoldToPartyName;
+  @UI.fieldGroup: [ { position: 85, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 85 } ]
+  @UI.lineItem: [ { position: 85 } ]
+  soldtogstin;
+  @UI.fieldGroup: [ { position: 90, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 90 } ]
+  @UI.lineItem: [ { position: 90 } ]
+  ShipToParty;
+  @UI.fieldGroup: [ { position: 95, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 95 } ]
+  @UI.lineItem: [ { position: 95 } ]
+  ShipToPartyName;
+  @UI.fieldGroup: [ { position: 100, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 100 } ]
+  @UI.lineItem: [ { position: 100 } ]
+  ShipToGSTIN;
+  @UI.fieldGroup: [ { position: 105, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 105 } ]
+  @UI.lineItem: [ { position: 105 } ]
+  Broker;
+  @UI.fieldGroup: [ { position: 110, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 110 } ]
+  @UI.lineItem: [ { position: 110 } ]
+  Brokername;
+  @UI.fieldGroup: [ { position: 115, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 115 } ]
+  @UI.lineItem: [ { position: 115 } ]
+  HSNCode;
+  @UI.fieldGroup: [ { position: 120, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 120 } ]
+  @UI.lineItem: [ { position: 120 } ]
+  Product;
+  @UI.fieldGroup: [ { position: 125, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 125 } ]
+  @UI.lineItem: [ { position: 125 } ]
+  ProductType;
+  @UI.fieldGroup: [ { position: 130, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 130 } ]
+  @UI.lineItem: [ { position: 130 } ]
+  BillingDocumentItemText;
+  @UI.fieldGroup: [ { position: 135, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 135 } ]
+  @UI.lineItem: [ { position: 135 } ]
+  uom;
+  @UI.fieldGroup: [ { position: 140, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 140 } ]
+  @UI.lineItem: [ { position: 140 } ]
+  BillingQuantity;
+  @UI.fieldGroup: [ { position: 145, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 145 } ]
+  @UI.lineItem: [ { position: 145 } ]
+  Plant;
+  @UI.fieldGroup: [ { position: 150, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 150 } ]
+  @UI.lineItem: [ { position: 150 } ]
+  ProfitCenter;
+  @UI.fieldGroup: [ { position: 155, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position:    155 } ]
+  @UI.lineItem: [ { position: 155 } ]
+  Batch;
+  @UI.fieldGroup: [ { position: 160, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 160 } ]
+  @UI.lineItem: [ { position: 160 } ]
+  Rate;
+  @UI.fieldGroup: [ { position: 165, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 165 } ]
+  @UI.lineItem: [ { position: 165 } ]
+  amtuom;
+  @UI.fieldGroup: [ { position: 170, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 170 } ]
+  @UI.lineItem: [ { position: 170 } ]
+  taxablevalue;
+  @UI.fieldGroup: [ { position: 175, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 175 } ]
+  @UI.lineItem: [ { position: 175 } ]
+  IGSTRATE;
+  @UI.fieldGroup: [ { position: 180, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 180 } ]
+  @UI.lineItem: [ { position: 180 } ]
+  IGSTvalue;
+  @UI.fieldGroup: [ { position: 185, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 185 } ]
+  @UI.lineItem: [ { position: 185 } ]
+  CGSTRATE;
+  @UI.fieldGroup: [ { position: 190, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 190 } ]
+  @UI.lineItem: [ { position: 190 } ]
+  cGSTvalue;
+  @UI.fieldGroup: [ { position: 195, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 195 } ]
+  @UI.lineItem: [ { position: 195 } ]
+  SGSTRATE;
+  @UI.fieldGroup: [ { position: 200, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 200 } ]
+  @UI.lineItem: [ { position: 200 } ]
+  sGSTvalue;
+  @UI.fieldGroup: [ { position: 205, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 205 } ]
+  @UI.lineItem: [ { position: 205 } ]
+  UTGSTRATE;
+  @UI.fieldGroup: [ { position: 210, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 210 } ]
+  @UI.lineItem: [ { position: 210 } ]
+  utGSTvalue;
+  @UI.fieldGroup: [ { position: 215, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 215 } ]
+  @UI.lineItem: [ { position: 215 } ]
+  compcessamt;
+  @UI.fieldGroup: [ { position: 220, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 220 } ]
+  @UI.lineItem: [ { position: 220 } ]
+  totaltax;
+  @UI.fieldGroup: [ { position: 225, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 225 } ]
+  @UI.lineItem: [ { position: 225 } ]
+  tcsrate;
+  @UI.fieldGroup: [ { position: 230, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 230 } ]
+  @UI.lineItem: [ { position: 230 } ]
+  Tcsvalue;
+  @UI.fieldGroup: [ { position: 232, qualifier: 'GeneralData1', importance: #HIGH } ]      // ++ new added on 14.08.25 SP
+  @UI.identification: [ { position: 232 } ]                                                  // ++ new added on 14.08.25 SP
+  @UI.lineItem: [ { position: 232 } ]                                                      // ++ new added on 14.08.25 SP
+  RoundingOff; // ++ new added on 14.08.25 SP
+  @UI.fieldGroup: [ { position: 235, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 235 } ]
+  @UI.lineItem: [ { position: 235 } ]
+  invval;
+  @UI.fieldGroup: [ { position: 237, qualifier: 'GeneralData1', importance: #HIGH } ]    // ++ new added on 18.08.25
+  @UI.identification: [ { position: 235 } ]                                               // ++ new added on 18.08.25
+  @UI.lineItem: [ { position: 237 } ]                                                     // ++ new added on 18.08.25
+  gatepassnumber;                                                                         // ++ new added on 18.08.25
+
+  @UI.fieldGroup: [ { position: 240, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 240 } ]
+  @UI.lineItem: [ { position: 240 } ]
+  transportername;
+  @UI.fieldGroup: [ { position: 245, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 245 } ]
+  @UI.lineItem: [ { position: 245 } ]
+  transportergstin;
+  @UI.fieldGroup: [ { position: 250, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 250 } ]
+  @UI.lineItem: [ { position: 250 } ]
+  vehiclenumber;
+  @UI.fieldGroup: [ { position: 255, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 255 } ]
+  @UI.lineItem: [ { position: 255 } ]
+  Lrrrno;
+  @UI.fieldGroup: [ { position: 260, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 260 } ]
+  @UI.lineItem: [ { position: 260 } ]
+  Lrrrdate;
+  @UI.fieldGroup: [ { position: 265, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 265 } ]
+  @UI.lineItem: [ { position: 265 } ]
+  irn;
+  @UI.fieldGroup: [ { position: 270, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 270 } ]
+  @UI.lineItem: [ { position: 270 } ]
+  eway;
+  @UI.fieldGroup: [ { position: 275, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 275 } ]
+  @UI.lineItem: [ { position: 275 } ]
+  ewaycanceldate;
+  @UI.fieldGroup: [ { position: 280, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 280 } ]
+  @UI.lineItem: [ { position: 280 } ]
+  BillingDocumentType;
+  @UI.fieldGroup: [ { position: 285, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 285 } ]
+  @UI.lineItem: [ { position: 285 } ]
+  BillingDocumentIsCancelled;
+  @UI.fieldGroup: [ { position: 290, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 290 } ]
+  @UI.lineItem: [ { position: 290} ]
+  CancelledBillingDocument;
+  @UI.fieldGroup: [ { position: 300, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 300 } ]
+  @UI.lineItem: [ { position: 300} ]
+  ShippingCondition;
+  @UI.fieldGroup: [ { position: 310, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 310 } ]
+  @UI.lineItem: [ { position: 310} ]
+  Orderreason;
+  @UI.fieldGroup: [ { position: 320, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 320 } ]
+  @UI.lineItem: [ { position: 320} ]
+  BillingStatus;
+   @UI.fieldGroup: [ { position: 330, qualifier: 'GeneralData1', importance: #HIGH } ]
+   @UI.identification: [ { position: 330 } ]
+  @UI.lineItem: [ { position: 330} ]
+   einvcancellationdate;
+}

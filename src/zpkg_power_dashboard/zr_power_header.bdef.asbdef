@@ -1,0 +1,110 @@
+managed implementation in class zbp_r_power_header unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZR_POWER_HEADER //alias <alias_name>
+persistent table zdt_power_header
+draft table zdr_power_header
+lock master
+total etag Postingdate
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly : update, numbering : managed ) Id;
+  field ( mandatory : create, readonly : update ) Productionorder, Postingdate, NoOfTurbine, Activity;
+  field ( readonly ) referenceid, status, postcons, Consistency, Postgen, Power, Plant, material, materialdesc, getcons, transfer, Postcnf;
+  determination headerdetails on save { create; }
+  determination headeronmod on modify { field productionorder; }
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action ( features : instance ) CONSISTENCY result [1] $self;
+  action ( features : instance ) POSTCNF result [1] $self;
+  action ( features : instance ) POSTGEN result [1] $self;
+  action ( features : instance ) POSTCONS result [1] $self;
+  action ( features : instance ) POWER result [1] $self;
+  action ( features : instance ) GETCONS result [1] $self;
+  action ( features : instance ) TRANSFER result [1] $self;
+
+  //side effects { action GETCONS affects entity _MAT; }
+
+  side effects
+  { action CONSISTENCY affects field Consistency, messages;
+    action POSTCNF affects field Postcnf, messages;
+    action POSTGEN affects field Postgen, messages;
+    action POSTCONS affects field postcons, messages;
+    action POWER affects field Power, messages;
+    action GETCONS affects entity _MAT, field getcons, messages;
+    action TRANSFER affects field transfer, messages;
+  }
+
+  association _CONS { create ( features : instance ); }
+  association _POW { create ( features : instance ); }
+  association _MAT { create ( features : instance ); }
+
+
+}
+
+
+define behavior for ZR_POWER_GENERATION //alias <alias_name>
+persistent table zdt_power_gen
+draft table zdr_power_gen
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id, referenceid, Description, Material, Materialdescription, Uom, Movementtype, plant;
+  field ( readonly : update, numbering : managed ) item;
+
+  determination turbinemet on modify { field Turbine; }
+  side effects { field Turbine affects field Description; }
+
+  association _Head;
+}
+
+
+
+define behavior for ZR_CONSUMED_MAT //alias <alias_name>
+persistent table zdt_consumed_mat
+draft table zdr_consumed_mat
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id, referenceid, Turbine, Description, Material, Materialdescription, uom;
+  field ( readonly : update, numbering : managed ) item;
+
+  association _Head;
+}
+
+
+define behavior for ZR_POWER_CONS //alias <alias_name>
+persistent table zdt_power_cons
+draft table zdr_power_cons
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+  field ( mandatory : create, readonly : update ) Productionorderno;
+  field ( readonly ) Id, referenceid, Plantname, Material, UOM, Materialdescription, Costcentertext, Plant;
+  field ( readonly : update, numbering : managed ) item;
+
+  determination prodordmet on modify { field Productionorderno; }
+  side effects { field Productionorderno affects field Plant, field Material, field Materialdescription, field Uom; }
+
+  association _Head;
+}

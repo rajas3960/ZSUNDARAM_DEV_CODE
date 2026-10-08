@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+
+define behavior for ZSALES_HDR_C //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action PDF;
+
+  use association _item { create; }
+}
+
+define behavior for ZSALES_ITEM_C //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _header;
+}

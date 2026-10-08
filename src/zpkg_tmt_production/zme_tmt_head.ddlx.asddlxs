@@ -1,0 +1,152 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.title: { type: #STANDARD, label: 'TMT Production Dashboard', value: 'Referenceid' }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'Postingdate', direction: #DESC } ],
+                             visualizations: [ { type: #AS_LINEITEM } ],
+                             text: 'TMT Production Dashboard' } ]
+annotate view ZC_TMT_HEAD with
+{
+  @UI.facet: [ { id: 'GeneralZata',
+                 isSummary: true,
+                 label: 'TMT Production Header',
+                 position: 5,
+                 type: #COLLECTION },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData1',
+                 parentId: 'GeneralZata',
+                 position: 10,
+                 label: 'Header',
+                 id: 'GeneralData1' },
+               { type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'GeneralData3',
+                 parentId: 'GeneralZata',
+                 position: 25,
+                 label: 'Status',
+                 id: 'GeneralData3' },
+               { id: 'GeneralLine1',
+                 label: 'TMT Production Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item',
+                 position: 20 },
+               { id: 'GeneralLine2',
+                 label: 'By Product Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item1',
+                 position: 40 },
+               { id: 'GeneralLine3',
+                 label: 'Consumed Material ( Production )',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item2',
+                 position: 30 },
+               { id: 'GeneralLine4',
+                 label: 'Metal Balancing Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item3',
+                 position: 60 } ,
+                       { id: 'GeneralLine5',
+                 label: 'Bundle Generation Details',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item4',
+                 position: 70 } ,
+                       { id: 'GeneralLine6',
+                 label: 'Consumed Material ( Bundle Generation)',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_item5',
+                 position: 80 } ]
+
+  @UI.hidden: true
+  Id;
+  @UI.fieldGroup: [ { position: 5, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.selectionField: [{  position: 5  }]
+  Referenceid;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'ManufacturingOrder', name: 'ZV_PROD_ORD' },
+                                       distinctValues: true,
+                                       useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 10, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.selectionField: [{  position: 10  }]
+  Productionorder;
+  @UI.fieldGroup: [ { position: 15, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.selectionField: [{  position: 15  }]
+  Plant;
+  @UI.fieldGroup: [ { position: 20, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [{  position: 20  }]
+  Postingdate;
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.selectionField: [{  position: 25  }]
+  Material;
+  @UI.fieldGroup: [ { position: 30, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  Materialdesc;
+  @UI.fieldGroup: [ { position: 31, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 31 } ]
+  @UI.lineItem: [ { position: 31 } ]
+  noofbatch;
+  @UI.lineItem: [ { position: 35 }, { criticality: 'Criticality' } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData3', position: 35, importance: #HIGH } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.selectionField: [ { position: 35 } ]
+  Status;
+  @UI.hidden: true
+  Criticality;
+  @UI.hidden: true
+  Progress;
+  @UI.dataPoint: { visualization: #PROGRESS,
+                   targetValueElement: 'Total',
+                   criticality: 'Criticality',
+                   criticalityRepresentation: #WITHOUT_ICON }
+  @UI.lineItem: [ { position: 40, type: #AS_DATAPOINT } ]
+  Total;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'department', name: 'ZVDEPTF4' },
+                                      distinctValues: true,
+                                      useForValidation: true } ]
+  @UI.fieldGroup: [ { position: 45, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 45 } ]
+  @UI.lineItem: [ { position: 345 } ]
+  department;
+  @UI.fieldGroup: [ { position: 50, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  Avlquantity;
+  @UI.hidden: true
+  Uom;
+  @UI.hidden: true
+  @UI.identification: [{position: 90 },  { type: #FOR_ACTION, dataAction: 'CONSCHECK', label: 'Consistency Check'} ]
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData3', importance: #HIGH } ]
+  conscheck;
+  @UI.hidden: true
+  @UI.identification: [{position: 75 },  { type: #FOR_ACTION, dataAction: 'POSTCNF', label: 'Post Confirmation'} ]
+  @UI.fieldGroup: [ { position: 25, qualifier: 'GeneralData3', importance: #HIGH } ]
+  postcnf;
+  @UI.hidden: true
+  @UI.identification: [{position: 80 },  { type: #FOR_ACTION, dataAction: 'POST101', label: 'Post GR'} ]
+  @UI.fieldGroup: [ { position: 35, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post101;
+  @UI.hidden: true
+  @UI.identification: [{position: 85 },  { type: #FOR_ACTION, dataAction: 'POST261', label: 'Post GI'} ]
+  @UI.fieldGroup: [ { position: 54, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post261;
+  @UI.hidden: true
+  @UI.identification: [{position: 90 },  { type: #FOR_ACTION, dataAction: 'POST531', label: 'Post By-Product'} ]
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData3', importance: #HIGH } ]
+  post531;
+  @UI.hidden: true
+  @UI.identification: [{position: 90 },  { type: #FOR_ACTION, dataAction: 'GETCONS', label: 'Get Consumed'} ]
+  @UI.fieldGroup: [ { position: 55, qualifier: 'GeneralData3', importance: #HIGH } ]
+  getcons;
+  @UI.fieldGroup: [ { position: 34, qualifier: 'GeneralData1', importance: #HIGH } ]
+  @UI.identification: [ { position: 43 } ]
+  @UI.lineItem: [ { position: 43 } ]
+  activity;
+}

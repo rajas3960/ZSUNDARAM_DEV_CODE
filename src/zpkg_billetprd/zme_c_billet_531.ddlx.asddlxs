@@ -1,0 +1,110 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Material', value: 'materialdescription' } } }
+annotate entity ZC_BILLET_531 with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'By-Product', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  id;
+  @UI.hidden: true
+  item;
+  @UI.hidden: true
+  referenceid;
+  @UI.lineItem: [ { position: 2 } ]
+  @UI.identification: [ { position: 2 } ]
+  @UI.fieldGroup: [ { position: 2,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  plant;
+
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  @Consumption.valueHelpDefinition: [{ entity:{ element: 'heatnumber', name:'ZVBILLETHEATF4_5' },
+                                            distinctValues: true,
+                                            useForValidation: true,
+                                             enabled: '',
+    additionalBinding:
+          [
+          {
+            localParameter: '',
+            localElement: 'plant',
+            localConstant: '',
+            parameter: '',
+            element: 'plant',
+            usage: #FILTER
+           }
+           ] } ]
+
+  //  @Consumption.valueHelpDefinition: [{ entity:{ element: 'heatnumber', name:'ZVBILLETHEATF4_5' },
+  //  distinctValues: true,
+  //  useForValidation: true
+  //  additionalBinding:
+  //        [
+  //        {
+  //          localParameter: '',
+  //          localElement: 'plant',
+  //          localConstant: '',
+  //          parameter: '',
+  //          element: 'Plant',
+  //          usage: #FILTER
+  //         }
+  //         ]
+  //        }
+  //      ]
+  heatnumber;
+
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  material;
+
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 15,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  materialdescription;
+
+
+
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  quantity;
+
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.fieldGroup: [ { position: 25,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  uom;
+
+  @Consumption.valueHelpDefinition: [{
+        entity:{
+        element: 'storagelocation',
+        name:'ZVXSLOCF4'
+        },
+
+           distinctValues: true,
+        useForValidation: true,
+        enabled: '',
+
+                additionalBinding:
+        [
+        {
+          localParameter: '',
+          localElement: 'plant',
+          localConstant: '',
+          parameter: '',
+          element: 'plant',
+          usage: #FILTER
+         }
+         ]
+        }
+      ]
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  storagelocation;
+
+}

@@ -1,0 +1,52 @@
+projection;
+strict ( 1 );
+use draft;
+use side effects;
+
+define behavior for ZC_POWER_HEADER //alias <alias_name>
+{
+  use create;
+  use update;
+  //use delete;
+
+  use action CONSISTENCY;
+  use action POSTGEN;
+  use action POSTCONS;
+  use action POWER;
+  use action POSTCNF;
+  use action GETCONS;
+  use action TRANSFER;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _POW { create; }
+  use association _MAT { create; }
+  use association _CONS { create; }
+}
+define behavior for ZC_POWER_GENERATION //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _Head;
+}
+define behavior for ZC_CONSUMED_MAT //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_POWER_CONS //alias <alias_name>
+{
+
+  use update;
+  use delete;
+
+  use association _Head;
+}

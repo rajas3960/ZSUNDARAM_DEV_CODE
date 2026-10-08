@@ -1,0 +1,95 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPO_POGST_CV
+    with 
+{
+     @UI.lineItem: [
+        { position: 10 }
+    ]
+    FiscalYear;
+
+    @UI.lineItem: [
+        { position: 20 }
+    ]
+    CompanyCode;
+
+    @UI.lineItem: [
+        { position: 30 }
+    ]
+    AccountingDocument;
+
+    @UI.lineItem: [
+        { position: 40 }
+    ]
+    SourceLedger;
+
+    @UI.lineItem: [
+        { position: 50 }
+    ]
+    LedgerGLLineItem;
+
+    @UI.lineItem: [
+        { position: 60 }
+    ]
+    DocumentDate;
+
+    @UI.lineItem: [
+        { position: 70 }
+    ]
+    PostingDate;
+
+    @UI.lineItem: [
+        { position: 80 }
+    ]
+    Supplier;
+
+    @UI.lineItem: [
+        { position: 90 }
+    ]
+    BPSupplierFullName;
+
+    @UI.lineItem: [
+        { position: 100 }
+    ]
+    SupGSTIN;
+
+    @UI.lineItem: [
+        { position: 110 }
+    ]
+    TaxCode;
+
+    @UI.lineItem: [
+        { position: 120 }
+    ]
+    InvoiceValue;
+
+    @UI.lineItem: [
+        { position: 130 }
+    ]
+    CgstAmt;
+
+    @UI.lineItem: [
+        { position: 140 }
+    ]
+    SgstAmt;
+
+    @UI.lineItem: [
+        { position: 150 }
+    ]
+    IgstAmt;
+
+    @UI.lineItem: [
+        { position: 160 }
+    ]
+    TaxableValue;
+
+    @UI.lineItem: [
+        { position: 170 }
+    ]
+    statuscode;
+
+    @UI.lineItem: [
+        { position: 180 }
+    ]
+    ackno;
+    
+}

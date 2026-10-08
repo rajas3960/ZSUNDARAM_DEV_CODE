@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Reservation Print",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Reservation Print"
+  },
+  "ui5AppDetails": {
+    "appId": "zresvprint.zresvprint"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_B05B7B1033625A8CCA9004EB14560C0B70FCFA31_TM",
+    "semanticObject": "zresv_print",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_B05B7B1033625A8CCA9004EB14560C0B70FCFA31_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Reservation Print"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'SALES ORDER SD'
+define service ZSALES_SD {
+  expose ZSALES_HDR_C  as SALESHDR;
+  expose ZSALES_ITEM_C as SALESITEM;
+}

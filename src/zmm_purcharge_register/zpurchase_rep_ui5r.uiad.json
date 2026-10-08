@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Purchase Report-Delivery Cost",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Report-"
+  },
+  "ui5AppDetails": {
+    "appId": "zpurchaserep.zpurchaserep"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_7AFA18837917E2E166A9DFF79BD767374B3B33A3_TM",
+    "semanticObject": "ZPURCHARGE_REPORT",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_7AFA18837917E2E166A9DFF79BD767374B3B33A3_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Report-",
+        "subtitle": "Delivery Cost"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+projection;
+strict;
+use draft;
+use side effects;
+
+define behavior for ZC_BILLET_HDR //alias <alias_name>
+{
+  use create;
+  use update;
+  //use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use action POSTCNF;
+  use action POSTCHECK;
+  use action POST101;
+  use action POST261;
+  use action POST531;
+  use action GETCONS;
+
+  use association _101 { create; }
+  use association _261 { create; }
+  use association _531 { create; }
+  use association _HTB { create; }
+}
+
+define behavior for ZC_BILLET_101 //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_BILLET_261 //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_BILLET_531 //alias <alias_name>
+{
+  use update;
+  //use delete;
+
+  use association _Head;
+}
+
+define behavior for ZC_BILLET_HTB //alias <alias_name>
+{
+  use update;
+  // use delete;
+
+  use association _Head;
+}

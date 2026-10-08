@@ -1,0 +1,160 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZR_PURCHASE_REGISTER_001 with
+{
+
+  @UI.facet: [
+    {
+      id        : 'GeneralData',
+      isSummary : true,
+      label     : 'Purchase Register',
+      position  : 5,
+      type      : #IDENTIFICATION_REFERENCE
+    },
+    {
+      type            : #FIELDGROUP_REFERENCE,
+      targetQualifier : 'GeneralData1',
+      parentId        : 'GeneralData',
+      position        : 10,
+      label           : 'Header',
+      id              : 'GeneralData1'
+    }
+  ]
+
+
+  /*--------------- FIELD DEFINITIONS ---------------*/
+
+  @UI.fieldGroup: [{ position: 10, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  Material_Document;
+   @UI.fieldGroup: [{ position: 12, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 12 }]
+  @UI.selectionField: [{ position: 12 }]
+  quantity;
+  
+  @UI.fieldGroup: [{ position: 15, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 15 }]
+  @UI.selectionField: [{ position: 15 }]
+  Movement_type;
+  
+  @UI.fieldGroup: [{ position: 17, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 17 }]
+  @UI.selectionField: [{ position: 17 }]
+  MovementTypeName;
+
+  @UI.fieldGroup: [{ position: 20, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  documentdate;
+
+  @UI.fieldGroup: [{ position: 30, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  AccountingDocument;
+
+  @UI.fieldGroup: [{ position: 40, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  Purchase_Order;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  PO_Creation_Date;
+
+  @UI.fieldGroup: [{ position: 60, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  Material;
+
+  @UI.fieldGroup: [{ position: 70, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 70 }]
+  @UI.selectionField: [{ position: 70 }]
+  PoItemText;
+
+  @UI.fieldGroup: [{ position: 80, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 80 }]
+  @UI.selectionField: [{ position: 80 }]
+  Supplier;
+
+  @UI.fieldGroup: [{ position: 90, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 90 }]
+  @UI.selectionField: [{ position: 90 }]
+  SupplierName;
+
+//  @UI.fieldGroup: [{ position: 100, qualifier: 'GeneralData1' }]
+//  @UI.lineItem:   [{ position: 100 }]
+//  @UI.selectionField: [{ position: 100 }]
+//  Freight_charges;
+
+  @UI.fieldGroup: [{ position: 110, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 110 }]
+  @UI.selectionField: [{ position: 110 }]
+  GLAccount;
+
+  @UI.fieldGroup: [{ position: 120, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 120 }]
+  @UI.selectionField: [{ position: 120 }]
+  GLAccountName;
+
+  @UI.fieldGroup: [{ position: 130, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 130 }]
+  @UI.selectionField: [{ position: 5 }]
+  FreightSupplier;
+
+  @UI.fieldGroup: [{ position: 140, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 140 }]
+  @UI.selectionField: [{ position: 140 }]
+ // @UI.hidden: true
+  FreightSupplierName;
+
+  @UI.fieldGroup: [{ position: 150, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 150 }]
+  @UI.selectionField: [{ position: 150 }]
+  supplierinvoiceitemamount;
+
+  @UI.fieldGroup: [{ position: 160, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 160 }]
+  @UI.selectionField: [{ position: 160 }]
+  unplanneddeliverycost;
+
+  @UI.fieldGroup: [{ position: 170, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 170 }]
+  @UI.selectionField: [{ position: 170 }]
+  INVOICINGPARTY;
+
+  @UI.fieldGroup: [{ position: 180, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 180 }]
+  @UI.selectionField: [{ position: 180 }]
+  Supplier_name;
+//  @UI.fieldGroup: [{ position: 190, qualifier: 'GeneralData1' }]
+//  @UI.lineItem:   [{ position: 190 }]
+//  @UI.selectionField: [{ position: 190 }]
+//  SupplierInvoice;
+   @UI.fieldGroup: [{ position: 190, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 190 }]
+  @UI.selectionField: [{ position: 190 }]
+  CompanyCode;
+  @UI.hidden: true
+  Material_Document_Year;
+  @UI.hidden: true
+  Material_Document_Item;
+  @UI.hidden: true
+  Material_DocumentYear;
+  @UI.fieldGroup: [{ position: 200, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 200 }]
+  MaterialDocumentHeaderText;
+  @UI.fieldGroup: [{ position: 210, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 210 }]
+  ConditionTypeName;
+  @UI.fieldGroup: [{ position: 220, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 220 }]
+  Freightamount;
+  @UI.fieldGroup: [{ position: 230, qualifier: 'GeneralData1' }]
+  @UI.lineItem:   [{ position: 230 }]
+  freightmirostatus;
+ 
+  
+ 
+
+};

@@ -1,0 +1,102 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'GstIsoDetails', 
+    typeNamePlural: 'GstIsoDetailss', 
+    title: {
+      type: #STANDARD, 
+      label: 'GST/ISO Details', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_GstIsoDetails with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_GstIsoDetails', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'GST/ISO Details', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'PlantNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'PlantNo'
+  } ]
+  PlantNo;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'PlantAddress'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'PlantAddress'
+  } ]
+  PlantAddress;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'GstNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'GstNo'
+  } ]
+  GstNo;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'IsoNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'IsoNo'
+  } ]
+  IsoNo;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

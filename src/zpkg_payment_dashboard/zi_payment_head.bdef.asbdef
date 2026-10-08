@@ -1,0 +1,103 @@
+managed implementation in class zbp_i_payment_head unique;
+strict;
+//strict( 2 );
+with draft;
+define behavior for ZI_PAYMENT_HEAD //alias <alias_name>
+with unmanaged save and cleanup
+//persistent table zdt_payment_head
+draft table zdr_payment_head
+lock master
+total etag PostingDate
+authorization master ( instance )
+
+//etag master <field_name>
+{
+  //create;
+  update;
+  //  delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( readonly ) Accountingdoc, Fiscalyear, Companycode, PaymentMethod, PaymentRunID, DocumentDate,
+  PostingDate, Supplier, SupplierName, AmountInCompanyCodeCurrency, CompanyCodeCurrency, HouseBank, HouseBankAccount,
+  BankAccountNumber, PayeeBankAccount, PayeeBankKey, BankName, apprlevel, Appr1comment, Appr2comment, Status,
+  Criticality, Senton, Sentat, Sentby, PersonFullName, Utr, Message, Messagecode, Approved, Rejected, Inprocess, Appr1, Appr2,
+  Appr3, Reject1, Reject2, Reject3;
+  action ( features : instance ) APPROVE1 result [1] $self;
+  //  action ( features : instance ) APPROVE2 result [1] $self;
+  //  action ( features : instance ) APPROVE3 result [1] $self;
+  action ( features : instance ) Reject1 result [1] $self;
+  //  action ( features : instance ) Reject2 result [1] $self;
+  //  action ( features : instance ) Reject3 result [1] $self;
+  association _item1 { create; }
+  association _item { create; }
+  mapping for zi_payment_head
+    {
+      PaymentRunID                = PaymentRunID;
+      DocumentDate                = DocumentDate;
+      PostingDate                 = PostingDate;
+      Supplier                    = Supplier;
+      AmountInCompanyCodeCurrency = AmountInCompanyCodeCurrency;
+      CompanyCodeCurrency         = CompanyCodeCurrency;
+      PaymentMethod               = PaymentMethod;
+      HouseBank                   = HouseBank;
+      HouseBankAccount            = HouseBankAccount;
+      BankAccountNumber           = BankAccountNumber;
+      PayeeBankAccount            = PayeeBankAccount;
+      PayeeBankKey                = PayeeBankKey;
+      BankName                    = BankName;
+      apprlevel                   = apprlevel;
+      Appr1comment                = Appr1comment;
+      Appr2comment                = Appr2comment;
+      Status                      = Status;
+      Criticality                 = Criticality;
+      Senton                      = Senton;
+      Sentat                      = Sentat;
+      Sentby                      = Sentby;
+      PersonFullName              = PersonFullName;
+      Utr                         = Utr;
+      Message                     = Message;
+      Messagecode                 = Messagecode;
+      Approved                    = Approved;
+      Rejected                    = Rejected;
+      Inprocess                   = Inprocess;
+      Appr1                       = Appr1;
+      Appr2                       = Appr2;
+      Appr3                       = Appr3;
+      Reject1                     = Reject1;
+      Reject2                     = Reject2;
+      Reject3                     = Reject3;
+      SupplierName                = SupplierName;
+    }
+}
+
+define behavior for ZI_APPR_LOG //alias <alias_name>
+persistent table zdt_appr_log
+draft table zdr_appr_log
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  //update;
+  //  delete;
+  field ( readonly ) Accountingdoc, Fiscalyear, Companycode, Apprlevel;
+  association _Head;
+}
+
+define behavior for zi_invoicE_item
+with unmanaged save //alias <alias_name>
+////persistent table <???>
+draft table zdr_invoice_item
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  //update;
+  //  delete;
+  field ( readonly ) CompanyCode, AccountingDocument,ClearingJournalEntryFiscalYear, FiscalYear, SupplierInvoice, AccountingDocumentItem;
+  association _Head;
+}

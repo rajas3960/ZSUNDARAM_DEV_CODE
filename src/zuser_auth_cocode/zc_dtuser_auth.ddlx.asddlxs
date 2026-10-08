@@ -1,0 +1,95 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ID'
+annotate view ZC_DTUSER_AUTH with
+{
+//  @EndUserText.label: 'ID'
+// 
+//  @UI.identification: [ {
+//    position: 10 , 
+//    label: 'ID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'ID'
+//  } ]
+@UI.hidden: true 
+  ID;
+   @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Cbuser;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.hidden: true
+  Changedby;
+  @UI.hidden: true
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+ 
+  Lastchangetstmpl;
+  @UI.hidden: true
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  
+  Changetstmpl;
+  
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+ 
+  Createdby;
+  
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 80 , 
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: '_BaseEntity'
+  } ]
+  _BaseEntity;
+}

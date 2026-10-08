@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition For MMR Report'
+define service ZSD_MMR_REPORT {
+  expose ZMMR_REPORT12;
+}

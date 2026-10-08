@@ -1,0 +1,28 @@
+managed implementation in class zbp_po_i_gstrun unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPO_I_GSTRUN //alias <alias_name>
+persistent table zpo_gstrun_db
+draft table zpo_gstrun_draft
+lock master total etag Createdat
+authorization master ( instance )
+etag master Createdat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) runid;
+  field ( readonly ) Status, PostedCount;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action ( features : instance ) SetDateRange parameter ZPO_A_DATERANGE result [1] $self;
+  action GetPost result [1] $self;
+  //  action ( features : instance ) GetPost result [1] $self;
+
+}

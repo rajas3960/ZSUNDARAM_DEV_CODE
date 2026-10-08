@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_DTUSER_AUTH'
+@MappingRole: true
+define role ZR_DTUSER_AUTH {
+  grant select on ZR_DTUSER_AUTH
+  where TRUE;
+}

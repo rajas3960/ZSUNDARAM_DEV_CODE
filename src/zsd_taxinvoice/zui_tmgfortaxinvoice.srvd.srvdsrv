@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TmgForTaxInvoice_S'
+define service ZUI_TMGFORTAXINVOICE {
+  expose ZI_TMGFORTAXINVOICE_S as TmgForTaxInvoiceAll;
+  expose ZI_TMGFORTAXINVOICE as TmgForTaxInvoice;
+}

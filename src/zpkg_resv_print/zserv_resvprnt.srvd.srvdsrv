@@ -1,0 +1,5 @@
+@EndUserText.label: 'Reservation print service defination'
+define service ZSERV_RESVPRNT {
+  expose ZI_RES_HEADPRINT;
+  expose ZI_RES_ITMPRINT1;
+}

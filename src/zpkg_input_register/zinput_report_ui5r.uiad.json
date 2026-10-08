@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Input Register",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Input Register"
+  },
+  "ui5AppDetails": {
+    "appId": "zinputregreport.zinputregister"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_860D1F271FC00402F3F316767B686E7F850B7516_TM",
+    "semanticObject": "zinput_register",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_860D1F271FC00402F3F316767B686E7F850B7516_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Input Register",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

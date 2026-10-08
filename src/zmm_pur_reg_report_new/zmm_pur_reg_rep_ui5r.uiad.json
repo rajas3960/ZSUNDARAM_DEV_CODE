@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Register Report"
+  },
+  "ui5AppDetails": {
+    "appId": "purchaseregister.zmmpurregreportnew"
+  },
+  "navigation": {
+    "targetMappingId": "ZMM_PUR_REG_REP_UI5R_TM",
+    "semanticObject": "zmm_pur_reg_report",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZMM_PUR_REG_REP_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Register Report"
+      }
+    }
+  ]
+}

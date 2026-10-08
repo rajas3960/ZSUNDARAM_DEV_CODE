@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_PlantDetails_S'
+define service ZUI_PLANTDETAILS {
+  expose ZI_PLANTDETAILS_S as PlantDetailsAll;
+  expose ZI_PLANTDETAILS as PlantDetails;
+}

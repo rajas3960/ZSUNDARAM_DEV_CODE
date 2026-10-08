@@ -1,0 +1,5 @@
+@EndUserText.label: 'SD'
+define service ZSD_QUALITYREP {
+  expose ZC_QUALITY_HDR;
+  expose ZC_QUALITY_ITM;
+}

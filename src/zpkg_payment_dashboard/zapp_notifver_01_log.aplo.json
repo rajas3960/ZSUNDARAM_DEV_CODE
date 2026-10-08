@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Internal Pay Notif Jobs01",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "subobjects": [
+    {
+      "name": "ZAPP_NOTIFVER_01_SUB",
+      "description": "Application Log 01"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+@EndUserText.label: 'Custom entity tax invoice header'
+//@ObjectModel.query.implementedBy: 'ABAP:ZCL_TAXINV_BO_IMPL_UPDATE'
+define custom entity ZI_TAXINVHDR_PRINT_UPDATE
+ 
+{
+  key SerialInvoiceNo         : abap.char( 10 );
+      DocumentType            : abap.char( 4 );
+      Deliveryterms           : abap.char(30);
+      SalesOrder              : abap.char(10);
+      OrderNumber             : abap.char( 35 );
+      OrderDate               : abap.char(10);
+      PaymentTerms            : abap.sstring(50);
+      LCNumber                : abap.char( 20 );
+      LCDate                  : abap.dats;
+      DateOfInvoice           : abap.dats;
+      TimeOfInvoice           : abap.tims;
+      DateOfRemoval           : abap.dats;
+      TimeOfRemoval           : abap.tims;
+      Discountflag            : abap.char(1);
+      Freightflag             : abap.char(1);
+      IGSTflag                : abap.char(1);
+      CGSTflag                : abap.char(1);
+      SGSTflag                : abap.char(1);
+      UTGSTflag               : abap.char(1);
+      TCSflag                 : abap.char(1);
+      IRNNumber               : abap.char( 64 );
+      IRNDate                 : abap.dats;
+      BitmapCode              : abap.sstring(1000);
+      Bitmapflag              : abap.char(1);
+      RBusinessName           : abap.char( 70 );
+      RAddress                : abap.char( 200 );
+      RCityName               : abap.char( 35 );
+      RStateName              : abap.char( 30 );
+      RStateCode              : abap.char( 10 );
+      RGSTIN                  : abap.char( 18 );
+      RFullAddress            : abap.char( 200 );
+      RPanNo                  : abap.char(10);
+      CBusinessName           : abap.char( 70 );
+      CAddress                : abap.char( 200 );
+      CCityName               : abap.char( 35 );
+      CStateName              : abap.char( 30 );
+      CStateCode              : abap.char( 10 );
+      CGSTIN                  : abap.char( 18 );
+      CFullAddress            : abap.char( 200 );
+      TransporterName         : abap.char( 100 );
+      TransporterNo           : abap.char( 50 );
+      TransportDate           : abap.dats;
+      LRNumber                : abap.char( 20 );
+      LRDate                  : abap.dats;
+      VehicleNumber           : abap.char( 20 );
+      DispatchedThrough       : abap.char( 100 );
+      ExchangedRate           : abap.dec( 9, 5 );
+      ContainerNumber         : abap.char( 20 );
+      Customer                : abap.char( 20 );
+      Customername            : abap.char( 80 );
+      CompanyCode             : abap.char(4);
+      PlantBank               : abap.char( 20 );
+      BankName                : abap.char( 70 );
+      BankAddress             : abap.char( 100 );
+      AccountNumber           : abap.char( 20 );
+      AccountName             : abap.char( 100 );
+      IfscCode                : abap.char( 20 );
+      Freight                 : abap.dec( 13, 2 );
+      PlantNo                 : abap.char( 20 );
+      PlantName               : abap.char( 50 );
+      PlantAddress            : abap.char( 200 );
+      StateOfSupply           : abap.char( 30 );
+      StateCode               : abap.char( 20 );
+      GSTNo                   : abap.char( 20 );
+      ISONo                   : abap.char( 50 );
+      amountinwords           : abap.sstring( 200 );
+      taxinwords              : abap.sstring( 200 );
+      DESCOFITEMS             : abap.char(70);
+      remarks                 : abap.char(100);
+      division                : abap.char(2);
+      unitpkg                 : abap.char(20);
+      PurchaseOrderByCustomer : abap.char(35);
+      ReferenceSDDocument     : abap.char(10);
+      Contact                 : abap.char(12);
+      Email                   : abap.char(30);
+      CIN                     : abap.char(25);
+      Website                 : abap.char(50);
+      RegOffice               : abap.char(200);
+      signedqrcode            : abap.string(5000);
+      ackno                   : abap.char(20);
+      ackdate                 : abap.char(21);
+      eway                    : abap.char(20);
+      companyname             : abap.char(40);
+      IncotermsLocation1      : abap.char(200);
+      gstin                   : abap.char(20);
+      remarksTX05             : abap.char(200);
+      destination             : abap.char(50);
+      emailid                 : abap.char(50);
+      contact_no_plant        : abap.char(20);
+      roundoff                : abap.dec( 23, 2 );
+      totalamt                : abap.dec( 23, 2 );
+      roundoff_char           : abap.char(10);
+      totalamt_int            : abap.int4;
+//      @ObjectModel.filter.enabled  : false
+//      _Item                   : association [1..*] to ZI_TAXINVITEM_PRINT_UPDATE on $projection.SerialInvoiceNo = _Item.BillingDocument;
+//      _Item2                  : association [1..*] to ZI_TAXINVITEM2_PRINT_UPDATE on $projection.SerialInvoiceNo = _Item2.BillingDocument;
+
+  
+}

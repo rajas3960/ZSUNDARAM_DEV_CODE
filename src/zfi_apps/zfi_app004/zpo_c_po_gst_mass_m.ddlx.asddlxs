@@ -1,0 +1,86 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: {
+  headerInfo: {
+    typeName: 'PO GST Mass Processing',
+    typeNamePlural: 'PO GST Mass Processing',
+    title: {
+      type: #STANDARD,
+      value: 'Uuid'
+    }
+  }
+}
+
+annotate entity ZPO_C_PO_GST_MASS with
+{
+@UI.facet: [
+    {
+      id: 'Header',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'PO GST Mass Processing',
+      position: 10
+    }
+  ]
+
+  @UI: {
+    lineItem: [
+      {
+        position: 10,
+        label: 'UUID'
+      },
+      {
+        type: #FOR_ACTION,
+        dataAction: 'DateRange',
+        label: 'Date Range',
+        position: 5
+      }
+    ],
+    identification: [
+      {
+        position: 10,
+        label: 'UUID'
+      }
+    ]
+  }
+  Uuid;
+
+  @UI: {
+    lineItem: [
+      {
+        position: 20,
+        label: 'From Date'
+      }
+    ],
+    identification: [
+      {
+        position: 20,
+        label: 'From Date'
+      }
+    ]
+  }
+  Fromdate;
+
+  @UI: {
+    lineItem: [
+      {
+        position: 30,
+        label: 'To Date'
+      }
+    ],
+    identification: [
+      {
+        position: 30,
+        label: 'To Date'
+      }
+    ]
+  }
+  Todate;
+
+  @UI.hidden: true
+  Createdby;
+
+  @UI.hidden: true
+  Createdat;
+
+}

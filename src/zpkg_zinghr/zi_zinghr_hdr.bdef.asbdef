@@ -1,0 +1,92 @@
+//managed implementation in class zbp_i_zinghr_hdr unique;
+//strict ( 2 );
+//
+//define behavior for ZI_ZINGHR_HDR //alias <alias_name>
+//persistent table zdt_zinghr_hdr
+//lock master
+//authorization master ( instance )
+////etag master <field_name>
+//{
+//  create ( authorization : global );
+//  update;
+//  delete;
+//  field ( readonly ) Companycode, Payrollrunid, Payrollrundate;
+//  association _Item { create; }
+//}
+//
+//define behavior for ZI_ZINGHR_ITM //alias <alias_name>
+//persistent table zdt_zinghr_itm
+//lock dependent by _Head
+//authorization dependent by _Head
+////etag master <field_name>
+//{
+//  update;
+//  delete;
+//  field ( readonly ) Companycode, Payrollrunid, Payrollrundate, Glid, Costcenter, Profitcenter;
+//  association _Head;
+//}
+
+managed implementation in class zbp_i_zinghr_hdr unique;
+strict;
+//with draft;
+define behavior for ZI_ZINGHR_HDR alias Hdr
+persistent table zdt_zinghr_hdr
+//draft table zdr_zinghr_hdr
+//etag master LastChangedAt
+lock master
+//total etag LastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  //  draft action ( features : instance ) Edit;
+  //  draft action Activate optimized;
+  //  draft action Discard;
+  //  draft action Resume;
+  //  draft determine action Prepare;
+
+  create;
+  update;
+  delete;
+  //  association _Item { create; with draft; }
+  association _Item { create; }
+
+  //  field ( readonly, numbering : managed ) Id;
+
+  mapping for zi_zinghr_hdr
+    {
+
+      //      Id = Id;
+      //      Companycode        = Companycode;
+      Payrollrunid      = Payrollrunid;
+      Payrollrundate    = Payrollrundate;
+      Payrollrunremarks = Payrollrunremarks;
+      LastChangedAt     = LastChangedAt;
+    }
+}
+
+define behavior for ZI_ZINGHR_ITM alias Itm
+persistent table zdt_zinghr_itm
+//draft table zdr_zinghr_itm
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  //  update( features : instance );
+  update ( features : instance );
+  delete;
+  field ( readonly ) Companycode, Payrollrunid, Payrollrundate;
+  //  field ( readonly ) Id;
+  //  field ( readonly, numbering : managed ) item;
+  association _Head;
+
+  mapping for zi_zinghr_itm
+    {
+      Glid           = Glid;
+      Glname         = Glname;
+      Amt            = Amt;
+      Costcenter     = Costcenter;
+      Costcenterdesc = Costcenterdesc;
+      Profitcenter   = Profitcenter;
+    }
+}

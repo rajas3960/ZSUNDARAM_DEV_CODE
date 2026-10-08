@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Debit Credit Application Jobs 03",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_DEBIT_CREDIT_BJ"
+  },
+  "groups": [
+    {
+      "name": "GRP_DEF",
+      "title": "Default"
+    }
+  ]
+}

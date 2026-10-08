@@ -1,0 +1,22 @@
+CLASS zcl_payment_save DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS save CHANGING head TYPE zdt_payment_head.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCL_PAYMENT_SAVE IMPLEMENTATION.
+
+
+    METHOD save.
+        IF head IS NOT INITIAL.
+            MODIFY zdt_payment_head FROM @head.
+        ENDIF.
+    ENDMETHOD.
+ENDCLASS.

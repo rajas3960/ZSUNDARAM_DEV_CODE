@@ -1,0 +1,28 @@
+projection;
+strict ( 1 );
+
+define behavior for ZC_TAXINVHDR_UPDATE //alias <alias_name>
+{
+  use update;
+
+  use action tprint;
+  use action dcprint;
+  use action anxprint;
+
+  use association _Item;
+  use association _Item2;
+}
+
+define behavior for ZC_TAXINVITEM2_UPDATE //alias <alias_name>
+{
+  use update;
+
+  use association _Head;
+}
+
+define behavior for ZC_TAXINVITEM_UPDATE //alias <alias_name>
+{
+  use update;
+
+  use association _Head;
+}

@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TmgForCompanyCodeMa_S'
+define service ZUI_TMGFORCOMPANYCODEMA {
+  expose ZI_TMGFORCOMPANYCODEMA_S as TmgForCompanyCodAll;
+  expose ZI_TMGFORCOMPANYCODEMA as TmgForCompanyCodeMa;
+}

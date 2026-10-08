@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_DetailsForStateCode_S'
+define service ZUI_DETAILSFORSTATECODE {
+  expose ZI_DETAILSFORSTATECODE_S as DetailsForStateCAll;
+  expose ZI_DETAILSFORSTATECODE as DetailsForStateCode;
+}

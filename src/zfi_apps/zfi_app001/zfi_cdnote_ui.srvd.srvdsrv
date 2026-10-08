@@ -1,0 +1,5 @@
+@EndUserText.label: 'Credit - Debit Note UI Version SD'
+define service ZFI_CDNOTE_UI {
+  expose ZFI_HEAD_PV as MainHead;
+  expose ZFI_ITEM_PV as MainItem;
+}

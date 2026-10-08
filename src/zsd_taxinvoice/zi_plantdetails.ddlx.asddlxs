@@ -1,0 +1,112 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'PlantDetails', 
+    typeNamePlural: 'PlantDetailss', 
+    title: {
+      type: #STANDARD, 
+      label: 'Plant Details', 
+      value: 'Id'
+    }
+  }
+}
+annotate view ZI_PlantDetails with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+  
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_PlantDetails', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Plant Details', 
+    position: 1 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'PlantNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'PlantNo'
+  } ]
+  PlantNo;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'PlantName'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'PlantName'
+  } ]
+  PlantName;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'PlantAddress'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'PlantAddress'
+  } ]
+  PlantAddress;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'State'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'State'
+  } ]
+  State;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'StateCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'StateCode'
+  } ]
+  StateCode;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    criticality: 'ConfigDeprecationCode_Critlty'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Deprecate', 
+    label: 'Deprecate Selected Entry'
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'Invalidate', 
+    label: 'Invalidate Selected Entry'
+  } ]
+  ConfigDeprecationCode;
+}

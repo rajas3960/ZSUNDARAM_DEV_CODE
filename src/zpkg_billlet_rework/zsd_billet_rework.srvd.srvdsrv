@@ -1,0 +1,7 @@
+@EndUserText.label: 'Billet Rework'
+define service ZSD_BILLET_REWORK {
+  expose ZC_BILLETRE_HDR;
+  expose ZC_BILLETRE_101;
+  expose ZC_BILLETRE_261;
+  expose ZC_BILLETRE_531;
+}

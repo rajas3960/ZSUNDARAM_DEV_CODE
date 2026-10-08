@@ -1,0 +1,50 @@
+@Metadata.layer: #CORE
+@UI:{ headerInfo: {
+        typeName: 'Gate Pass App User Matrix',
+        title: { type: #STANDARD, value: 'Userid' },
+        description: { type: #STANDARD, value: 'Usrname' }} }
+annotate entity ZMM_GATE_USER_PVC
+    with 
+{
+  @UI.facet: [ { id:              'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Authorised Signer Details',
+                      position:        10 } ]
+                      
+  @UI: { lineItem: [{ position: 10, label: 'User ID'}],
+    identification: [{ position: 10, label: 'User ID' } ] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BusinessUserVH',element: 'UserID' },
+  additionalBinding: [{localElement: 'Usrname', element: 'PersonFullName'}]  }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'User ID'
+Userid;
+  @UI: { lineItem: [{ position: 20, label: 'Company Code'}],
+  identification: [{ position: 20, label: 'Company Code' } ] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CompanyCodeVH',element: 'CompanyCode' },
+  additionalBinding: [{localElement: 'Ccname', element: 'CompanyCodeName'}]  }]
+  @EndUserText.label: 'Company Code'
+Ccode;
+  @UI: { lineItem: [{ position: 30, label: 'Creation User'}] ,
+  identification: [{ position: 30, label: 'Creation User' } ] }
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BusinessUserVH',element: 'UserID' },
+//  additionalBinding: [{localElement: 'Createdname', element: 'PersonFullName'}]  }]  
+  @EndUserText.label: 'Create User'
+Createdby;
+  @UI: { lineItem: [{ position: 40, label: 'Creation Date'}],
+  identification: [{ position: 40, label: 'Creation Date' } ] }
+  @EndUserText.label: 'Creation Date'
+Createdat;
+@UI.hidden: true
+Usrname;
+@UI.hidden: true
+Ccname;
+@UI.hidden: true
+Signername;
+@UI.hidden: true
+Createdname;
+@UI.hidden: true
+Lastchangedby;
+@UI.hidden: true
+Lastchangedat;    
+}

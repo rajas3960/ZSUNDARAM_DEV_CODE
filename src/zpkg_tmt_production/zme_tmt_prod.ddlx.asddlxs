@@ -1,0 +1,57 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'TMT Production', value: 'Garde' } } }
+annotate view ZC_TMT_PROD with
+{
+
+  @UI.facet:
+   [{ id: 'GeneralDataI',
+   isSummary: true, label: 'TMT Production',
+   type: #COLLECTION,
+   purpose: #STANDARD },
+   { type: #FIELDGROUP_REFERENCE,
+   targetQualifier: 'GeneralData1',
+   parentId: 'GeneralDataI',
+   position: 10,
+   label: 'TMT Production Details',
+   id: 'GeneralData1' }
+   ]
+  @UI.hidden: true
+  Id;
+  @UI.hidden: true
+  Item;
+  @UI.hidden: true
+  Referenceid;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'GARDE', name: 'ZVGRADEF4' },
+                                           distinctValues: true,
+                                           useForValidation: true } ]
+  @UI.lineItem: [ { position: 8 } ]
+  @UI.identification: [ { position: 8 } ]
+  @UI.fieldGroup: [ { position: 8,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Garde;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'Tsection', name: 'ZVSECTIONF4' },
+                                           distinctValues: true,
+                                           useForValidation: true } ]
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Tsection;
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 15,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Batchno;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Weight;
+  @UI.hidden: true
+  Uom;
+  @Consumption.valueHelpDefinition: [ { entity: { element: 'SLOC', name: 'ZVSTRLOC' },
+                                          distinctValues: true,
+                                          useForValidation: true } ]
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.fieldGroup: [ { position: 25,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  Storagelocation;
+
+}

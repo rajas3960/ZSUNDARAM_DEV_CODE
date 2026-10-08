@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_CcpProductionReport_S'
+define service ZUI_CCPPRODUCTIONREPORT {
+  expose ZI_CCPPRODUCTIONREPORT_S as CcpProductionRepAll;
+  expose ZI_CCPPRODUCTIONREPORT as CcpProductionReport;
+}

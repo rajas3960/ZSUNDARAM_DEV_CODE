@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Taxinvoice",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Taxinvoice"
+  },
+  "ui5AppDetails": {
+    "appId": "zinvoiceapp"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_2CAA0A171909534EDE7A0B325395C75744F7B2C3_TM",
+    "semanticObject": "ztaxinvoice_app",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_2CAA0A171909534EDE7A0B325395C75744F7B2C3_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Taxinvoice",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

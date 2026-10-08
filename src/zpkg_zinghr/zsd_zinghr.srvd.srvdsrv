@@ -1,0 +1,5 @@
+@EndUserText.label: 'SRV Definition for ZingHR'
+define service ZSD_ZINGHR {
+  expose ZC_ZINGHR_HDR;
+  expose ZC_ZINGHR_ITM;
+}

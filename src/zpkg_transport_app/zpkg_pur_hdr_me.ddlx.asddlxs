@@ -1,0 +1,123 @@
+@Metadata.layer: #CUSTOMER
+@UI:{
+    headerInfo: {
+        typeName: 'Tranport app Report ',
+        typeNamePlural: 'Tranport app Reports',
+        title: { type: #STANDARD, value: 'Purchase_Order' }
+    }
+}
+annotate entity ZPV_PUR_HDR
+    with 
+{
+  
+    @UI.facet: [ { id:              'Purchase_Order',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Purchase_Order',
+                      position:        10 } ,
+                    { id:              'Purchase_Order_Item',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Purchase order Item',
+                      position:        20,
+                      targetElement:   '_Item'} ]
+
+    @UI.lineItem: [{ position: 10, label: 'Purchase Order' }]
+    @UI.identification: [{ position: 10, label: 'Purchase Order' }]
+    @EndUserText.label: 'Purchase Order'
+    @UI.selectionField: [{ position: 10 }]
+    Purchase_Order;
+    @UI.lineItem: [{ position: 20, label: 'Supplier Invoice' }]
+    @UI.identification: [{ position: 20, label: 'Supplier Invoice' }]
+    @EndUserText.label: 'Supplier Invoice'
+    @UI.selectionField: [{ position: 20 }]
+    SupplierInvoice;
+    @UI.lineItem: [{ position: 30, label: 'Supplier Invoice Item' }]
+    @UI.identification: [{ position: 30, label: 'Supplier Invoice Item' }]
+    @EndUserText.label: 'Supplier Invoice Item'
+    @UI.selectionField: [{ position: 30 }]
+    SupplierInvoiceItem;
+    @UI.lineItem: [{ position: 40, label: 'Purchase Order Item' }]
+    @UI.identification: [{ position: 40, label: 'Purchase Order Item' }]
+    @EndUserText.label: 'Purchase Order Item'
+    Purchase_Order_Item;
+    @UI.lineItem: [{ position: 50, label: 'Material Document' }]
+    @UI.identification: [{ position: 50, label: 'Material Document' }]
+    @EndUserText.label: 'Material Document'
+    Material_Document;
+    @UI.lineItem: [{ position: 60, label: 'Material Document Year' }]
+    @UI.identification: [{ position: 60, label: 'Material Document Year' }]
+    @EndUserText.label: 'Material Document Year'
+    Material_Document_Year;
+    @UI.lineItem: [{ position: 70, label: 'Material Document Item' }]
+    @UI.identification: [{ position: 70, label: 'Material Document Item' }]
+    @EndUserText.label: 'Material Document Item'
+    Material_Document_Item;
+    @UI.lineItem: [{ position: 80, label: 'Quantity' }]
+    @UI.identification: [{ position: 80, label: 'Quantity' }]
+    @EndUserText.label: 'Quantity'
+    Quantity;
+    @UI.lineItem: [{ position: 90, label: 'Material Base Unit' }]
+    @UI.identification: [{ position: 90, label: 'Material Base Unit' }]
+    @EndUserText.label: 'Material Base Unit'
+    MaterialBaseUnit;
+    @UI.lineItem: [{ position: 100, label: 'Company Code' }]
+    @UI.identification: [{ position: 100, label: 'Company Code' }]
+    @EndUserText.label: 'Company Code'
+    CompanyCode;
+    @UI.lineItem: [{ position: 110, label: 'Supplier' }]
+    @UI.identification: [{ position: 110, label: 'Supplier' }]
+    @EndUserText.label: 'Supplier'
+    Supplier;
+    @UI.lineItem: [{ position: 120, label: 'Goods Movement Type' }]
+    @UI.identification: [{ position: 120, label: 'Goods Movement Type' }]
+    @EndUserText.label: 'Goods Movement Type'
+    GoodsMovementType;
+    @UI.lineItem: [{ position: 130, label: 'Document Date' }]
+    @UI.identification: [{ position: 130, label: 'Document Date' }]
+    @EndUserText.label: 'Document Date'
+    DocumentDate;
+    @UI.lineItem: [{ position: 140, label: 'Accounting Document' }]
+    @UI.identification: [{ position: 140, label: 'Accounting Document' }]
+    @EndUserText.label: 'Accounting Document'
+    AccountingDocument;
+    @UI.lineItem: [{ position: 150, label: 'po Creation Date' }]
+    @UI.identification: [{ position: 150, label: 'po Creation Date' }]
+    @EndUserText.label: 'po Creation Date'
+    poCreationDate;
+    @UI.lineItem: [{ position: 160, label: 'Material' }]
+    @UI.identification: [{ position: 160, label: 'Material' }]
+    @EndUserText.label: 'Material'
+    Material;
+    @UI.lineItem: [{ position: 170, label: 'Material Description' }]
+    @UI.identification: [{ position: 170, label: 'Material Description' }]
+    @EndUserText.label: 'PO Item Text'
+    POitemtext;
+    @UI.lineItem: [{ position: 180 }]
+    @EndUserText.label: 'supplier Name'
+    SupplierName;
+    @UI.lineItem: [{ position: 190, label: 'GL Account' }]
+    @UI.identification: [{ position: 190, label: 'GL Account' }]
+    @EndUserText.label: 'GL Account'
+    GLAccount;
+    @UI.lineItem: [{ position: 200, label: 'GL Account Name' }]
+    @UI.identification: [{ position: 200, label: 'GL Account Name' }]
+    @EndUserText.label: 'GL Account Name'
+    GLAccountName;
+    @UI.lineItem: [{ position: 210, label: 'Goods Movement Type Name' }]
+    @UI.identification: [{ position: 210, label: 'Goods Movement Type Name' }]
+    @EndUserText.label: 'goods movement type name'
+    GoodsMovementTypeName;
+    @UI.lineItem: [{ position: 220, label: 'Vehicle No' }]
+    @UI.identification: [{ position: 220, label: 'Vehicle No' }]
+    @EndUserText.label: 'Vehicle No'
+    MaterialDocumentHeaderText;
+    @UI.lineItem: [{ position: 230, label: 'GRN Value' }]
+    @UI.identification: [{ position: 230, label: 'GRN Value' }]
+    @EndUserText.label: 'GRN Value'
+    GRNValue;
+    /* Associations */
+    @UI.hidden: true
+    _Item;
+    
+}

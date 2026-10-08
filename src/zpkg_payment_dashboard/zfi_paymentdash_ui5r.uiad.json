@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Payment Dashboard for Approvals",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Payment Dashboard for Approvals"
+  },
+  "ui5AppDetails": {
+    "appId": "zfipaymentdash.zfipaymentdash"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_3CEE0C5D3B8425FFBA69DEF60A06F3F4E6EF4A4F_TM",
+    "semanticObject": "zfi_paymentdash",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_3CEE0C5D3B8425FFBA69DEF60A06F3F4E6EF4A4F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Payment Dashboard for Approvals",
+        "subtitle": "Payment Process"
+      }
+    }
+  ]
+}

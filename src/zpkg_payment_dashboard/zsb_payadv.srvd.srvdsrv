@@ -1,0 +1,5 @@
+@EndUserText.label: 'bank status Head'
+define service ZSB_PAYADV {
+  expose ZC_PAYADV_HEAD;
+  expose ZC_PAYADV_ITEM;
+}

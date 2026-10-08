@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_DataOfBank_S'
+define service ZUI_DATAOFBANK {
+  expose ZI_DATAOFBANK_S as DataOfBankAll;
+  expose ZI_DATAOFBANK as DataOfBank;
+}

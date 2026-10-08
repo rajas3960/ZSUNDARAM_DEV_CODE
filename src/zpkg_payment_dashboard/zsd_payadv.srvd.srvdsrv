@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Payment Advice'
+define service ZSD_PAYADV {
+  expose ZCE_PAYADV;
+  expose ZI_PAYADV_ITEM;
+}

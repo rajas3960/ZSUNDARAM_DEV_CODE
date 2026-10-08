@@ -1,0 +1,25 @@
+managed implementation in class zbp_mm_gate_user_rvi unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZMM_GATE_USER_RVI alias Head
+persistent table zmm_user_db
+draft table zmm_user_ddb
+lock master
+total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete(features : instance);
+  field ( readonly : update ) Userid, Ccode;
+  field (readonly)Createdby,Createdat,Lastchangedat,Lastchangedby,Signername;
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare; //{ validation ( always )  ; }
+
+  mapping for zmm_user_db corresponding;
+}

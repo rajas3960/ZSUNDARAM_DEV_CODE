@@ -1,0 +1,143 @@
+managed implementation in class zbp_i_tmt_head unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZI_TMT_HEAD //alias <alias_name>
+persistent table zdt_tmt_head
+draft table zdr_tmt_head
+lock master
+total etag postingdate
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly : update, numbering : managed ) id;
+  field ( mandatory : create, readonly : update ) productionorder,  postingdate, activity ,  noofbatch;
+
+  field ( readonly ) Referenceid, Plant, Material , Materialdesc , Avlquantity , Uom , Status , Total ,department;
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action ( features : instance ) CONSCHECK result [1] $self;
+  action ( features : instance ) POSTCNF result [1] $self;
+  action ( features : instance ) POST101 result [1] $self;
+  action ( features : instance ) POST261 result [1] $self;
+  action ( features : instance ) POST531 result [1] $self;
+  action ( features : instance ) GETCONS result [1] $self;
+
+  side effects
+  { action POSTCNF affects  messages;
+    action CONSCHECK affects  messages;
+    action POST101 affects  messages;
+    action POST261 affects  messages;
+    action POST531 affects  messages;
+    action GETCONS affects  messages;
+  }
+
+  determination headerdetails1 on modify { field productionorder ; field postingdate; }
+  determination headerdetails on save { create; }
+  association _item4 { create ( features : instance );  }
+  association _item2 { create ( features : instance ); }
+  association _item5 { create ( features : instance ); }
+  association _item3 { create ( features : instance ); }
+  association _item1 { create ( features : instance ); }
+  association _item { create ( features : instance ); }
+}
+
+define behavior for ZI_BUNDLE_GEN //alias <alias_name>
+persistent table zdt_bundle_gen
+draft table ZDR_BUNDLE_GEN
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id, Bbatchno, Uom;
+  field ( readonly : update, numbering : managed ) item;
+//  field ( mandatory : create, readonly : update ) Bundleno ;
+//   determination bundlegen on modify { field Bundleno; }
+
+  determination bundlesave on save { create; }
+  association _Head;
+}
+
+define behavior for ZI_CONSUMED //alias <alias_name>
+persistent table zdt_consumed
+draft table ZDR_consumed
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id;
+   field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}
+
+define behavior for ZI_CONS_BUNDLE //alias <alias_name>
+persistent table zdt_cons_batch
+draft table zdR_cons_batch
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+   update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id, Batchno ;
+   field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}
+
+define behavior for ZI_METAL_BAL //alias <alias_name>
+persistent table zdt_metal_bal
+draft table zdR_metal_bal
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+    update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id;
+     field ( readonly : update, numbering : managed ) item;
+
+  association _Head;
+}
+
+define behavior for ZI_TMT_BYPROD //alias <alias_name>
+persistent table zdt_tmt_byprod
+draft table ZDR_TMT_BYPROD
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+    update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id;
+     field ( readonly : update, numbering : managed ) item;
+  association _Head;
+}
+
+define behavior for ZI_TMT_PROD //alias <alias_name>
+persistent table zdt_tmt_prod
+draft table ZDR_TMT_PROD
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+    update ( features : instance );
+  delete ( features : instance );
+  field ( readonly ) Id, Storagelocation, Batchno ;
+  field ( readonly : update, numbering : managed ) item;
+  field ( mandatory : create, readonly : update ) Garde , Tsection ;
+  determination proddetails1 on modify { field Garde ; field Tsection ; }
+  determination proddetails on save { create ; }
+
+  association _Head;
+}
